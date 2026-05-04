@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://v5yjofs0eb75" path="res://YV-TestStuff/collectible.gd" id="1_od5xb"]
 [ext_resource type="Shader" uid="uid://v7dieinlkpwn" path="res://JuneTestStuff/Shader/SHA_Collectible_Bubble.gdshader" id="2_lltec"]
-[ext_resource type="Shader" uid="uid://dfg75d4hgrnsn" path="res://JuneTestStuff/Shader/SHA_Collectible.gdshader" id="3_gld4r"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_le8k1"]
 
@@ -10,14 +9,14 @@
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="CurveTexture" id="CurveTexture_krhed"]
+[sub_resource type="CurveTexture" id="CurveTexture_le8k1"]
 curve = SubResource("Curve_lltec")
 
 [sub_resource type="Curve" id="Curve_gld4r"]
 _data = [Vector2(0, 1), 0.0, -2.410125, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="CurveTexture" id="CurveTexture_3228i"]
+[sub_resource type="CurveTexture" id="CurveTexture_lltec"]
 curve = SubResource("Curve_gld4r")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_4jghh"]
@@ -27,10 +26,10 @@ initial_velocity_max = 20.0
 gravity = Vector3(0, -20, 0)
 scale_min = 0.099999994
 scale_max = 1.5
-scale_curve = SubResource("CurveTexture_3228i")
-alpha_curve = SubResource("CurveTexture_krhed")
+scale_curve = SubResource("CurveTexture_lltec")
+alpha_curve = SubResource("CurveTexture_le8k1")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jd6wt"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gld4r"]
 transparency = 1
 vertex_color_use_as_albedo = true
 emission_enabled = true
@@ -43,10 +42,10 @@ particles_anim_v_frames = 1
 particles_anim_loop = false
 
 [sub_resource type="QuadMesh" id="QuadMesh_j25r0"]
-material = SubResource("StandardMaterial3D_jd6wt")
+material = SubResource("StandardMaterial3D_gld4r")
 size = Vector2(0.25, 0.25)
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_crtlc"]
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_4jghh"]
 noise_type = 2
 fractal_type = 2
 fractal_octaves = 2
@@ -55,17 +54,17 @@ cellular_distance_function = 1
 cellular_return_type = 6
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_4jghh"]
-noise = SubResource("FastNoiseLite_crtlc")
+noise = SubResource("FastNoiseLite_4jghh")
 seamless = true
 as_normal_map = true
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_0s1vp"]
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_jd6wt"]
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_jd6wt"]
-noise = SubResource("FastNoiseLite_0s1vp")
+noise = SubResource("FastNoiseLite_jd6wt")
 seamless = true
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_0s1vp"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j25r0"]
 render_priority = 0
 shader = ExtResource("2_lltec")
 shader_parameter/wave_noise = SubResource("NoiseTexture2D_jd6wt")
@@ -84,13 +83,39 @@ shader_parameter/y_offset = -0.25
 shader_parameter/enable_wobble = false
 
 [sub_resource type="SphereMesh" id="SphereMesh_j25r0"]
-material = SubResource("ShaderMaterial_0s1vp")
+material = SubResource("ShaderMaterial_j25r0")
 radial_segments = 16
 rings = 5
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_lltec"]
+[sub_resource type="Shader" id="Shader_7ct10"]
+code = "shader_type spatial;
+
+uniform vec3 emission_color : source_color;
+uniform float emission_strength = 1.0;
+uniform float wobble_scale = 1.0;
+uniform float upDown_scale = 1.0;
+uniform float time_scale = 1.0;
+uniform float y_offset = 0.0;
+const vec3 center = vec3(0.0);
+
+void vertex() {
+	vec3 pos = VERTEX - center;
+	float angle = atan(pos.y, pos.x);
+	float wobble_movement_a = wobble_scale * sin(TIME * time_scale - angle);
+	float wobble_movement_b = wobble_scale * cos(TIME * time_scale - angle);
+	VERTEX.y += (wobble_movement_a + wobble_movement_b) / 2.0;
+	
+	float upDown_movement = upDown_scale * sin(TIME * time_scale);
+	VERTEX.y += abs(upDown_movement) + y_offset;
+}
+void fragment() {
+	EMISSION = emission_color * emission_strength;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pbkhl"]
 render_priority = 0
-shader = ExtResource("3_gld4r")
+shader = SubResource("Shader_7ct10")
 shader_parameter/emission_color = Color(0.55198437, 0.124832906, 0, 1)
 shader_parameter/emission_strength = 2.0
 shader_parameter/wobble_scale = 35.0
@@ -98,7 +123,7 @@ shader_parameter/upDown_scale = 100.0
 shader_parameter/time_scale = 1.5
 shader_parameter/y_offset = -140.0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_b14b0"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_xl370"]
 _surfaces = [{
 "aabb": AABB(-87.83797, -92.13536, -95.04844, 185.33075, 280.75256, 190.09688),
 "format": 34359742465,
@@ -122,7 +147,7 @@ _surfaces = [{
 "index_count": 252,
 "index_data": PackedByteArray("JQAmABUAFQAnACUADgAnABUAKAAmACUAJQAUACgAFQAmACkAJgAoACoAKgApACYADQAoABQAFAAMAA0ADQAMACsAKAANABoAGgAqACgAKwAsAA0AGgANACwAFwAsACsAKwAYABcAGQAXABgALAAtABoALAAXAAsACwAtACwABQALABcAGgAtAC4ALgAtAAsAKgAaAAAALgAAABoAAAAbACoACwAJAC4AAwAJAAsAHQAAAC4AGwAAAB0ALwAuAAkALgAvAB0ACQAQAC8ACgAQAAkAAQAdAC8AMAAvABAALwAwAAEAEAASADAABwASABAAMQAwABIAAQAwADEAJAAjABIAEgAjADEAEwAiACMAMQAjACIAIgAyADEAMQAyAAgAMQAgAAEACAAgADEAMwABACAANAAgAAgAIAA0ADMACAAhADQANQA0ACEAMwA0ADUAIQA2ADUAAQAzADcANwAdAAEAHQA3ABsAHwA1ADYANgA4AB8ABgAfADgAOQA1AB8ANQA5ADMAHwARADkAHgARAB8AMwA5ADoAOgA5ABEAOgA3ADMAEQAcADoAAgAcABEANwA6ADsAOwA6ABwAOwAbADcAKgAbADsAOwApACoAHAA8ADsAPQA8ABwADwApADsAOwA8AA8ABAAPADwAKQAPABUAFgAVAA8A"),
 "lods": [54.245037, PackedByteArray("FAANABUAFQAOABQAFAAMAA0AFgAVAA8AFQANAA8AFwANAAwADAAYABcAGQAXABgADQAXAAsABQALABcAGgAPAA0ACwAaAA0AGwAPABoAGwAEAA8AHAAEABsAAAAbABoAAAAaAAsAGwAdABwAGwAAAB0ACwAJAAAAAwAJAAsAHQAAAAkAEQAcAB0AAgAcABEACQAQAB0ACgAQAAkAAQARAB0AAQAdABAAHgARAB8AEAASAAEABwASABAAIAARAAEAEQAgAB8AIAABABIAIQAGAB8AHwAgACEACAAhACAAIgAIACAAEgAjACAAIAAjACIAJAAjABIAEwAiACMA"), 114.192604, PackedByteArray("DAANAA4ABQANAAwADgANAA8ADQAFAAsAAAAPAA0AAAANAAsAAAAEAA8ACwAJAAAAAwAJAAsAAQAAAAkAAAABAAIACgAQAAkACQAQAAEAEQACAAEAEAASAAEABwASABAACAARAAEACAABABIAEQAIAAYAEgATAAgA"), 171.28891, PackedByteArray("AAABAAIACAABAAcACAAGAAEAAQAAAAkACQAKAAEACwAJAAAAAwAJAAsAAAAMAAsADAAFAAsAAAAEAAwA"), 256.93338, PackedByteArray("AAABAAIAAQAAAAMAAAAEAAUABgABAAcA")],
-"material": SubResource("ShaderMaterial_lltec"),
+"material": SubResource("ShaderMaterial_pbkhl"),
 "name": "openPBR_shader1",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
@@ -130,7 +155,7 @@ _surfaces = [{
 "vertex_data": PackedByteArray("Cq2vwsApwUC/MylCniRzQsApwUAkcphCiMEHJk5FuMIAAAAAAAAAAAKePEMAAAAAiMEHJk5FuMIAAAAAAAAAAAKePEMAAAAAiMEHJk5FuMIAAAAAAAAAAAKePEMAAAAAoCRzQsApwUAjcpjC36EGwla+5kLywoJBAAAAAAKePEMAAAAA36EGwla+5kL0woLBoCRzQsApwUAjcpjCro2twcApwUDNGL7CiMEHJk5FuMIAAAAAxV0cwul2pMKmmpbBapgBwVa+5kLE6BJC7GrYQel2pMKJsAdCHiu+QVa+5kLGn+tBAAAAAAKePEMAAAAAoCRzQsY0fMEjcpjCI3oawel2pMLAMynCiMEHJk5FuMIAAAAAZ5gBwVa+5kLE6BLCICu+QVa+5kLFn+vBAAAAAAKePEMAAAAACa2vwsApwUDBMynCCq2vwsY0fMG/MylCJ3oawel2pMLAMylCso2twcApwUDNGL5CiMEHJk5FuMIAAAAAso0tQul2pMIAAAAAT/zCQsApwUAAAAAAoCRzQsY0fMEjcpjCICu+QVa+5kLFn+vBzNEXQla+5kIAAAAAAAAAAAKePEMAAAAAUfxCQrrQWMIRgXTC1y2LwbrQWMIlcpjC7mrYQel2pMKIsAfCro2twcY0fMHNGL7ClOGMwrrQWMKKsAfCCa2vwsY0fMHBMynCUfxCQpBgTUIRgXTC1y2LwZBgTUIlcpjClOGMwpBgTUKKsAfClOGMwpBgTUKIsAdC2i2LwZBgTUIlcphCUPxCQpBgTUITgXRCxl2cQpBgTUIAAAAAUfxCQpBgTUIRgXTCniRzQsY0fMEkcphCT/zCQsY0fMEAAAAAxl2cQrrQWMIAAAAAUfxCQrrQWMIRgXTCso2twcY0fMHNGL5C7mrYQel2pMKIsAfCUPxCQrrQWMITgXRC2i2LwbrQWMIlcphClOGMwrrQWMKIsAdCxV0cwul2pMKkmpZBiMEHJk5FuMIAAAAA+zdMlZqp/7+7r2aU//+ao/9/AAD//xq0zH/M//9//7//fwAA/3//v8x/zP/ZOPG//38AAAAAzJTMf8z/1f/0y5frQtAFCt2fsEQYqKGp/7/Mf8z/JccNwBgor8RdVv+/l+tC0BcKPd5MF4rsyRf/v/9/AAAAAOPL2kJEKWRW/79GcBWrS+j/v9qbyT7//2Tcu6eEpv7/lKPMf8z/EADKlPbpAy/aCrahT0a4CskX/7//fwAAyTj/vxUrRfCzF/+/etlD2BsRfd3Mf8z/KQAJtE0V+rdkVv+/HjkDaZqp/79Hda85Nej/v4psTJc16P+//38AAP//zJQKtAo0//8AgBDl7pr/////9ukDL8QKgeB62UPYoRBgm8vPMrD/////zH/M/+7/NOuu1QMm+hEKo/YuDg/JF/+/yb7bGzYS/qcbGR4TyRf/v8gr1zhkVv+//BbgRmRW/7/a3V/WwA/l3V0mTu/UF/6/lSObwWhW/7+cQZSjlqn/v09vXaYq6P+/nqkjov7/YNy81EGr/////9rdX9Z4D3+cAq/3af//mqMN4w5j//8AgI7Lj0v//wCArtUDJnARjOXgbORmNej/v8m+2xsXEQXqA6avVf//ZNzwcAhRNej/vyhHNlSaqf+/ulYkPZqp/7//fwAANcf/vw==")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_b14b0")
+shadow_mesh = SubResource("ArrayMesh_xl370")
 
 [node name="Collectible_Oil" type="Area3D" unique_id=814614715]
 script = ExtResource("1_od5xb")
@@ -147,6 +172,7 @@ process_material = SubResource("ParticleProcessMaterial_4jghh")
 draw_pass_1 = SubResource("QuadMesh_j25r0")
 
 [node name="Meshes" type="Node3D" parent="." unique_id=800197482]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
 [node name="Bubble" type="MeshInstance3D" parent="Meshes" unique_id=159092687]
 transform = Transform3D(1.4999999, 0, 0, 0, 1.4999999, 0, 0, 0, 1.5, 0, 0, 0)

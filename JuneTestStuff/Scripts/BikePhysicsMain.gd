@@ -71,7 +71,7 @@ var is_slipping := false
 
 func _ready() -> void:
 	_set_wing_anim_default()
-	CheckPointManager.setLastStableLocationManual(position)
+	#CheckPointManager.setLastStableLocationManual(position)
 	wingLAnimator.animation_finished.connect(_flap_wing_anim) #open -> flap -> close
 	
 func _unhandled_input(event: InputEvent) -> void:

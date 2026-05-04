@@ -16,7 +16,7 @@ func _process(delta: float) -> void:
 		bike.apply_impulse(bike.global_basis.z * bump_force)
 		for particle in bump_particles:
 			particle.restart()
-		AudioManager.play_audio("Hurt")
+		#AudioManager.play_audio("Hurt")
 		if engineSanity and can_hit: #NEW
 			can_hit = false #NEW
 			engineSanity.takeDamage(crashDamage * delta) #NEW

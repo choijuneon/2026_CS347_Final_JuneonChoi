@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://bkf7j70dyplvb"]
 
-[ext_resource type="Script" uid="uid://boq0017mmijds" path="res://YV-TestStuff/YV_small_barrier.gd" id="1_5lmx3"]
 [ext_resource type="PackedScene" uid="uid://dbq0r57jmi67h" path="res://FinalAssets/StaticMeshes/Environments/3.0/Obstacles&Ramps/SM_BreakableBarrier_3M.fbx" id="2_88xix"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_iquqa"]
@@ -52,7 +51,6 @@ radius = 0.05
 height = 0.15
 
 [node name="Small Barrier (Node3D)" type="Node3D" unique_id=261643983]
-script = ExtResource("1_5lmx3")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1405230812]
 

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="2026 CS347 Final JuneonChoi"
-run/main_scene="uid://b3223un2ctjys"
+run/main_scene="uid://do1gorjohewme"
 config/features=PackedStringArray("4.6", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 <<<<<<<Updatedupstreamrun/main_scene="uid://vg7bjg4ohahn"
@@ -22,11 +22,11 @@ buses/default_bus_layout=""
 
 [autoload]
 
-TimeTrials="*uid://dw5jc8nitp5x2"
-CheckPointManager="*uid://casvhd7f0pmh4"
-ArduinoTest="*uid://cfjekii1486s4"
-AudioManager="*uid://cneha23d7sp1a"
-ConnectionGlobal="*uid://bhnh8eowpm8jw"
+TimeTrials="uid://dw5jc8nitp5x2"
+CheckPointManager="uid://casvhd7f0pmh4"
+ArduinoTest="uid://cfjekii1486s4"
+AudioManager="uid://cneha23d7sp1a"
+ConnectionGlobal="uid://bhnh8eowpm8jw"
 
 [debug]
 
