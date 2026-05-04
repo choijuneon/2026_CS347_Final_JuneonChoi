@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://g6yiqwo1iu1h"]
+
+[ext_resource type="Script" uid="uid://cik13lvjndut2" path="res://GTestStuff/Scripts/song_manager.gd" id="1_2s4jb"]
+[ext_resource type="AudioStream" uid="uid://cgkm7xe0q6f4t" path="res://GTestStuff/Sounds/AudioFromMT/Songs/AboveDeck V2.mp3" id="1_3mofd"]
+
+[node name="SongManager" type="AudioStreamPlayer" unique_id=2024980272]
+stream = ExtResource("1_3mofd")
+volume_db = -5.0
+autoplay = true
+bus = &"Music"
+script = ExtResource("1_2s4jb")

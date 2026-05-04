@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cgkm7xe0q6f4t"
+path="res://.godot/imported/AboveDeck V2.mp3-b975a955ed9977410d7351c5876be66f.mp3str"
+
+[deps]
+
+source_file="res://GTestStuff/Sounds/AudioFromMT/Songs/AboveDeck V2.mp3"
+dest_files=["res://.godot/imported/AboveDeck V2.mp3-b975a955ed9977410d7351c5876be66f.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bi3405axvaw2c"]
+
+[ext_resource type="PackedScene" uid="uid://c1pp6amvqhcpm" path="res://FinalAssets/StaticMeshes/Environments/Mod Signs/SM_MOD_MagnetSign.fbx" id="1_kw31g"]
+[ext_resource type="Material" uid="uid://b5dru7s1fiu83" path="res://FinalAssets/Materials/MAT_ModSignAtlas.tres" id="2_1q2ss"]
+
+[node name="Node3D" type="Node3D" unique_id=1026184223]
+
+[node name="SM_MOD_MagnetSign" parent="." unique_id=1487706372 instance=ExtResource("1_kw31g")]
+
+[node name="magnetSign2" parent="SM_MOD_MagnetSign/magnetSign" parent_id_path=PackedInt32Array(1487706372, 702546466) index="0" unique_id=480749277]
+material_override = ExtResource("2_1q2ss")
+
+[editable path="SM_MOD_MagnetSign"]

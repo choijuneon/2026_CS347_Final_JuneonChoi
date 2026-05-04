@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b5dru7s1fiu83"]
+
+[ext_resource type="Texture2D" uid="uid://lsusgd3y4ed8" path="res://FinalAssets/Textures/Mod Signs/TX_ModSignsAtlas_v03.png" id="1_dux5y"]
+
+[resource]
+albedo_texture = ExtResource("1_dux5y")

@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://c5in6kbbfxyip"]
+
+[ext_resource type="PackedScene" uid="uid://c4nl8aay10ts0" path="res://FinalAssets/StaticMeshes/Environments/Mod Signs/SM_MOD_WaterSign.fbx" id="1_c28hq"]
+[ext_resource type="Material" uid="uid://b5dru7s1fiu83" path="res://FinalAssets/Materials/MAT_ModSignAtlas.tres" id="2_c3xri"]
+
+[node name="Node3D" type="Node3D" unique_id=1085698347]
+
+[node name="SM_MOD_WaterSign" parent="." unique_id=508009630 instance=ExtResource("1_c28hq")]
+
+[node name="water_Sign" parent="SM_MOD_WaterSign/waterSign" parent_id_path=PackedInt32Array(508009630, 16872608) index="0" unique_id=1889376931]
+material_override = ExtResource("2_c3xri")
+
+[editable path="SM_MOD_WaterSign"]

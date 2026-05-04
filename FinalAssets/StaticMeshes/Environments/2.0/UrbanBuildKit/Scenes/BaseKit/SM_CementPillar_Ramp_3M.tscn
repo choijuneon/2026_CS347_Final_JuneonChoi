@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://w36rtij1ur31"]
+
+[ext_resource type="PackedScene" uid="uid://b24n51bj8mti0" path="res://FinalAssets/StaticMeshes/Environments/2.0/UrbanBuildKit/FBX/BaseKit/SM_CementPillar_Ramp_3D.fbx" id="1_31uhj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_up205"]
+size = Vector3(1, 2, 1)
+
+[node name="Node3D" type="Node3D" unique_id=1876446945]
+
+[node name="SM_CementPillar_Ramp_3D" parent="." unique_id=408889403 instance=ExtResource("1_31uhj")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="SM_CementPillar_Ramp_3D" unique_id=1015828836]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SM_CementPillar_Ramp_3D/StaticBody3D" unique_id=594245953]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_up205")

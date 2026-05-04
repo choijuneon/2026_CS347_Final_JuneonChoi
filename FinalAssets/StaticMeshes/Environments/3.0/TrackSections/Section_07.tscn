@@ -1,0 +1,110 @@
+[gd_scene format=3 uid="uid://pqaka08u8nw0"]
+
+[ext_resource type="PackedScene" uid="uid://c7st6ot2phdqa" path="res://FinalAssets/StaticMeshes/Environments/3.0/TrackBuildKit/Scenes_Chunks/18x18_Block.tscn" id="5_ctrre"]
+[ext_resource type="PackedScene" uid="uid://cpwygmn2eonsr" path="res://FinalAssets/StaticMeshes/Environments/3.0/TrackBuildKit/Scenes_Chunks/18x6_WideRamp.tscn" id="6_2jywi"]
+[ext_resource type="PackedScene" uid="uid://d358d7nql80he" path="res://FinalAssets/StaticMeshes/Environments/3.0/TrackBuildKit/Scenes_Chunks/18x18_Corner.tscn" id="6_8s3lh"]
+[ext_resource type="PackedScene" uid="uid://4yessdf1n4o" path="res://FinalAssets/StaticMeshes/Environments/3.0/TrackBuildKit/Scenes_Chunks/18to12_Slimmer.tscn" id="8_ehswj"]
+[ext_resource type="PackedScene" uid="uid://d0q6x4pnswrt4" path="res://FinalAssets/StaticMeshes/Environments/3.0/TrackBuildKit/Scenes_Chunks/18x6_MediumRamp.tscn" id="8_llgof"]
+[ext_resource type="PackedScene" uid="uid://dqhomqol8lfgd" path="res://FinalAssets/StaticMeshes/Environments/3.0/TrackBuildKit/Scenes_Chunks/12x12_Block.tscn" id="8_wy4ie"]
+[ext_resource type="PackedScene" uid="uid://mq7k2sste5y3" path="res://FinalAssets/StaticMeshes/Environments/3.0/TrackBuildKit/Scenes_Chunks/12x12_Corner.tscn" id="9_2k3ja"]
+[ext_resource type="PackedScene" uid="uid://badnkmoiymmop" path="res://FinalAssets/StaticMeshes/Environments/3.0/TrackBuildKit/Scenes_Chunks/6x6_Block.tscn" id="9_gd8dm"]
+[ext_resource type="PackedScene" uid="uid://cbld7nmodttc0" path="res://FinalAssets/StaticMeshes/Environments/3.0/TrackBuildKit/Scenes_Chunks/12to6_Slimmer.tscn" id="9_id28n"]
+[ext_resource type="PackedScene" uid="uid://bawovwj4ecmjs" path="res://FinalAssets/StaticMeshes/Environments/3.0/TrackBuildKit/Scenes_Chunks/12to18_Widener.tscn" id="11_id28n"]
+
+[node name="Section07" type="Node3D" unique_id=82390105]
+
+[node name="18x18_Block" parent="." unique_id=139849848 instance=ExtResource("5_ctrre")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -196.5, 12.5, 186)
+
+[node name="18x18_WideRamp" parent="." unique_id=1049707235 instance=ExtResource("6_2jywi")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -160.5, 12.5, 168)
+
+[node name="12x12_Block" parent="." unique_id=1008490163 instance=ExtResource("8_wy4ie")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -58.49994, 20, 186)
+
+[node name="18to12_Slimmer" parent="." unique_id=69631543 instance=ExtResource("8_ehswj")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -142.49994, 15, 168)
+
+[node name="18to12_Slimmer3" parent="." unique_id=1516628014 instance=ExtResource("8_ehswj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -118.49994, 19.5, 222)
+
+[node name="18to12_Slimmer2" parent="." unique_id=1423838397 instance=ExtResource("8_ehswj")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -52.49994, 20, 174)
+
+[node name="12to6_Slimmer" parent="." unique_id=1731678590 instance=ExtResource("9_id28n")]
+transform = Transform3D(-4.371138e-08, 0, 1, 0, 1, 0, -1, 0, -4.371138e-08, -106.499954, 20, 149.99998)
+
+[node name="6x6_Block" parent="." unique_id=63883904 instance=ExtResource("9_gd8dm")]
+transform = Transform3D(-4.3711395e-08, 0, -1, 0, 1, 0, 1, 0, -4.3711395e-08, -64.49996, 20, 143.99998)
+
+[node name="6x6_Block2" parent="." unique_id=1863805165 instance=ExtResource("9_gd8dm")]
+transform = Transform3D(-4.3711395e-08, 0, -1, 0, 1, 0, 1, 0, -4.3711395e-08, -64.49996, 20, 149.99998)
+
+[node name="12to6_Slimmer2" parent="." unique_id=753143141 instance=ExtResource("9_id28n")]
+transform = Transform3D(-4.3711395e-08, 0, -1, 0, 1, 0, 1, 0, -4.3711395e-08, -70.49996, 20, 143.99998)
+
+[node name="MediumRamp_18x12_3M" parent="." unique_id=835802880 instance=ExtResource("8_llgof")]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -124.49994, 15, 138)
+
+[node name="MediumRamp_18x12_3M2" parent="." unique_id=1272441758 instance=ExtResource("8_llgof")]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -106.49994, 17.5, 138)
+
+[node name="12x12_Block10" parent="." unique_id=909297603 instance=ExtResource("9_2k3ja")]
+transform = Transform3D(-2.1855695e-07, 0, 1, 0, 1, 0, -1, 0, -2.1855695e-07, -130.49994, 25, 246)
+
+[node name="MediumRamp_18x12_3M3" parent="." unique_id=89439821 instance=ExtResource("8_llgof")]
+transform = Transform3D(1, 0, -7.1054274e-15, 0, 1, 0, 7.1054274e-15, 0, 1, -130.49994, 25, 216)
+
+[node name="MediumRamp_18x12_3M4" parent="." unique_id=605931588 instance=ExtResource("8_llgof")]
+transform = Transform3D(-4.3711395e-08, 0, -1, 0, 1, 0, 1, 0, -4.3711395e-08, -142.49994, 19.5, 234)
+
+[node name="MediumRamp_18x12_3M5" parent="." unique_id=1563477500 instance=ExtResource("8_llgof")]
+transform = Transform3D(-1, 0, 8.7422784e-08, 0, 1, 0, -8.7422784e-08, 0, -1, -118.49994, 25, 204)
+
+[node name="MediumRamp_18x12_3M6" parent="." unique_id=1331332477 instance=ExtResource("8_llgof")]
+transform = Transform3D(1.3113417e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113417e-07, -118.49994, 22.5, 186)
+
+[node name="MediumRamp_18x12_3M7" parent="." unique_id=1088832687 instance=ExtResource("8_llgof")]
+transform = Transform3D(1.3113417e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113417e-07, -100.49994, 20, 186)
+
+[node name="12x12_Block5" parent="." unique_id=1102244579 instance=ExtResource("8_wy4ie")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -118.49994, 27.5, 216)
+
+[node name="12x12_Block14" parent="." unique_id=985156837 instance=ExtResource("8_wy4ie")]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -148.49994, 19.5, 210)
+
+[node name="12x12_Block15" parent="." unique_id=4855796 instance=ExtResource("8_wy4ie")]
+transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, -172.49994, 19.5, 222)
+
+[node name="12x12_Block2" parent="." unique_id=2074180403 instance=ExtResource("9_2k3ja")]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -142.49994, 15, 138)
+
+[node name="12x12_Block9" parent="." unique_id=1276348775 instance=ExtResource("9_2k3ja")]
+transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, -172.49994, 19.5, 234)
+
+[node name="12to18_Widener" parent="." unique_id=1549904455 instance=ExtResource("11_id28n")]
+transform = Transform3D(-4.371138e-08, 0, 1, 0, 1, 0, -1, 0, -4.371138e-08, -148.49994, 19.5, 221.99998)
+
+[node name="12x12_Block7" parent="." unique_id=923762396 instance=ExtResource("9_2k3ja")]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -160.49994, 19.5, 210)
+
+[node name="12x12_Block3" parent="." unique_id=1868113034 instance=ExtResource("9_2k3ja")]
+transform = Transform3D(-1, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0, -1, -52.49994, 20, 156)
+
+[node name="12x12_Block4" parent="." unique_id=1351034977 instance=ExtResource("9_2k3ja")]
+transform = Transform3D(-4.371138e-08, 0, 1, 0, 1, 0, -1, 0, -4.371138e-08, -70.49994, 20, 198)
+
+[node name="12x12_Block12" parent="." unique_id=67372061 instance=ExtResource("9_2k3ja")]
+transform = Transform3D(1, 0, -7.1054274e-15, 0, 1, 0, 7.1054274e-15, 0, 1, -82.49994, 20, 186)
+
+[node name="12x12_Block13" parent="." unique_id=1504484329 instance=ExtResource("9_2k3ja")]
+transform = Transform3D(-1, 0, 8.7422784e-08, 0, 1, 0, -8.7422784e-08, 0, -1, -70.49994, 20, 186)
+
+[node name="12x12_Block11" parent="." unique_id=423772273 instance=ExtResource("9_2k3ja")]
+transform = Transform3D(-4.3711395e-08, 0, -1, 0, 1, 0, 1, 0, -4.3711395e-08, -118.49994, 25, 174)
+
+[node name="18x18_Corner" parent="." unique_id=1046793272 instance=ExtResource("6_8s3lh")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -160.5, 15, 186)
+
+[node name="18x18_Corner2" parent="." unique_id=1354340177 instance=ExtResource("6_8s3lh")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -100.5, 19.5, 222)

@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://cq3l6teh2rx52"]
+
+[ext_resource type="Script" uid="uid://dk7i4mkefq620" path="res://YV-TestStuff/YV_button_display.gd" id="1_s5dho"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_s5dho"]
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[node name="ButtonDisplay" type="Control" unique_id=574972411]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_s5dho")
+
+[node name="JumpMod" type="Label" parent="." unique_id=1932956545]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 252.0
+offset_right = 288.0
+offset_bottom = 356.0
+text = "Press Spacebar to Jump
+Hold Spacebar to charge your Jump,
+then release to gain more height"
+label_settings = SubResource("LabelSettings_s5dho")
+horizontal_alignment = 1

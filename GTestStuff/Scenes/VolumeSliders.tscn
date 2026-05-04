@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://bnwo34kpv2261"]
+
+[ext_resource type="Script" uid="uid://bqyrakyeuvbal" path="res://GTestStuff/Scripts/VolumeSlider.gd" id="1_ynlkv"]
+
+[node name="VolumeSliders" type="Control" unique_id=1212851701]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1217799883]
+layout_mode = 0
+offset_right = 332.0
+offset_bottom = 194.0
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=96855244]
+layout_mode = 2
+text = "Master"
+
+[node name="HSlider3" type="HSlider" parent="VBoxContainer" unique_id=587989656]
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+script = ExtResource("1_ynlkv")
+bus_name = "Master"
+
+[node name="Label2" type="Label" parent="VBoxContainer" unique_id=708633141]
+layout_mode = 2
+text = "Music"
+
+[node name="HSlider4" type="HSlider" parent="VBoxContainer" unique_id=430968271]
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+script = ExtResource("1_ynlkv")
+bus_name = "Music"
+
+[node name="Label3" type="Label" parent="VBoxContainer" unique_id=2034308464]
+layout_mode = 2
+text = "SFX"
+
+[node name="HSlider5" type="HSlider" parent="VBoxContainer" unique_id=277558688]
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+script = ExtResource("1_ynlkv")
+bus_name = "SFX"

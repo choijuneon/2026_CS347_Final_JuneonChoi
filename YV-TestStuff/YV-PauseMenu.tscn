@@ -1,0 +1,172 @@
+[gd_scene format=3 uid="uid://pq6gmktfbbto"]
+
+[ext_resource type="FontFile" uid="uid://bevxfgm8s3edr" path="res://FinalAssets/Fonts/hetilica.ttf" id="1_aybii"]
+[ext_resource type="Script" uid="uid://c3s6u64ddv5t5" path="res://YV-TestStuff/YV-PauseMenu.gd" id="1_spydf"]
+[ext_resource type="PackedScene" uid="uid://bnwo34kpv2261" path="res://GTestStuff/Scenes/VolumeSliders.tscn" id="3_emex3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spydf"]
+bg_color = Color(0.08632169, 0.6886288, 0.6552157, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_emex3"]
+bg_color = Color(0.027064715, 0.33345714, 0.3151306, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pkae0"]
+bg_color = Color(0.046468146, 0.44065967, 0.41725892, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_io4nn"]
+
+[node name="PauseMenu" type="Control" unique_id=776251924]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_spydf")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1516827836]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.14901961, 0.14901961, 0.14901961, 0.49019608)
+
+[node name="CreditsTitle" type="Label" parent="." unique_id=1937592612]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -542.0
+offset_top = 93.0
+offset_right = 542.0
+offset_bottom = 173.075
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("1_aybii")
+theme_override_font_sizes/font_size = 80
+text = "Paused"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=779778081]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -139.0
+offset_top = -111.5
+offset_right = 139.0
+offset_bottom = 207.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=1889140236]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("1_aybii")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_spydf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_emex3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_pkae0")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_io4nn")
+text = "Resume"
+
+[node name="Button2" type="Button" parent="VBoxContainer" unique_id=1210191718]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("1_aybii")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_spydf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_emex3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_pkae0")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_io4nn")
+text = "Restart"
+
+[node name="Button3" type="Button" parent="VBoxContainer" unique_id=241763043]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("1_aybii")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_spydf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_emex3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_pkae0")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_io4nn")
+text = "Options"
+
+[node name="Button4" type="Button" parent="VBoxContainer" unique_id=467892508]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("1_aybii")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_spydf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_emex3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_pkae0")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_io4nn")
+text = "Quit"
+
+[node name="VolumeSliders" parent="." unique_id=1212851701 instance=ExtResource("3_emex3")]
+visible = false
+layout_mode = 1
+offset_left = 42.0
+offset_top = 223.0
+offset_right = -763.0
+offset_bottom = -253.0
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button4" to="." method="_on_quit_pressed"]

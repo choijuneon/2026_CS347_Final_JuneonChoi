@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://bdn1kx4v4oe3k"]
+
+[ext_resource type="Script" uid="uid://c6crljsceglm0" path="res://GTestStuff/Scripts/EndOfGameScript.gd" id="1_yk3qp"]
+[ext_resource type="PackedScene" uid="uid://bgr3pgxii7iyo" path="res://GTestStuff/Scenes/P_Fade.tscn" id="2_u3yrc"]
+[ext_resource type="AudioStream" uid="uid://br3a72nbb8nw5" path="res://GTestStuff/Sounds/AudioFromMT/Songs/Winner.mp3" id="3_s83wl"]
+
+[node name="SEndOfGame" type="Node2D" unique_id=502488904]
+script = ExtResource("1_yk3qp")
+
+[node name="Best Time" type="Label" parent="." unique_id=1001470793]
+offset_left = 200.0
+offset_top = 168.0
+offset_right = 920.0
+offset_bottom = 208.0
+text = "Best Time:"
+
+[node name="Last Time" type="Label" parent="." unique_id=1463374277]
+offset_left = 200.0
+offset_top = 200.0
+offset_right = 920.0
+offset_bottom = 240.0
+text = "This Time:"
+
+[node name="PFade" parent="." unique_id=55214262 instance=ExtResource("2_u3yrc")]
+
+[node name="Restart" type="Button" parent="PFade" unique_id=755878655]
+visible = false
+offset_left = 432.0
+offset_top = 72.0
+offset_right = 1072.0
+offset_bottom = 384.0
+text = "Restart"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1094384421]
+stream = ExtResource("3_s83wl")
+
+[connection signal="button_up" from="PFade/Restart" to="." method="_on_restart_button_up"]

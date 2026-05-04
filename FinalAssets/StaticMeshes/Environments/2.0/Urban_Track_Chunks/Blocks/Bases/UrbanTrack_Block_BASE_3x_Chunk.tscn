@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://d0uey4d8vdtlg"]
+
+[ext_resource type="PackedScene" uid="uid://8nsxdj3ibrsc" path="res://FinalAssets/StaticMeshes/Environments/2.0/UrbanBuildKit/Scenes/BaseKit/SM_CementWall_3M.tscn" id="1_fcfoi"]
+[ext_resource type="PackedScene" uid="uid://ch5bojkmxndit" path="res://FinalAssets/StaticMeshes/Environments/2.0/UrbanBuildKit/Scenes/BaseKit/SM_CementPillar_3M.tscn" id="2_itnp3"]
+
+[node name="Node3D" type="Node3D" unique_id=882917808]
+
+[node name="Node3D23" parent="." unique_id=1371707816 instance=ExtResource("1_fcfoi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 6)
+
+[node name="Node3D24" parent="." unique_id=759225644 instance=ExtResource("1_fcfoi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 6)
+
+[node name="Node3D25" parent="." unique_id=700413218 instance=ExtResource("1_fcfoi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, 6)
+
+[node name="Node3D34" parent="." unique_id=509026221 instance=ExtResource("1_fcfoi")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 4.5, 0, 0)
+
+[node name="Node3D35" parent="." unique_id=1632202764 instance=ExtResource("1_fcfoi")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 7.5, 0, 2.6226832e-07)
+
+[node name="Node3D36" parent="." unique_id=1976861625 instance=ExtResource("1_fcfoi")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 10.5, 0, 5.2453663e-07)
+
+[node name="Node3D30" parent="." unique_id=1616028572 instance=ExtResource("1_fcfoi")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10.5, 0, 6)
+
+[node name="Node3D31" parent="." unique_id=357935837 instance=ExtResource("1_fcfoi")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10.5, 0, 2.9999995)
+
+[node name="Node3D26" parent="." unique_id=2065878384 instance=ExtResource("1_fcfoi")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.5, 0, 0)
+
+[node name="Node3D27" parent="." unique_id=1826291957 instance=ExtResource("1_fcfoi")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.5, 0, 3)
+
+[node name="Node3D28" parent="." unique_id=739573883 instance=ExtResource("2_itnp3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 1)
+
+[node name="Node3D29" parent="." unique_id=635421858 instance=ExtResource("2_itnp3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 4)
+
+[node name="Node3D32" parent="." unique_id=1416148176 instance=ExtResource("2_itnp3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, 1)
+
+[node name="Node3D33" parent="." unique_id=1329158974 instance=ExtResource("2_itnp3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, 4)

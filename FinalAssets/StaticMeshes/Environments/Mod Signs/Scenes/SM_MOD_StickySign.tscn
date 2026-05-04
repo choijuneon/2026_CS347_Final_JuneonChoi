@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bnnnyf2e1m4e3"]
+
+[ext_resource type="PackedScene" uid="uid://cwermeeoswfpj" path="res://FinalAssets/StaticMeshes/Environments/Mod Signs/SM_MOD_StickySign.fbx" id="1_yvti6"]
+[ext_resource type="Material" uid="uid://b5dru7s1fiu83" path="res://FinalAssets/Materials/MAT_ModSignAtlas.tres" id="2_x0370"]
+
+[node name="Node3D" type="Node3D" unique_id=620957942]
+
+[node name="SM_MOD_StickySign" parent="." unique_id=999872090 instance=ExtResource("1_yvti6")]
+
+[node name="pSphere1" parent="SM_MOD_StickySign/stickyMod" parent_id_path=PackedInt32Array(999872090, 1149194050) index="1" unique_id=135957316]
+material_override = ExtResource("2_x0370")
+
+[editable path="SM_MOD_StickySign"]

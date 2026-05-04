@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://doc4rf542lqos"]
+
+[ext_resource type="PackedScene" uid="uid://247o1co5dtne" path="res://FinalAssets/StaticMeshes/Environments/2.0/UrbanBuildKit/Scenes/BaseKit/SM_CementBarrier_3M.tscn" id="1_kueu1"]
+
+[node name="Node3D" type="Node3D" unique_id=229017953]
+
+[node name="Node3D" parent="." unique_id=1335779035 instance=ExtResource("1_kueu1")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.5, 0, 3)
+
+[node name="Node3D2" parent="." unique_id=1749840529 instance=ExtResource("1_kueu1")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.5, 0, 6)
+
+[node name="Node3D3" parent="." unique_id=1093960558 instance=ExtResource("1_kueu1")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.5, 0, 9)
+
+[node name="Node3D4" parent="." unique_id=832987412 instance=ExtResource("1_kueu1")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.5, 0, 12)

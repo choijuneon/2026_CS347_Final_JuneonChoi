@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://pl7o42v8fs61"]
+
+[ext_resource type="Script" uid="uid://cfjekii1486s4" path="res://FinalAssets/Scripts/ArduinoTest.cs" id="1_pb48v"]
+
+[node name="ArduinoTest" type="Control" unique_id=803519112]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pb48v")
+
+[node name="TestLabel" type="Label" parent="." unique_id=121389921]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 28.0
+offset_right = 495.0
+offset_bottom = 214.0
+theme_override_font_sizes/font_size = 25

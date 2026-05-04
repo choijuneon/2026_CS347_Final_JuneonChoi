@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dtggu3xdh5efm"]
+
+[ext_resource type="PackedScene" uid="uid://cx8t8ea2he0nt" path="res://FinalAssets/StaticMeshes/Environments/3.0/Obstacles&Ramps/FBX/SM_ENV_Streetlight_v04.fbx" id="1_4fed3"]
+[ext_resource type="Material" uid="uid://c1jv3mwgakd58" path="res://FinalAssets/Materials/MAT_PropAtlas.tres" id="2_tutxa"]
+
+[node name="Node3D" type="Node3D" unique_id=284414917]
+
+[node name="SM_ENV_Streetlight_v04" parent="." unique_id=905139986 instance=ExtResource("1_4fed3")]
+
+[node name="SM_ENV_Streetlight_Post" parent="SM_ENV_Streetlight_v04/SM_ENV_Streetlight_v01" parent_id_path=PackedInt32Array(905139986, 1131468876) index="0" unique_id=126618221]
+material_override = ExtResource("2_tutxa")
+
+[editable path="SM_ENV_Streetlight_v04"]

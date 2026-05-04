@@ -1,0 +1,120 @@
+[gd_scene format=3 uid="uid://cpyw72m5um8v1"]
+
+<<<<<<< HEAD
+[ext_resource type="Shader" uid="uid://crmkkfpg8nv7g" path="res://YV-TestStuff/gridmaterial.tres" id="1_cagqg"]
+[ext_resource type="PackedScene" uid="uid://doh0w0if3r85g" path="res://YV-TestStuff/character.tscn" id="2_324o7"]
+=======
+[ext_resource type="PackedScene" path="res://YV-TestStuff/character.tscn" id="1_glv2v"]
+[ext_resource type="Shader" uid="uid://crmkkfpg8nv7g" path="res://YV-TestStuff/gridmaterial.tres" id="1_uu6xs"]
+>>>>>>> main
+
+[sub_resource type="Environment" id="Environment_glv2v"]
+background_mode = 1
+background_color = Color(0.411765, 0.756863, 0.909804, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_uu6xs"]
+size = Vector2(100, 100)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r0du0"]
+size = Vector3(100, 0.1, 100)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cm0pq"]
+size = Vector3(7, 7, 0.5)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fos0i"]
+render_priority = 0
+<<<<<<< HEAD
+shader = ExtResource("1_cagqg")
+=======
+shader = ExtResource("1_uu6xs")
+>>>>>>> main
+shader_parameter/grid_size = 1
+shader_parameter/Color_1 = Color(0.964706, 0.658824, 0, 1)
+shader_parameter/Color_2 = Color(1, 0.713726, 0.231373, 1)
+
+[sub_resource type="PrismMesh" id="PrismMesh_uu6xs"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fos0i"]
+size = Vector3(4, 2, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r0du0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uu6xs"]
+size = Vector3(15, 10, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uu6xs"]
+metallic = 0.5
+
+<<<<<<< HEAD
+[node name="YV-Main" type="Node3D" unique_id=1388464254]
+=======
+[node name="Main" type="Node3D" unique_id=1388464254]
+>>>>>>> main
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1262830343]
+environment = SubResource("Environment_glv2v")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment" unique_id=1884673592]
+transform = Transform3D(0.866025, 0.25, -0.433013, 0, 0.866026, 0.5, 0.5, -0.433013, 0.75, 0, 6, 0)
+shadow_enabled = true
+
+[node name="ground" type="StaticBody3D" parent="." unique_id=210475274]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ground" unique_id=931659459]
+mesh = SubResource("PlaneMesh_uu6xs")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ground" unique_id=1941574334]
+shape = SubResource("BoxShape3D_r0du0")
+
+[node name="ramp" type="StaticBody3D" parent="." unique_id=891818831]
+transform = Transform3D(-2.33351e-15, 1, -4.37114e-08, -0.422618, -3.9616e-08, -0.906308, -0.906308, 1.84732e-08, 0.422618, -8, 1.0705531, -1)
+collision_layer = 6
+collision_mask = 7
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ramp" unique_id=975386005]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
+shape = SubResource("BoxShape3D_cm0pq")
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="ramp" unique_id=499229335]
+transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 3.72529e-09, 0, 3.72529e-09, 1, 0, 1.25, 0)
+visible = false
+size = Vector3(7, 7, 0.5)
+material = SubResource("ShaderMaterial_fos0i")
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="ramp" unique_id=276514550]
+transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 3.72529e-09, 0, 3.72529e-09, 1, 0, 1.25, 0)
+size = Vector3(7, 7, 0.5)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ramp" unique_id=1519730220]
+transform = Transform3D(2.8248174, 6.4022207, -0.17883173, 0, 0.19545312, 6.997271, 6.4047174, -2.8237162, 0.07887419, 1.185, 1.26, 1.725)
+mesh = SubResource("PrismMesh_uu6xs")
+
+[node name="obstacle" type="StaticBody3D" parent="." unique_id=829758475]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="obstacle" unique_id=1666827295]
+shape = SubResource("BoxShape3D_fos0i")
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="obstacle" unique_id=491961252]
+transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 3.72529e-09, 0, 3.72529e-09, 1, 0, 0, 0)
+use_collision = true
+size = Vector3(4, 2, 2)
+material = SubResource("StandardMaterial3D_r0du0")
+
+[node name="wall" type="StaticBody3D" parent="." unique_id=83753942]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -15)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="wall" unique_id=1619686597]
+shape = SubResource("BoxShape3D_uu6xs")
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="wall" unique_id=77114138]
+transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 3.72529e-09, 0, 3.72529e-09, 1, 0, 0, 0)
+use_collision = true
+size = Vector3(15, 10, 2)
+material = SubResource("StandardMaterial3D_uu6xs")
+
+<<<<<<< HEAD
+[node name="character" parent="." unique_id=1759768011 instance=ExtResource("2_324o7")]
+=======
+[node name="character" parent="." unique_id=1759768011 instance=ExtResource("1_glv2v")]
+>>>>>>> main

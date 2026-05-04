@@ -1,0 +1,100 @@
+[gd_scene format=3 uid="uid://cxoa341lapfum"]
+
+[ext_resource type="Script" uid="uid://bvf7bn5q7ro32" path="res://GTestStuff/Scripts/PlayerStart.gd" id="1_65q88"]
+[ext_resource type="PackedScene" uid="uid://bgr3pgxii7iyo" path="res://GTestStuff/Scenes/P_Fade.tscn" id="2_02pkf"]
+[ext_resource type="Script" uid="uid://dn2cusu8e0qd2" path="res://GTestStuff/Scenes/CountDownText.gd" id="2_dkvrb"]
+[ext_resource type="Script" uid="uid://djajqe5apd40w" path="res://GTestStuff/Scenes/current_time_2D.gd" id="3_4ay0p"]
+[ext_resource type="FontFile" uid="uid://dy5t1j0fogdl0" path="res://FinalAssets/Fonts/belligerent.ttf" id="3_a8xxe"]
+[ext_resource type="FontFile" uid="uid://xog4hm1efxfq" path="res://FinalAssets/Fonts/boston.ttf" id="3_nrsm4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s5630"]
+transparency = 1
+albedo_color = Color(1, 0, 0, 0.50980395)
+
+[sub_resource type="BoxMesh" id="BoxMesh_8h81h"]
+material = SubResource("StandardMaterial3D_s5630")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s5630"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_xo2ph"]
+font_size = 100
+font_color = Color(1, 0.02745098, 0, 1)
+outline_size = 50
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_qc61x"]
+font_size = 40
+outline_size = 17
+outline_color = Color(0.15686275, 0, 0, 1)
+shadow_size = 0
+
+[node name="PlayerStart" type="Area3D" unique_id=351622580]
+process_mode = 3
+transform = Transform3D(15.840407, 0, 0.7181693, 0, 1.5439999, 0, -8.323101, 0, 1.3668095, 0, 0, 0)
+collision_layer = 4
+script = ExtResource("1_65q88")
+
+[node name="PFade" parent="." unique_id=55214262 instance=ExtResource("2_02pkf")]
+visible = false
+
+[node name="Track_Water" type="MeshInstance3D" parent="." unique_id=1199373708]
+transform = Transform3D(0.9999998, 0, 0, 0, 0.9999998, 0, 0, 0, 0.9999998, 0, 0, 0)
+mesh = SubResource("BoxMesh_8h81h")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=521421473]
+transform = Transform3D(0.9999998, 0, 0, 0, 0.9999998, 0, 0, 0, 0.9999998, 0, 0, 0)
+shape = SubResource("BoxShape3D_s5630")
+
+[node name="Timer" type="Timer" parent="." unique_id=1313612853]
+process_mode = 1
+
+[node name="Starting Timer" type="Timer" parent="." unique_id=381316327]
+process_mode = 3
+autostart = true
+
+[node name="CountdownTimer" type="Label" parent="." unique_id=629939725]
+process_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -86.5
+offset_top = -68.5
+offset_right = 86.5
+offset_bottom = 68.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_nrsm4")
+text = "0"
+label_settings = SubResource("LabelSettings_xo2ph")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_dkvrb")
+
+[node name="CurrentTime2" type="Label" parent="." unique_id=1531525757]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -40.0
+offset_top = 20.0
+offset_right = 40.0
+offset_bottom = 75.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_a8xxe")
+text = "0:00"
+label_settings = SubResource("LabelSettings_qc61x")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_4ay0p")
+
+[node name="SilentTimer" type="Timer" parent="." unique_id=288386031]
+wait_time = 10.0
+autostart = true
+
+[connection signal="countDownEnd" from="." to="CountdownTimer" method="_on_player_start_count_down_end"]
+[connection signal="countdownChanged" from="." to="CountdownTimer" method="_on_player_start_countdown_changed"]
+[connection signal="timeChanged" from="." to="CurrentTime2" method="_on_player_start_time_changed"]
+[connection signal="timeout" from="Timer" to="." method="_per_second"]
+[connection signal="timeout" from="Starting Timer" to="." method="_on_starting_timer_timeout"]
+[connection signal="timeout" from="SilentTimer" to="." method="_on_silent_timer_timeout"]

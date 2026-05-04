@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://jlpcfrt7evw5"]
+
+[ext_resource type="PackedScene" uid="uid://ca6tnduj64loj" path="res://FinalAssets/StaticMeshes/Environments/Mod Signs/SM_MOD_WingsSign.fbx" id="1_psrrs"]
+[ext_resource type="Material" uid="uid://b5dru7s1fiu83" path="res://FinalAssets/Materials/MAT_ModSignAtlas.tres" id="2_8fcjd"]
+
+[node name="Node3D" type="Node3D" unique_id=216631593]
+
+[node name="SM_MOD_WingsSign" parent="." unique_id=736073282 instance=ExtResource("1_psrrs")]
+
+[node name="pCube8" parent="SM_MOD_WingsSign/wingsMod" parent_id_path=PackedInt32Array(736073282, 271702907) index="0" unique_id=210288107]
+material_override = ExtResource("2_8fcjd")
+
+[editable path="SM_MOD_WingsSign"]

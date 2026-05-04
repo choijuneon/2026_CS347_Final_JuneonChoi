@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://247o1co5dtne"]
+
+[ext_resource type="PackedScene" uid="uid://beqkf7lq8dkgw" path="res://FinalAssets/StaticMeshes/Environments/2.0/UrbanBuildKit/FBX/BaseKit/SM_CementBarrier_3M.fbx" id="1_4bltu"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4bltu"]
+size = Vector3(301.5, 102, 100.5)
+
+[node name="Node3D" type="Node3D" unique_id=1335779035]
+
+[node name="SM_NEW_CSBarrier_3M" parent="." unique_id=636993284 groups=["Wall"] instance=ExtResource("1_4bltu")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="SM_NEW_CSBarrier_3M" unique_id=321424505 groups=["Wall"]]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 1.5, 0, 0.5)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SM_NEW_CSBarrier_3M/StaticBody3D" unique_id=2071575579]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 50.499992, -0.75)
+shape = SubResource("BoxShape3D_4bltu")

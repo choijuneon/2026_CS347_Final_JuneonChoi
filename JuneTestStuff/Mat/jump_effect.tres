@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ptxe2ecynt6c"]
+
+[ext_resource type="Texture2D" uid="uid://ch0dfdceclw8n" path="res://JuneTestStuff/Tex/minecraft_fire.png" id="1_7uk1a"]
+
+[resource]
+transparency = 1
+albedo_texture = ExtResource("1_7uk1a")
+emission_enabled = true
+emission = Color(0.94821316, 0.5648578, 7.70092e-07, 1)
+emission_energy_multiplier = 3.01

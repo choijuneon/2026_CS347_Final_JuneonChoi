@@ -1,0 +1,194 @@
+[gd_scene format=3 uid="uid://c0xsgu6ma4bep"]
+
+[sub_resource type="GDScript" id="GDScript_20a43"]
+script/source = "extends Node
+
+# Stores what mode the bike will be switching to next
+var modeToSwitch = 1
+# All possible inputs, used for randomization
+var inputTypes = [\"u\",\"d\",\"l\",\"r\"]
+# Contains the code required to change mode
+var modeCode = [\"u\",\"u\",\"u\",\"u\",\"u\"]
+# Contains player code inputs
+var playerInput = [\"#\",\"#\",\"#\",\"#\",\"#\"]
+# index of playerInput
+var currentIndex = 0
+# For the UI labels
+var modeTypes = [\"Road\", \"Offroad\", \"Water\"]
+
+# Called when an input is pressed
+func _input(_event):
+	if Input.is_action_pressed(\"codeUp\"):
+		print(\"up pressed\")
+		setCode(\"u\")
+	elif Input.is_action_pressed(\"codeDown\"):
+		print(\"down pressed\")
+		setCode(\"d\")
+	elif Input.is_action_pressed(\"codeLeft\"):
+		print(\"left pressed\")
+		setCode(\"l\")
+	elif Input.is_action_pressed(\"codeRight\"):
+		print(\"right pressed\")
+		setCode(\"r\")
+	elif Input.is_action_pressed(\"codeConfirm\"):
+		confirmCode()
+	elif Input.is_action_pressed(\"codeCancel\"):
+		resetInput()
+	elif Input.is_action_pressed(\"mode1\"):
+		if(PlayerData.currentMode == 1):
+			print(\"Selected mode already active\")
+		else:
+			modeToSwitch = 1
+			randomizeCode()
+	elif Input.is_action_pressed(\"mode2\"):
+		if(PlayerData.currentMode == 2):
+			print(\"Selected mode already active\")
+		else:
+			modeToSwitch = 2
+			randomizeCode()
+	elif Input.is_action_pressed(\"mode3\"):
+		if(PlayerData.currentMode == 3):
+			print(\"Selected mode already active\")
+		else:
+			modeToSwitch = 3
+			randomizeCode()
+
+# Randomizes the code needed to change mode
+func randomizeCode():
+	$CodeContainer.show()
+	for i in range(0,5):
+		modeCode[i] = inputTypes[randi_range(0,3)]
+	setPanelColor()
+
+# When a player does an input, set it in playerInput and increment currentIndex
+func setCode(input):
+	if(currentIndex<5):
+		playerInput[currentIndex] = input
+		setText()
+		print(playerInput)
+		currentIndex += 1
+	else:
+		print(\"No more inputs can be made\")
+
+# Checks to see if a correct code was entered
+func confirmCode():
+	if(modeCode == playerInput):
+		print(\"Mode Successfully Changed!\")
+		PlayerData.currentMode = modeToSwitch
+		changeMode(str(modeTypes[modeToSwitch-1]))
+		$CodeContainer.hide()
+		resetInput()
+	else:
+		print(\"Code incorrect! Try again!\")
+		resetInput()
+
+# Sets playerInput array and currentIndex back to normal
+func resetInput():
+	playerInput = [\"#\",\"#\",\"#\",\"#\",\"#\"]
+	currentIndex = 0
+	setText()
+
+# Sets level text to whatever mode the player activated
+func changeMode(mode):
+	var modeText = $CurrentModeLabel
+	modeText.text = \"Current Mode: \" + mode
+
+# Sets label text to playerInput variable
+func setText():
+	var playerLabel = $PlayerCodeLabel
+	playerLabel.text = \"Input: \" + str(playerInput)
+
+func setPanelColor():
+	var style:StyleBoxFlat = StyleBoxFlat.new()
+	var panels = $CodeContainer.get_children()
+	
+	for i in range(0,5):
+		var panel = panels[i]
+		if(modeCode[i] == \"u\"):
+			panel.modulate = Color.YELLOW
+		elif(modeCode[i] == \"d\"):
+			panel.modulate = Color.GREEN
+		elif(modeCode[i] == \"l\"):
+			panel.modulate = Color.BLUE
+		elif(modeCode[i] == \"r\"):
+			panel.modulate = Color.RED
+		
+"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3mt5u"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0dlff"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4snvd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0lcqv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u5434"]
+
+[node name="PlayerUI" type="Control" unique_id=1844155359]
+layout_mode = 3
+anchors_preset = 0
+script = SubResource("GDScript_20a43")
+
+[node name="PlayerCodeLabel" type="Label" parent="." unique_id=588539692]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 822.0
+offset_top = 4.0
+offset_right = 1146.0
+offset_bottom = 72.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0.99888235, 0.14394635, 1)
+theme_override_font_sizes/font_size = 26
+text = "Input: [\"#\",\"#\",\"#\",\"#\",\"#\"]"
+vertical_alignment = 1
+
+[node name="CurrentModeLabel" type="Label" parent="." unique_id=1899455297]
+layout_mode = 0
+offset_left = 823.0
+offset_top = 511.0
+offset_right = 1194.0
+offset_bottom = 547.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 25
+text = "Current Mode: Road Mode"
+
+[node name="CodeContainer" type="HBoxContainer" parent="." unique_id=546663928]
+layout_mode = 0
+offset_left = 852.0
+offset_top = 558.0
+offset_right = 1129.0
+offset_bottom = 627.0
+
+[node name="Panel1" type="Panel" parent="CodeContainer" unique_id=974478629 groups=["CodePanels"]]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_3mt5u")
+
+[node name="Panel2" type="Panel" parent="CodeContainer" unique_id=15704153 groups=["CodePanels"]]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_0dlff")
+
+[node name="Panel3" type="Panel" parent="CodeContainer" unique_id=456625612 groups=["CodePanels"]]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_4snvd")
+
+[node name="Panel4" type="Panel" parent="CodeContainer" unique_id=52198982 groups=["CodePanels"]]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_0lcqv")
+
+[node name="Panel5" type="Panel" parent="CodeContainer" unique_id=1035857319 groups=["CodePanels"]]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_u5434")

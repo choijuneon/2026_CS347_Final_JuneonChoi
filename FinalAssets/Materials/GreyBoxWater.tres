@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://can0qbj00c0ey"]
+
+[ext_resource type="Texture2D" uid="uid://cnjc42rbeg62x" path="res://FinalAssets/Textures/GreyBoxTextures/greybox_blue_solid.png" id="1_mrc2d"]
+
+[resource]
+albedo_texture = ExtResource("1_mrc2d")
+uv1_scale = Vector3(50, 50, 50)

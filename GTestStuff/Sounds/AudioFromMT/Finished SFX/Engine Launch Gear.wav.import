@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ceakri8m2vr6d"
+path="res://.godot/imported/Engine Launch Gear.wav-c6ab0d2590c6c172db422532d5c4023b.sample"
+
+[deps]
+
+source_file="res://GTestStuff/Sounds/AudioFromMT/Finished SFX/Engine Launch Gear.wav"
+dest_files=["res://.godot/imported/Engine Launch Gear.wav-c6ab0d2590c6c172db422532d5c4023b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

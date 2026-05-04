@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://cxru8cdoywh83"]
+
+[ext_resource type="PackedScene" uid="uid://8nsxdj3ibrsc" path="res://FinalAssets/StaticMeshes/Environments/2.0/UrbanBuildKit/Scenes/BaseKit/SM_CementWall_3M.tscn" id="1_hk0hf"]
+[ext_resource type="PackedScene" uid="uid://ch5bojkmxndit" path="res://FinalAssets/StaticMeshes/Environments/2.0/UrbanBuildKit/Scenes/BaseKit/SM_CementPillar_3M.tscn" id="2_o8dri"]
+
+[node name="Node3D" type="Node3D" unique_id=159481251]
+
+[node name="Node3D20" parent="." unique_id=1371707816 instance=ExtResource("1_hk0hf")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 4.5, 0, 0)
+
+[node name="Node3D68" parent="." unique_id=2106817685 instance=ExtResource("1_hk0hf")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 7.5, 0, 2.6226832e-07)
+
+[node name="Node3D78" parent="." unique_id=25031897 instance=ExtResource("1_hk0hf")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 10.5, 0, 5.2453663e-07)
+
+[node name="Node3D88" parent="." unique_id=83486151 instance=ExtResource("1_hk0hf")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 13.5, 0, 7.8680495e-07)
+
+[node name="Node3D98" parent="." unique_id=743067147 instance=ExtResource("1_hk0hf")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 16.5, 0, 1.0490733e-06)
+
+[node name="Node3D17" parent="." unique_id=1432635259 instance=ExtResource("1_hk0hf")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 16.5, 0, 2.999999)
+
+[node name="Node3D21" parent="." unique_id=420162136 instance=ExtResource("1_hk0hf")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.5, 0, 0)
+
+[node name="Node3D23" parent="." unique_id=739573883 instance=ExtResource("2_o8dri")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 1)
+
+[node name="Node3D18" parent="." unique_id=240425369 instance=ExtResource("2_o8dri")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.5, 0, 1)
+
+[node name="Node3D" parent="." unique_id=1173713676 instance=ExtResource("1_hk0hf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5, 0, 3)
+
+[node name="Node3D5" parent="." unique_id=1735974325 instance=ExtResource("1_hk0hf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, 3)
+
+[node name="Node3D9" parent="." unique_id=803817791 instance=ExtResource("1_hk0hf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, 3)
+
+[node name="Node3D14" parent="." unique_id=599524054 instance=ExtResource("1_hk0hf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 3)
+
+[node name="Node3D16" parent="." unique_id=560918840 instance=ExtResource("1_hk0hf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 3)

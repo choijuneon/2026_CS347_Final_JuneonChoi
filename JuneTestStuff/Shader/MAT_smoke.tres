@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://bd0sowd5yegyd"]
+
+[ext_resource type="Shader" uid="uid://cye2un72e60rb" path="res://JuneTestStuff/Shader/SHA_smoke.tres" id="1_5cn4e"]
+
+[resource]
+render_priority = -2
+shader = ExtResource("1_5cn4e")
+shader_parameter/ColorParameter = Color(0, 0, 0, 1)

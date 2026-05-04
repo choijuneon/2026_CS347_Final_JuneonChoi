@@ -1,0 +1,64 @@
+[gd_scene format=4 uid="uid://c0k1fev3esqhx"]
+
+[ext_resource type="Material" uid="uid://chrpoy47wdwnp" path="res://FinalAssets/Materials/GreyBoxBasic.tres" id="1_j85ca"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_urnlk"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 500, 250, 500),
+"format": 34359742465,
+"index_count": 24,
+"index_data": PackedByteArray("AAABAAIAAQAAAAMAAAACAAQABAACAAEABAADAAAAAwAFAAEAAQAFAAQABAAFAAMA"),
+"name": "openPBR_shader1",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 6,
+"vertex_data": PackedByteArray("AAAAAAAAekMAAPpDAAD6QwAAAAAAAPpDAAAAAAAAAAAAAPpDAAAAAAAAekMAAAAAAAAAAAAAAAAAAAAAAAD6QwAAAAAAAAAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_bdxuw"]
+resource_name = "Half_Ramp_Guide"
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 500, 250, 500),
+"attribute_data": PackedByteArray("AADAPgAAQD9WVSU/q6qCPwAAwD4AAIA/AADAPgAAAD+BpiA/NIWgPlZVJT+rqoI/AADAPgAAQD8AAMA+AACAPoGmID80haA+AADAPgAAAD8AACA/AAAAAIGmID80haA+AADAPgAAgD4AAMA+AAAAAAAAwD4AAEA/AADAPgAAgD8AAAA+AACAPwAAAD4AAEA/"),
+"format": 34359742487,
+"index_count": 24,
+"index_data": PackedByteArray("AAABAAIAAwAEAAUABQAGAAMABwAIAAkACgALAAwADAANAAoADgAPABAAEAARAA4A"),
+"material": ExtResource("1_j85ca"),
+"name": "openPBR_shader1",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 18,
+"vertex_data": PackedByteArray("AAAAAAAAekMAAPpDAAD6QwAAAAAAAPpDAAAAAAAAAAAAAPpDAAAAAAAAekMAAAAAAAD6QwAAAAAAAAAAAAD6QwAAAAAAAPpDAAAAAAAAekMAAPpDAAAAAAAAAAAAAAAAAAD6QwAAAAAAAAAAAAAAAAAAekMAAAAAAAD6QwAAAAAAAPpDAAD6QwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPpDAAAAAAAAekMAAPpDAAAAAAAAAAAAAPpDAAAAAAAAAAAAAAAAAAAAAAAAekMAAAAA/3//f+D6jsL/f/9/4PqOwv9//3/g+o7CqqpU1YDdfaKqqlTVksjaraqqVNWt21GkqqpU1TjnxZj/////kfHIuP////+R8ci4/////5HxyLj/fwAAVPT/v/9/AABu6v+//38AAFT0/7//fwAA////vwAA/3//f/+/AAD/f/9//78AAP9//3//vwAA/3//f/+/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_urnlk")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_j85ca"]
+data = PackedVector3Array(0, 250, 500, 500, 0, 500, 0, 0, 500, 0, 250, 0, 500, 0, 0, 500, 0, 500, 500, 0, 500, 0, 250, 500, 0, 250, 0, 0, 0, 0, 500, 0, 0, 0, 250, 0, 500, 0, 500, 500, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 500, 500, 0, 500, 0, 250, 500, 0, 0, 500, 0, 0, 0, 0, 0, 0, 0, 250, 0, 0, 250, 500)
+
+[sub_resource type="Animation" id="Animation_08hjf"]
+resource_name = "Take 001"
+length = 4.9583335
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_p2k0r"]
+_data = {
+&"Take 001": SubResource("Animation_08hjf")
+}
+
+[node name="SM_Track_BaseRampHalf_01" type="Node3D" unique_id=1404033323]
+
+[node name="Guides" type="Node3D" parent="." unique_id=953749551]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, 0, 0)
+
+[node name="Half_Ramp_Guide" type="MeshInstance3D" parent="Guides" unique_id=124265234]
+mesh = SubResource("ArrayMesh_bdxuw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Guides/Half_Ramp_Guide" unique_id=1785268854 groups=["Road"]]
+collision_layer = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Guides/Half_Ramp_Guide/StaticBody3D" unique_id=400412995]
+shape = SubResource("ConcavePolygonShape3D_j85ca")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1153731495]
+libraries/ = SubResource("AnimationLibrary_p2k0r")

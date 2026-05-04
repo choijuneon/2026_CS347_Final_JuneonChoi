@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://chp37yrus3nbt"]
+
+[ext_resource type="PackedScene" path="res://FinalAssets/StaticMeshes/Environments/UrbanBuildKit/Scenes/Walls/OLD_Wall_18x_12_3M.tscn" id="2_hhf36"]
+[ext_resource type="PackedScene" uid="uid://bnm0qwecswply" path="res://FinalAssets/StaticMeshes/Environments/2.0/UrbanBuildKit/Scenes/Slabs/SM_Slab_6x18_3M.tscn" id="3_ewql7"]
+
+[node name="StraightAway_Small" type="Node3D" unique_id=609451013]
+
+[node name="Slab_6x18_3M" parent="." unique_id=673407338 instance=ExtResource("3_ewql7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12, 0)
+
+[node name="Wall_18x12_3M" parent="." unique_id=446947330 instance=ExtResource("2_hhf36")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 4.5, 0, 18)
+
+[node name="Wall_18x12_3M2" parent="." unique_id=628948521 instance=ExtResource("2_hhf36")]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 1.5, 0, 0)

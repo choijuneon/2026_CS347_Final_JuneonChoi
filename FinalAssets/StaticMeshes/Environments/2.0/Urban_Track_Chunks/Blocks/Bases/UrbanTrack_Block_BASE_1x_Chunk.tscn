@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://ceo7v1sjgk3q5"]
+
+[ext_resource type="PackedScene" uid="uid://8nsxdj3ibrsc" path="res://FinalAssets/StaticMeshes/Environments/2.0/UrbanBuildKit/Scenes/BaseKit/SM_CementWall_3M.tscn" id="1_fard1"]
+[ext_resource type="PackedScene" uid="uid://ch5bojkmxndit" path="res://FinalAssets/StaticMeshes/Environments/2.0/UrbanBuildKit/Scenes/BaseKit/SM_CementPillar_3M.tscn" id="2_6qg4d"]
+
+[node name="Node3D" type="Node3D" unique_id=1629480405]
+
+[node name="Node3D15" parent="." unique_id=1371707816 instance=ExtResource("1_fard1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 6)
+
+[node name="Node3D20" parent="." unique_id=916850247 instance=ExtResource("1_fard1")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 4.5, 0, 0)
+
+[node name="Node3D16" parent="." unique_id=1733640817 instance=ExtResource("1_fard1")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 4.5, 0, 6)
+
+[node name="Node3D17" parent="." unique_id=1025561470 instance=ExtResource("1_fard1")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 4.5, 0, 3)
+
+[node name="Node3D21" parent="." unique_id=1002871611 instance=ExtResource("1_fard1")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.5, 0, 0)
+
+[node name="Node3D22" parent="." unique_id=1710926571 instance=ExtResource("1_fard1")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.5, 0, 3)
+
+[node name="Node3D23" parent="." unique_id=739573883 instance=ExtResource("2_6qg4d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 1)
+
+[node name="Node3D24" parent="." unique_id=313321690 instance=ExtResource("2_6qg4d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 4)
+
+[node name="Node3D18" parent="." unique_id=193013633 instance=ExtResource("2_6qg4d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 1)
+
+[node name="Node3D19" parent="." unique_id=2059751023 instance=ExtResource("2_6qg4d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 4)

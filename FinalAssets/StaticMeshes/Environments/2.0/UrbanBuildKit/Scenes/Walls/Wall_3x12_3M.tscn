@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cwaexoeb8usxx"]
+
+[ext_resource type="PackedScene" uid="uid://bihyj4l8hg6co" path="res://FinalAssets/StaticMeshes/Environments/2.0/UrbanBuildKit/FBX/Walls/SM_CementWall_3x12_3M.fbx" id="1_3skut"]
+
+[node name="Wall_3x12_3M" type="Node3D" unique_id=394306456]
+
+[node name="SM_CementWall_3x12_3M" parent="." unique_id=850956541 instance=ExtResource("1_3skut")]

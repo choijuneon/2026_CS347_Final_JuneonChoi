@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://v4malr3bv5kj"]
+
+[ext_resource type="PackedScene" uid="uid://cbld7nmodttc0" path="res://FinalAssets/StaticMeshes/Environments/3.0/TrackBuildKit/Scenes_Chunks/12to6_Slimmer.tscn" id="5_6jl3j"]
+[ext_resource type="PackedScene" uid="uid://d358d7nql80he" path="res://FinalAssets/StaticMeshes/Environments/3.0/TrackBuildKit/Scenes_Chunks/18x18_Corner.tscn" id="5_wppy3"]
+[ext_resource type="PackedScene" uid="uid://c7st6ot2phdqa" path="res://FinalAssets/StaticMeshes/Environments/3.0/TrackBuildKit/Scenes_Chunks/18x18_Block.tscn" id="6_6jl3j"]
+[ext_resource type="PackedScene" uid="uid://cvxlk86f2xquk" path="res://FinalAssets/StaticMeshes/Environments/3.0/TrackBuildKit/Scenes_Chunks/6to12_Widener.tscn" id="6_iq23u"]
+[ext_resource type="PackedScene" uid="uid://dna387md3wcp6" path="res://FinalAssets/StaticMeshes/Environments/3.0/TrackBuildKit/Scenes_Chunks/18x6_NarrowRamp.tscn" id="8_iq23u"]
+[ext_resource type="PackedScene" uid="uid://cpwygmn2eonsr" path="res://FinalAssets/StaticMeshes/Environments/3.0/TrackBuildKit/Scenes_Chunks/18x6_WideRamp.tscn" id="9_gq6uf"]
+[ext_resource type="PackedScene" uid="uid://dqhomqol8lfgd" path="res://FinalAssets/StaticMeshes/Environments/3.0/TrackBuildKit/Scenes_Chunks/12x12_Block.tscn" id="10_w7n8p"]
+[ext_resource type="PackedScene" uid="uid://4yessdf1n4o" path="res://FinalAssets/StaticMeshes/Environments/3.0/TrackBuildKit/Scenes_Chunks/18to12_Slimmer.tscn" id="11_gq6uf"]
+[ext_resource type="PackedScene" uid="uid://d0q6x4pnswrt4" path="res://FinalAssets/StaticMeshes/Environments/3.0/TrackBuildKit/Scenes_Chunks/18x6_MediumRamp.tscn" id="12_w7n8p"]
+
+[node name="Section08" type="Node3D" unique_id=1842483622]
+
+[node name="12to6_Slimmer" parent="." unique_id=1731678590 instance=ExtResource("5_6jl3j")]
+transform = Transform3D(-2.1855693e-07, 0, 1, 0, 1, 0, -1, 0, -2.1855693e-07, 35.500008, -3, 306)
+
+[node name="6to12_Widener" parent="." unique_id=1366599628 instance=ExtResource("6_iq23u")]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 53.5, -3, 312)
+
+[node name="NarrowRamp_18x6_3M" parent="." unique_id=390436698 instance=ExtResource("8_iq23u")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 35.5, -3, 312)
+
+[node name="NarrowRamp_18x6_3M2" parent="." unique_id=395443425 instance=ExtResource("8_iq23u")]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 5.5, -3, 306)
+
+[node name="18x18_WideRamp" parent="NarrowRamp_18x6_3M2" unique_id=1049707235 instance=ExtResource("9_gq6uf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 32.5, 75.99997)
+
+[node name="18x18_WideRamp2" parent="NarrowRamp_18x6_3M2" unique_id=425447076 instance=ExtResource("9_gq6uf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 30, 93.99997)
+
+[node name="18x18_Corner" parent="NarrowRamp_18x6_3M2/18x18_WideRamp2" unique_id=1046793272 instance=ExtResource("5_wppy3")]
+transform = Transform3D(-4.3711395e-08, 0, 1, 0, 1, 0, -1, 0, -4.3711395e-08, -3.0517578e-05, 0, 36)
+
+[node name="18to12_Slimmer" parent="NarrowRamp_18x6_3M2/18x18_WideRamp2/18x18_Corner" unique_id=69631543 instance=ExtResource("11_gq6uf")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 18, 0, 0)
+
+[node name="MediumRamp_18x12_3M" parent="NarrowRamp_18x6_3M2/18x18_WideRamp2/18x18_Corner/18to12_Slimmer" unique_id=835802880 instance=ExtResource("12_w7n8p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.5, 18)
+
+[node name="12x12_Block" parent="." unique_id=1008490163 instance=ExtResource("10_w7n8p")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 23.500002, -3, 324)
+
+[node name="12x12_Block2" parent="." unique_id=629086103 instance=ExtResource("10_w7n8p")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 23.500004, -3, 306)
+
+[node name="12x12_Block3" parent="." unique_id=877201387 instance=ExtResource("10_w7n8p")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 11.500002, -3, 324)
+
+[node name="12x12_Block4" parent="." unique_id=1181948518 instance=ExtResource("10_w7n8p")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 11.500004, -3, 306)
+
+[node name="12x12_Block5" parent="." unique_id=465055671 instance=ExtResource("10_w7n8p")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.4999981, -3, 324)
+
+[node name="12x12_Block6" parent="." unique_id=838919199 instance=ExtResource("10_w7n8p")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.4999962, -3, 306)
+
+[node name="12x12_Block7" parent="." unique_id=492886677 instance=ExtResource("10_w7n8p")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -12.499998, -3, 324)
+
+[node name="12x12_Block8" parent="." unique_id=184723237 instance=ExtResource("10_w7n8p")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -12.499996, -3, 306)
+
+[node name="18x18_Block" parent="." unique_id=139849848 instance=ExtResource("6_6jl3j")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 53.5, -3, 318)
+
+[node name="18x18_Corner" parent="." unique_id=1834347116 instance=ExtResource("5_wppy3")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 71.5, -3, 318)

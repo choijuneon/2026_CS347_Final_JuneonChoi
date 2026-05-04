@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://b4pj0rawf4elh"]
+
+[ext_resource type="PackedScene" uid="uid://r3kwyvhio3a2" path="res://FinalAssets/StaticMeshes/Environments/3.0/Obstacles&Ramps/FBX/SM_ENV_TrafficCone_v04.fbx" id="1_xycg6"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xycg6"]
+radius = 1.0106066
+height = 2.9250069
+
+[node name="Node3D" type="Node3D" unique_id=1165026073]
+
+[node name="SM_ENV_TrafficCone_v04" parent="." unique_id=1907469767 instance=ExtResource("1_xycg6")]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="SM_ENV_TrafficCone_v04/SM_OB_TrafficCone_v01" parent_id_path=PackedInt32Array(1907469767, 1642578856) index="0" unique_id=168512434]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SM_ENV_TrafficCone_v04/SM_OB_TrafficCone_v01/RigidBody3D" unique_id=1394460456]
+transform = Transform3D(-4.371139e-08, -0.99999994, 0, 0.99999994, -4.3711385e-08, 0, 0, 0, 0.99999994, -0.011412024, 0.81892514, 0.011412144)
+shape = SubResource("CapsuleShape3D_xycg6")
+
+[editable path="SM_ENV_TrafficCone_v04"]

@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://krnvfon5m0np"]
+
+[ext_resource type="PackedScene" uid="uid://duo7m0pxj5p6y" path="res://FinalAssets/StaticMeshes/Environments/Mod Signs/SM_MOD_JumpSign.fbx" id="1_l2vih"]
+[ext_resource type="Material" uid="uid://b5dru7s1fiu83" path="res://FinalAssets/Materials/MAT_ModSignAtlas.tres" id="2_aeve8"]
+
+[node name="Node3D" type="Node3D" unique_id=1472957208]
+
+[node name="SM_MOD_JumpSign" parent="." unique_id=1097409326 instance=ExtResource("1_l2vih")]
+
+[node name="jumpMod" parent="SM_MOD_JumpSign" index="0" unique_id=563328145]
+material_override = ExtResource("2_aeve8")
+
+[editable path="SM_MOD_JumpSign"]

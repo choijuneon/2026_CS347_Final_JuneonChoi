@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dcm70yg4k5x4a"]
+
+[ext_resource type="Texture2D" uid="uid://b2cxeu2ij7oqu" path="res://JuneTestStuff/Tex/texture_02_normal.png" id="2_8i5er"]
+
+[resource]
+albedo_color = Color(1, 0, 1, 1)
+normal_enabled = true
+normal_texture = ExtResource("2_8i5er")
+uv1_triplanar = true
+uv1_world_triplanar = true

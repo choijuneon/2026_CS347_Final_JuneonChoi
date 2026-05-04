@@ -1,0 +1,452 @@
+[gd_scene format=3 uid="uid://bke2qyo1cdn8j"]
+
+[ext_resource type="Script" uid="uid://cfjekii1486s4" path="res://FinalAssets/Scripts/ArduinoTest.cs" id="1_7gria"]
+[ext_resource type="PackedScene" uid="uid://ds522ca4r7es3" path="res://FinalAssets/Prefabs/heartbeat_minigame.tscn" id="2_i6a3i"]
+[ext_resource type="PackedScene" uid="uid://clurvmjulir6v" path="res://FinalAssets/Prefabs/coolant_minigame.tscn" id="3_t66dy"]
+[ext_resource type="PackedScene" uid="uid://rhexo17jf7dq" path="res://FinalAssets/Prefabs/maintenance_minigame.tscn" id="4_ablun"]
+[ext_resource type="Script" uid="uid://pdjvsmt8kswh" path="res://FinalAssets/Scripts/SimonSays.gd" id="5_37edq"]
+[ext_resource type="Script" uid="uid://c858hs6cj7wcp" path="res://JuneTestStuff/Scripts/ModMethods.gd" id="6_u10st"]
+[ext_resource type="Script" uid="uid://b8lokwpupmlk7" path="res://JuneTestStuff/Scripts/ChargeBar.gd" id="7_uubo5"]
+[ext_resource type="Script" uid="uid://bd7h7c0qbwxcy" path="res://JuneTestStuff/Scripts/camera_test.gd" id="8_dkt1r"]
+[ext_resource type="PackedScene" uid="uid://df5e2shjjvl2j" path="res://JuneTestStuff/Scenes/P_bike_TestingNewAssets.tscn" id="9_32o07"]
+[ext_resource type="PackedScene" uid="uid://br872x7115ggq" path="res://YV-TestStuff/YV_Puncher.tscn" id="10_vvngs"]
+[ext_resource type="PackedScene" uid="uid://dqlb0mkly8iqd" path="res://YV-TestStuff/headlights.tscn" id="11_o06in"]
+[ext_resource type="PackedScene" uid="uid://4k5pya5ulkrm" path="res://YV-TestStuff/magnet_3d.tscn" id="12_rn47w"]
+[ext_resource type="PackedScene" uid="uid://dvxkgrmy6b2qk" path="res://FinalAssets/StaticMeshes/Environments/Nature_Build_Kit/Ocean_Placeholder_M_01.fbx" id="13_3jpkc"]
+[ext_resource type="Script" uid="uid://cnyb3ke5q6ntu" path="res://JuneTestStuff/Scripts/collision_test.gd" id="14_0mw4u"]
+[ext_resource type="PackedScene" uid="uid://17d511hrsfas" path="res://FinalAssets/StaticMeshes/Environments/Urban_Track_Chunks/Barriers&Fences/UrbanTrack_Barrier_2x_Chunk.tscn" id="15_61lyv"]
+[ext_resource type="PackedScene" uid="uid://doc4rf542lqos" path="res://FinalAssets/StaticMeshes/Environments/Urban_Track_Chunks/Barriers&Fences/UrbanTrack_Barrier_4x_Chunk.tscn" id="16_ijla0"]
+[ext_resource type="PackedScene" uid="uid://ja3x8jxn2a5b" path="res://FinalAssets/StaticMeshes/Environments/Urban_Track_Chunks/Barriers&Fences/UrbanTrack_Barrier_6x_Chunk.tscn" id="17_anf8u"]
+[ext_resource type="PackedScene" uid="uid://ccpj8ikr17tns" path="res://FinalAssets/StaticMeshes/Environments/Placeholder_Kit/TSCN/island_sm_01_1.tscn" id="18_it8em"]
+[ext_resource type="PackedScene" uid="uid://cxoa341lapfum" path="res://FinalAssets/Prefabs/P_StartingLine.tscn" id="19_nqgwo"]
+[ext_resource type="PackedScene" uid="uid://cq3l6teh2rx52" path="res://YV-TestStuff/YV_button_display.tscn" id="20_f4gd4"]
+[ext_resource type="PackedScene" uid="uid://bl4ukatjvw4ji" path="res://YV-TestStuff/user_interface.tscn" id="21_4mugt"]
+[ext_resource type="PackedScene" uid="uid://bkf7j70dyplvb" path="res://YV-TestStuff/small_barrier.tscn" id="22_adb2d"]
+[ext_resource type="Material" uid="uid://j8ptqst5b2t7" path="res://JuneTestStuff/Mat/gray.tres" id="26_fopu7"]
+[ext_resource type="PackedScene" uid="uid://cwdhgyfc8461e" path="res://YV-TestStuff/collectible.tscn" id="57_bui0u"]
+[ext_resource type="PackedScene" uid="uid://dq1u0niiv1lu5" path="res://YV-TestStuff/collectible_health.tscn" id="58_5oq81"]
+[ext_resource type="PackedScene" uid="uid://cjyciu6c2l1rj" path="res://YV-TestStuff/collectible_speed.tscn" id="59_oylcf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_udi0b"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0jy2u"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wsfqs"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fca2h"]
+sky_top_color = Color(0.25074077, 0.43474057, 0.7808944, 1)
+sky_horizon_color = Color(0.41316223, 0.45916218, 0.54570067, 1)
+ground_bottom_color = Color(0, 0, 0, 1)
+ground_horizon_color = Color(0.41316223, 0.45916218, 0.54570067, 1)
+energy_multiplier = 0.5
+
+[sub_resource type="Sky" id="Sky_8r5eb"]
+sky_material = SubResource("ProceduralSkyMaterial_fca2h")
+
+[sub_resource type="Environment" id="Environment_s2ryw"]
+background_mode = 2
+sky = SubResource("Sky_8r5eb")
+tonemap_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2j1r0"]
+transparency = 1
+albedo_color = Color(0, 0.5686275, 0.7921569, 0.5882353)
+
+[sub_resource type="BoxMesh" id="BoxMesh_d25n7"]
+material = SubResource("StandardMaterial3D_2j1r0")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gqpl6"]
+size = Vector3(1000, 10, 1000)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_vaqn4"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_s172f"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_0qwtn"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hbega"]
+size = Vector3(1000, 10, 1000)
+
+[node name="FinalMainScene" type="Node3D" unique_id=1582619210]
+
+[node name="ArduinoInput" type="Node" parent="." unique_id=343320572]
+script = ExtResource("1_7gria")
+
+[node name="HeartbeatMinigame" parent="." unique_id=1607652290 instance=ExtResource("2_i6a3i")]
+
+[node name="CoolantMinigame" parent="." unique_id=1061506414 instance=ExtResource("3_t66dy")]
+
+[node name="MaintenanceMinigame" parent="." unique_id=728143323 instance=ExtResource("4_ablun")]
+
+[node name="SimonSays" type="Node" parent="." unique_id=938564219]
+script = ExtResource("5_37edq")
+
+[node name="SSTimer" type="Timer" parent="SimonSays" unique_id=721299053]
+wait_time = 4.0
+
+[node name="CodeContainer" type="HBoxContainer" parent="SimonSays" unique_id=87241648]
+offset_left = 831.0
+offset_top = 574.0
+offset_right = 1070.0
+offset_bottom = 609.0
+
+[node name="Panel1" type="Panel" parent="SimonSays/CodeContainer" unique_id=802740988 groups=["CodePanels"]]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_udi0b")
+
+[node name="Panel2" type="Panel" parent="SimonSays/CodeContainer" unique_id=2136937316 groups=["CodePanels"]]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_0jy2u")
+
+[node name="Panel3" type="Panel" parent="SimonSays/CodeContainer" unique_id=906332870 groups=["CodePanels"]]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_wsfqs")
+
+[node name="ModMethods" type="Node" parent="." unique_id=1551570335 node_paths=PackedStringArray("bike", "punch", "light", "magnet")]
+script = ExtResource("6_u10st")
+bike = NodePath("../Bike")
+punch = NodePath("../Bike/Puncher (Node3D)")
+light = NodePath("../Bike/SpotLight3D")
+magnet = NodePath("../Bike/Magnet3D")
+
+[node name="Panel2" type="Panel" parent="ModMethods" unique_id=315638960]
+offset_left = 829.0
+offset_top = 543.0
+offset_right = 869.0
+offset_bottom = 583.0
+scale = Vector2(6.000002, 0.68940115)
+
+[node name="InputLabel2" type="Label" parent="ModMethods" unique_id=403526710]
+offset_left = 829.0
+offset_top = 544.0
+offset_right = 1068.0
+offset_bottom = 594.0
+text = "[\"right\", \"right\", \"right\", \"right\"]"
+horizontal_alignment = 1
+
+[node name="JumpChargeBar" type="Control" parent="." unique_id=1163887084]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 307.0
+offset_top = 407.0
+offset_right = 347.0
+offset_bottom = 447.0
+
+[node name="ProgressBar" type="ProgressBar" parent="JumpChargeBar" unique_id=1981757579 node_paths=PackedStringArray("bike")]
+layout_mode = 0
+offset_top = -228.0
+offset_right = 27.0
+offset_bottom = -7.0
+fill_mode = 3
+script = ExtResource("7_uubo5")
+bike = NodePath("../../Bike")
+
+[node name="Panel" type="Panel" parent="JumpChargeBar" unique_id=1440146874]
+layout_mode = 0
+offset_left = -36.999996
+offset_right = 3.0000038
+offset_bottom = 40.0
+scale = Vector2(2.640002, 0.68940115)
+
+[node name="Label" type="Label" parent="JumpChargeBar" unique_id=1401160050]
+layout_mode = 0
+offset_left = -37.0
+offset_right = 62.0
+offset_bottom = 23.0
+text = "Jump Charge"
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=811988745 node_paths=PackedStringArray("target")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -127.5, 21.384295, 273.15527)
+fov = 90.0
+script = ExtResource("8_dkt1r")
+target = NodePath("../Bike")
+offset_y = 1.5
+offset_z = 2.0
+follow_speed = 7.0
+
+[node name="Bike" parent="." unique_id=2141863104 instance=ExtResource("9_32o07")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -127.5, 21.01204, 274.31027)
+acceleration = 2400.0
+max_speed = 15.0
+tire_max_turn_degrees = 20
+show_debug = false
+
+[node name="Puncher (Node3D)" parent="Bike" unique_id=295459325 instance=ExtResource("10_vvngs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9802322e-08, 0.49505615, -1.2915711)
+
+[node name="SpotLight3D" parent="Bike" unique_id=1089508015 instance=ExtResource("11_o06in")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.18966675, 0.7398758, -0.46495056)
+
+[node name="Magnet3D" parent="Bike" unique_id=1719346144 instance=ExtResource("12_rn47w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.57292175, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1588691793]
+transform = Transform3D(0.70710677, -0.3535534, 0.61237246, 0, 0.8660254, 0.5, -0.70710677, -0.3535534, 0.61237246, 0, 150, 0)
+shadow_enabled = true
+sky_mode = 1
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=295002972]
+environment = SubResource("Environment_s2ryw")
+
+[node name="EnvironmentAssets" type="Node3D" parent="." unique_id=731201504]
+
+[node name="Ocean_Placeholder_M_01" parent="EnvironmentAssets" unique_id=2041880194 instance=ExtResource("13_3jpkc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="SpawnPoint" type="Node3D" parent="." unique_id=1837583979]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 8.9531765, 303.6553)
+
+[node name="Water1" type="Area3D" parent="." unique_id=857933933 node_paths=PackedStringArray("locator")]
+script = ExtResource("14_0mw4u")
+locator = NodePath("../SpawnPoint")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Water1" unique_id=1529285144 groups=["Mud"]]
+transform = Transform3D(750, 0, 0, 0, 10, 0, 0, 0, 750, 0, 0, 0)
+mesh = SubResource("BoxMesh_d25n7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Water1" unique_id=10160861]
+shape = SubResource("BoxShape3D_gqpl6")
+
+[node name="Node3D" parent="Water1" unique_id=1743399995 instance=ExtResource("15_61lyv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 96.5, 12.5, 132)
+
+[node name="Node3D2" parent="Water1" unique_id=282633985 instance=ExtResource("15_61lyv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 89.5, 12.5, 132)
+
+[node name="Node3D3" parent="Water1" unique_id=229017953 instance=ExtResource("16_ijla0")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 101.5, 21.5, 40)
+
+[node name="Node3D4" parent="Water1" unique_id=211137675 instance=ExtResource("16_ijla0")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 101.5, 21.5, 36)
+
+[node name="Node3D5" parent="Water1" unique_id=531889100 instance=ExtResource("17_anf8u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 87.5, 21.5, 18)
+
+[node name="Node3D6" parent="Water1" unique_id=525119170 instance=ExtResource("17_anf8u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 83.5, 21.5, 18)
+
+[node name="Node3D7" parent="Water1" unique_id=178995393 instance=ExtResource("17_anf8u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 83.5, 21.5, 0)
+
+[node name="Node3D8" parent="Water1" unique_id=2017130384 instance=ExtResource("17_anf8u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 87.5, 21.5, 0)
+
+[node name="Node3D9" parent="Water1" unique_id=443448797 instance=ExtResource("16_ijla0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 83.5, 24.5, -18)
+
+[node name="Node3D10" parent="Water1" unique_id=1969876055 instance=ExtResource("16_ijla0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 87.5, 24.5, -18)
+
+[node name="Node3D11" parent="Water1" unique_id=514072043 instance=ExtResource("17_anf8u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 83.5, 27.5, -48)
+
+[node name="Node3D12" parent="Water1" unique_id=1968726439 instance=ExtResource("17_anf8u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 87.5, 27.5, -48)
+
+[node name="Node3D13" parent="Water1" unique_id=1954798121 instance=ExtResource("15_61lyv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 83.5, 27.5, -30)
+
+[node name="Node3D14" parent="Water1" unique_id=825286607 instance=ExtResource("15_61lyv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 87.5, 27.5, -30)
+
+[node name="Node3D15" parent="Water1" unique_id=78042679 instance=ExtResource("16_ijla0")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 60, 33.5, -52)
+
+[node name="Node3D16" parent="Water1" unique_id=1781516942 instance=ExtResource("16_ijla0")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 60, 33.5, -48)
+
+[node name="Node3D17" parent="Water1" unique_id=981092522 instance=ExtResource("16_ijla0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 36.5, -66)
+
+[node name="Node3D18" parent="Water1" unique_id=1005548980 instance=ExtResource("16_ijla0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52, 36.5, -66)
+
+[node name="Node3D19" parent="Water1" unique_id=2077043087 instance=ExtResource("15_61lyv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 36.5, -78)
+
+[node name="Node3D20" parent="Water1" unique_id=2122141394 instance=ExtResource("15_61lyv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64, 36.5, -78)
+
+[node name="Node3D21" parent="Water1" unique_id=872753302 instance=ExtResource("15_61lyv")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 60, 36.5, -72)
+
+[node name="Node3D22" parent="Water1" unique_id=239361690 instance=ExtResource("15_61lyv")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 60, 36.5, -68)
+
+[node name="Node3D23" parent="Water1" unique_id=2000313113 instance=ExtResource("17_anf8u")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 84, 36.5, -80)
+
+[node name="Node3D24" parent="Water1" unique_id=291054921 instance=ExtResource("17_anf8u")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 84, 36.5, -84)
+
+[node name="Node3D25" parent="Water1" unique_id=1271595065 instance=ExtResource("17_anf8u")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 108, 42.5, -98)
+
+[node name="Node3D26" parent="Water1" unique_id=1635843027 instance=ExtResource("17_anf8u")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 108, 42.5, -102)
+
+[node name="Node3D27" parent="Water1" unique_id=1302513845 instance=ExtResource("17_anf8u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 112, 42.5, -120)
+
+[node name="Node3D28" parent="Water1" unique_id=871645677 instance=ExtResource("17_anf8u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108, 42.5, -120)
+
+[node name="Node3D29" parent="Water1" unique_id=2035994395 instance=ExtResource("17_anf8u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108, 45.5, -144)
+
+[node name="Node3D30" parent="Water1" unique_id=1055415964 instance=ExtResource("17_anf8u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 112, 45.5, -144)
+
+[node name="Node3D31" parent="Water1" unique_id=2075740568 instance=ExtResource("15_61lyv")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 120, 45.5, -150)
+
+[node name="Node3D32" parent="Water1" unique_id=1503128141 instance=ExtResource("15_61lyv")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 120, 45.5, -146)
+
+[node name="Node3D33" parent="Water1" unique_id=1027970340 instance=ExtResource("17_anf8u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 123.5, 45.5, -168)
+
+[node name="Node3D34" parent="Water1" unique_id=1938933022 instance=ExtResource("17_anf8u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 119.5, 45.5, -168)
+
+[node name="Node3D35" parent="Water1" unique_id=473695055 instance=ExtResource("17_anf8u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 123.5, 48.5, -192)
+
+[node name="Node3D36" parent="Water1" unique_id=904830097 instance=ExtResource("17_anf8u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 119.5, 48.5, -192)
+
+[node name="Node3D37" parent="Water1" unique_id=1226870826 instance=ExtResource("17_anf8u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 123.5, 48.5, -210)
+
+[node name="Node3D38" parent="Water1" unique_id=2127307573 instance=ExtResource("17_anf8u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 119.5, 48.5, -210)
+
+[node name="Node3D39" parent="Water1" unique_id=578616948 instance=ExtResource("17_anf8u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 123.5, 48.5, -228)
+
+[node name="Node3D40" parent="Water1" unique_id=396107313 instance=ExtResource("17_anf8u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 119.5, 48.5, -228)
+
+[node name="Node3D41" parent="Water1" unique_id=233836466 instance=ExtResource("16_ijla0")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 119.5, 48.5, -234)
+
+[node name="Node3D42" parent="Water1" unique_id=766109644 instance=ExtResource("16_ijla0")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 119.5, 48.5, -230)
+
+[node name="Node3D43" parent="Water1" unique_id=1582528830 instance=ExtResource("15_61lyv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 99.5, 51.5, -240)
+
+[node name="Node3D44" parent="Water1" unique_id=398615729 instance=ExtResource("15_61lyv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.5, 51.5, -240)
+
+[node name="Node3D45" parent="Water1" unique_id=1017461754 instance=ExtResource("17_anf8u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 155.5, 12.5, -294)
+
+[node name="Node3D46" parent="Water1" unique_id=1152881701 instance=ExtResource("17_anf8u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 165.5, 12.5, -294)
+
+[node name="Node3D47" parent="Water1" unique_id=1154619416 instance=ExtResource("17_anf8u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 155.5, 12.5, -276)
+
+[node name="Node3D48" parent="Water1" unique_id=711223517 instance=ExtResource("17_anf8u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 165.5, 12.5, -276)
+
+[node name="Node3D49" parent="Water1" unique_id=1262888770 instance=ExtResource("17_anf8u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 155.5, 12.5, -258)
+
+[node name="Node3D50" parent="Water1" unique_id=1560899938 instance=ExtResource("17_anf8u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 165.5, 12.5, -258)
+
+[node name="Node3D51" parent="Water1" unique_id=392918581 instance=ExtResource("17_anf8u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 155.5, 12.5, -240)
+
+[node name="Node3D52" parent="Water1" unique_id=587295608 instance=ExtResource("17_anf8u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 165.5, 12.5, -240)
+
+[node name="Node3D53" parent="Water1" unique_id=195976892 instance=ExtResource("15_61lyv")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 167.5, 12.5, -220)
+
+[node name="Node3D54" parent="Water1" unique_id=1309799051 instance=ExtResource("15_61lyv")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 167.5, 12.5, -210)
+
+[node name="Node3D55" parent="Water1" unique_id=2107798640 instance=ExtResource("17_anf8u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 183.5, 12.5, -210)
+
+[node name="Node3D56" parent="Water1" unique_id=1295511635 instance=ExtResource("17_anf8u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 173.5, 12.5, -210)
+
+[node name="CourseAssets" type="Node3D" parent="." unique_id=581769330]
+
+[node name="Dock" type="Node" parent="CourseAssets" unique_id=1654797287]
+
+[node name="StartLine" type="Node3D" parent="CourseAssets/Dock" unique_id=942047027]
+
+[node name="Island_SM_01_1" parent="." unique_id=375070035 instance=ExtResource("18_it8em")]
+
+[node name="PillTester" type="Node3D" parent="." unique_id=2004061824]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 87.5, 5, 265)
+visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PillTester" unique_id=1519465154]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 7.5, 2.5)
+mesh = SubResource("CapsuleMesh_vaqn4")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="PillTester/MeshInstance3D" unique_id=1736194120]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PillTester/MeshInstance3D/RigidBody3D" unique_id=849251525]
+shape = SubResource("CapsuleShape3D_s172f")
+
+[node name="PlayerStart" parent="." unique_id=351622580 instance=ExtResource("19_nqgwo")]
+transform = Transform3D(128.1333, 0, 0.3445558, 0, 11.061513, 0, -3.9931688, 0, 11.056145, 83.659256, 8.272, 359.21848)
+
+[node name="ButtonDisplay" parent="." unique_id=574972411 instance=ExtResource("20_f4gd4")]
+
+[node name="UserInterface" parent="." unique_id=112705093 instance=ExtResource("21_4mugt")]
+offset_left = 2.0
+offset_top = -1.0
+offset_right = 369.3733
+offset_bottom = 476.35132
+
+[node name="Small Barrier (Node3D)" parent="." unique_id=261643983 instance=ExtResource("22_adb2d")]
+transform = Transform3D(-0.004817019, 0, -2.9999962, 0, 3, 0, 2.9999962, 0, -0.004817019, 63.56053, 10.5, 214.52745)
+
+[node name="Small Barrier (Node3D)2" parent="." unique_id=466755167 instance=ExtResource("22_adb2d")]
+transform = Transform3D(-0.004817019, 0, -2.9999962, 0, 3, 0, 2.9999962, 0, -0.004817019, 68.388954, 10.5, 212.38164)
+
+[node name="Small Barrier (Node3D)3" parent="." unique_id=20724405 instance=ExtResource("22_adb2d")]
+transform = Transform3D(1.5989393, 0, -2.5383847, 0, 3, 0, 2.5383847, 0, 1.5989393, 81.76569, 8.8151, 228.81473)
+
+[node name="Pickups" type="Node" parent="." unique_id=1897235193]
+
+[node name="CollectibleHealth" parent="." unique_id=430003903 instance=ExtResource("58_5oq81")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -131.95273, 12.738876, 276.34418)
+
+[node name="Collectible_Speed" parent="." unique_id=952458803 instance=ExtResource("59_oylcf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -125.24306, 12.849822, 274.21436)
+
+[node name="Collectible" parent="." unique_id=814614715 instance=ExtResource("57_bui0u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -132.03618, 12.803295, 273.12265)
+
+[node name="Collectible2" parent="." unique_id=1390624022 instance=ExtResource("57_bui0u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -127.698784, 13.163464, 271.0152)
+
+[node name="Collectible3" parent="." unique_id=748415572 instance=ExtResource("57_bui0u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -127.698784, 12.605598, 278.25946)
+
+[node name="Terrain" type="StaticBody3D" parent="." unique_id=783152832]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -127.698784, 7.975724, 278.25946)
+collision_layer = 3
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Terrain" unique_id=102799453]
+transform = Transform3D(1000, 0, 0, 0, 10, 0, 0, 0, 1000, 0, -0.8479881, 0)
+material_override = ExtResource("26_fopu7")
+mesh = SubResource("BoxMesh_0qwtn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Terrain" unique_id=833774374]
+shape = SubResource("BoxShape3D_hbega")
+
+[connection signal="timeout" from="SimonSays/SSTimer" to="SimonSays" method="_on_ss_timer_timeout"]
+[connection signal="area_entered" from="Bike/Magnet3D" to="Bike/Magnet3D" method="_on_area_entered"]

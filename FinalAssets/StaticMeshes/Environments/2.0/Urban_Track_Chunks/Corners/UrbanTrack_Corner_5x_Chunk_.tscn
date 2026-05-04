@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://wx11241wq4y1"]
+
+[ext_resource type="PackedScene" uid="uid://d3v07xe0ji1o2" path="res://FinalAssets/StaticMeshes/Environments/2.0/UrbanBuildKit/Scenes/BaseKit/SM_CementBarrier_InnerCorner_3M.tscn" id="4_sjg7l"]
+[ext_resource type="PackedScene" uid="uid://b1t4l1o5fbe63" path="res://FinalAssets/StaticMeshes/Environments/2.0/UrbanBuildKit/Scenes/BaseKit/SM_CementBarrier_OuterCorner_3M.tscn" id="5_6l7x8"]
+[ext_resource type="PackedScene" uid="uid://247o1co5dtne" path="res://FinalAssets/StaticMeshes/Environments/2.0/UrbanBuildKit/Scenes/BaseKit/SM_CementBarrier_3M.tscn" id="6_o4uri"]
+[ext_resource type="PackedScene" uid="uid://djlhf2syy1bqx" path="res://FinalAssets/StaticMeshes/Environments/2.0/UrbanBuildKit/Scenes/Slabs/SM_Slab_18x18_3M.tscn" id="8_ijkye"]
+
+[node name="Node3D" type="Node3D" unique_id=202265659]
+
+[node name="Node3D25" parent="." unique_id=1890486789 instance=ExtResource("4_sjg7l")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 6.437459e-07, 6.5, 18)
+
+[node name="Node3D26" parent="." unique_id=1223911898 instance=ExtResource("5_6l7x8")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 18, 6.5, 6.437459e-07)
+
+[node name="Node3D27" parent="." unique_id=1335779035 instance=ExtResource("6_o4uri")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 16.5, 6.5, 5.9999995)
+
+[node name="Node3D39" parent="." unique_id=2131431702 instance=ExtResource("6_o4uri")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 16.5, 6.5, 9)
+
+[node name="Node3D64" parent="." unique_id=254261821 instance=ExtResource("6_o4uri")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 16.5, 6.5, 12)
+
+[node name="Node3D87" parent="." unique_id=1718051190 instance=ExtResource("6_o4uri")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 16.5, 6.5, 15)
+
+[node name="Node3D112" parent="." unique_id=2026647643 instance=ExtResource("6_o4uri")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 16.5, 6.5, 18)
+
+[node name="Node3D28" parent="." unique_id=784582056 instance=ExtResource("6_o4uri")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.5, 0.5)
+
+[node name="Node3D38" parent="." unique_id=1002679132 instance=ExtResource("6_o4uri")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 6.5, 0.5)
+
+[node name="Node3D61" parent="." unique_id=373675457 instance=ExtResource("6_o4uri")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 6.5, 0.5)
+
+[node name="Node3D86" parent="." unique_id=1846862181 instance=ExtResource("6_o4uri")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 6.5, 0.5)
+
+[node name="Node3D111" parent="." unique_id=434951444 instance=ExtResource("6_o4uri")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 6.5, 0.5)
+
+[node name="Slab_18x_3M" parent="." unique_id=269461536 instance=ExtResource("8_ijkye")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)

@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://c0ou3fh6kw3ee"]
+
+[ext_resource type="PackedScene" uid="uid://8nsxdj3ibrsc" path="res://FinalAssets/StaticMeshes/Environments/2.0/UrbanBuildKit/Scenes/BaseKit/SM_CementWall_3M.tscn" id="2_k2nd5"]
+[ext_resource type="PackedScene" uid="uid://ch5bojkmxndit" path="res://FinalAssets/StaticMeshes/Environments/2.0/UrbanBuildKit/Scenes/BaseKit/SM_CementPillar_3M.tscn" id="3_gq7rp"]
+[ext_resource type="PackedScene" uid="uid://dq3y72vc308k1" path="res://FinalAssets/StaticMeshes/Environments/2.0/UrbanBuildKit/Scenes/Slabs/SM_Slab_SA_6x12_3M.tscn" id="3_jpyer"]
+
+[node name="Node3D" type="Node3D" unique_id=1318014366]
+
+[node name="Node3D6" parent="." unique_id=1356979784 instance=ExtResource("2_k2nd5")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10.5, 3, 6)
+
+[node name="Node3D7" parent="." unique_id=577577782 instance=ExtResource("2_k2nd5")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10.5, 3, 2.9999995)
+
+[node name="Node3D30" parent="." unique_id=2102511722 instance=ExtResource("2_k2nd5")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10.5, 0, 6)
+
+[node name="Node3D31" parent="." unique_id=891435673 instance=ExtResource("2_k2nd5")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10.5, 0, 2.9999995)
+
+[node name="Node3D8" parent="." unique_id=927796938 instance=ExtResource("2_k2nd5")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.5, 3, 0)
+
+[node name="Node3D9" parent="." unique_id=356114103 instance=ExtResource("2_k2nd5")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.5, 3, 3)
+
+[node name="Node3D26" parent="." unique_id=784071280 instance=ExtResource("2_k2nd5")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.5, 0, 0)
+
+[node name="Node3D27" parent="." unique_id=1324767799 instance=ExtResource("2_k2nd5")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.5, 0, 3)
+
+[node name="Node3D11" parent="." unique_id=739573883 instance=ExtResource("3_gq7rp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 3, 1)
+
+[node name="Node3D12" parent="." unique_id=854356042 instance=ExtResource("3_gq7rp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 3, 4)
+
+[node name="Node3D28" parent="." unique_id=1016600815 instance=ExtResource("3_gq7rp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 1)
+
+[node name="Node3D29" parent="." unique_id=966378555 instance=ExtResource("3_gq7rp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 4)
+
+[node name="Node3D13" parent="." unique_id=1994958454 instance=ExtResource("3_gq7rp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 3, 1)
+
+[node name="Node3D14" parent="." unique_id=1088996362 instance=ExtResource("3_gq7rp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 3, 4)
+
+[node name="Node3D32" parent="." unique_id=1452571951 instance=ExtResource("3_gq7rp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, 1)
+
+[node name="Node3D33" parent="." unique_id=1684292412 instance=ExtResource("3_gq7rp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, 4)
+
+[node name="Slab_SA_6x12_3M" parent="." unique_id=761004561 instance=ExtResource("3_jpyer")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)

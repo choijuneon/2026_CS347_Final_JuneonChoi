@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bb7elu36rfdhm"]
+
+[ext_resource type="PackedScene" uid="uid://8nsxdj3ibrsc" path="res://FinalAssets/StaticMeshes/Environments/2.0/UrbanBuildKit/Scenes/BaseKit/SM_CementWall_3M.tscn" id="1_rwddi"]
+[ext_resource type="PackedScene" uid="uid://ch5bojkmxndit" path="res://FinalAssets/StaticMeshes/Environments/2.0/UrbanBuildKit/Scenes/BaseKit/SM_CementPillar_3M.tscn" id="2_biqs7"]
+[ext_resource type="PackedScene" uid="uid://cdo037xpwx2vq" path="res://FinalAssets/StaticMeshes/Environments/2.0/UrbanBuildKit/FBX/BaseKit/SM_CementSlab_3M.fbx" id="3_biqs7"]
+
+[node name="Node3D" type="Node3D" unique_id=1912052688]
+
+[node name="Node3D17" parent="." unique_id=840460544 instance=ExtResource("1_rwddi")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 4.5, 0, 2.999999)
+
+[node name="Node3D21" parent="." unique_id=1959704708 instance=ExtResource("1_rwddi")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.5, 0, 0)
+
+[node name="Node3D23" parent="." unique_id=739573883 instance=ExtResource("2_biqs7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 1)
+
+[node name="Node3D18" parent="." unique_id=650778501 instance=ExtResource("2_biqs7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 1)
+
+[node name="SM_CementSlab_3M" parent="." unique_id=415429600 instance=ExtResource("3_biqs7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="SM_CementSlab_3M2" parent="." unique_id=195598515 instance=ExtResource("3_biqs7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 3, 0)

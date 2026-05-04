@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://2sjaq0pnffvb"]
+
+[ext_resource type="PackedScene" uid="uid://bhkpghuf6x8hb" path="res://FinalAssets/StaticMeshes/Environments/3.0/Obstacles&Ramps/FBX/SM_WA_ShippingContainerWithDoors_v03.fbx" id="1_fqs14"]
+
+[node name="Node3D" type="Node3D" unique_id=1925615727]
+
+[node name="SM_WA_ShippingContainerWithDoors_v03" parent="." unique_id=1596882030 instance=ExtResource("1_fqs14")]
+
+[node name="SM_WA_ShippingContainerDoorRight_v02" parent="SM_WA_ShippingContainerWithDoors_v03/SM_ShippingContainerWithDoors_v01" parent_id_path=PackedInt32Array(1596882030, 18433370) index="1" unique_id=695299112]
+transform = Transform3D(-0.4249894, 0, 0.9051982, 0, 1, 0, -0.9051982, 0, -0.4249894, -100.03749, -1.4210855e-14, -600)
+
+[node name="SM_WA_ShippingContainerDoorLeft_v02" parent="SM_WA_ShippingContainerWithDoors_v03/SM_ShippingContainerWithDoors_v01" parent_id_path=PackedInt32Array(1596882030, 18433370) index="2" unique_id=1501330338]
+transform = Transform3D(-0.2443936, 0, -0.96967614, 0, 1, 0, 0.96967614, 0, -0.2443936, 100, 1.7763568e-15, -600)
+
+[node name="SM_WA_ShippingContainerDoorRight_v03" parent="SM_WA_ShippingContainerWithDoors_v03/SM_ShippingContainerWithDoors_v01" parent_id_path=PackedInt32Array(1596882030, 18433370) index="3" unique_id=590983644]
+transform = Transform3D(0.56724024, 0, -0.8235524, 0, 1, 0, 0.8235524, 0, 0.56724024, 100, -1.4210855e-14, 600)
+
+[node name="SM_WA_ShippingContainerDoorLeft_v03" parent="SM_WA_ShippingContainerWithDoors_v03/SM_ShippingContainerWithDoors_v01" parent_id_path=PackedInt32Array(1596882030, 18433370) index="4" unique_id=725397510]
+transform = Transform3D(0.5571945, 0, 0.830382, 0, 1, 0, -0.830382, 0, 0.5571945, -100, 1.7763568e-15, 600)
+
+[editable path="SM_WA_ShippingContainerWithDoors_v03"]

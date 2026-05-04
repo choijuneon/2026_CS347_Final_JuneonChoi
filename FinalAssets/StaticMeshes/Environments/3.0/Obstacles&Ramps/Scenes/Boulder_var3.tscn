@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cacfvxdrkvwej"]
+
+[ext_resource type="PackedScene" uid="uid://v6omtfmyusxk" path="res://FinalAssets/StaticMeshes/Environments/3.0/Obstacles&Ramps/FBX/SM_ENV_BoulderVar3_v02.fbx" id="1_2nlod"]
+[ext_resource type="Material" uid="uid://pmljejv4irt1" path="res://FinalAssets/Materials/MAT_RockAtlas.tres" id="2_8v34g"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_iiu86"]
+radius = 1924.7848
+height = 5411.559
+
+[node name="Node3D" type="Node3D" unique_id=332385389]
+
+[node name="SM_ENV_BoulderVar3_v02" parent="." unique_id=677667386 instance=ExtResource("1_2nlod")]
+
+[node name="SM_ENV_BoulderVar3_v01" parent="SM_ENV_BoulderVar3_v02/group1" parent_id_path=PackedInt32Array(677667386, 846670199) index="0" unique_id=291117417]
+material_override = ExtResource("2_8v34g")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="SM_ENV_BoulderVar3_v02" unique_id=1579214449]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SM_ENV_BoulderVar3_v02/RigidBody3D" unique_id=1975443699]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, -2.13849, 27.057793, -4.5305967)
+shape = SubResource("CapsuleShape3D_iiu86")
+
+[editable path="SM_ENV_BoulderVar3_v02"]

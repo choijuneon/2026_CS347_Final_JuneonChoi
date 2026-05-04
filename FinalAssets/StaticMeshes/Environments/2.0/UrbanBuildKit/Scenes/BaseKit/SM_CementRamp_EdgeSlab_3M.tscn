@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bx7wfc0im5s18"]
+
+[ext_resource type="PackedScene" uid="uid://bkvnmutu868hb" path="res://FinalAssets/StaticMeshes/Environments/2.0/UrbanBuildKit/FBX/BaseKit/SM_CementRamp_EdgeSlab_3M.fbx" id="1_u8j7l"]
+
+[node name="Node3D" type="Node3D" unique_id=329038710]
+
+[node name="SM_CementRamp_EdgeSlab_3M" parent="." unique_id=1971177297 instance=ExtResource("1_u8j7l")]

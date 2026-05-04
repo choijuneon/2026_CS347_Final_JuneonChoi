@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dcnps7u08u3vb"]
+
+[ext_resource type="Script" uid="uid://c0jl8c86fa8xx" path="res://GTestStuff/Scripts/pause_screen.gd" id="1_yu4br"]
+
+[node name="PauseScreen" type="Node2D" unique_id=427136990]
+process_mode = 3
+script = ExtResource("1_yu4br")
+
+[node name="Unpause" type="Button" parent="." unique_id=437976060]
+offset_left = 282.0
+offset_top = 183.0
+offset_right = 819.0
+offset_bottom = 416.0
+text = "Unpause"
+
+[connection signal="pressed" from="Unpause" to="." method="_on_unpause_pressed"]

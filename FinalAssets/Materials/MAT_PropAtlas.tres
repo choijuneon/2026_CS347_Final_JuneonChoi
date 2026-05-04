@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c1jv3mwgakd58"]
+
+[ext_resource type="Texture2D" uid="uid://kluvm05qy5f7" path="res://FinalAssets/Textures/PropAtlas/TX_propAtlas_v013_standardSurface1_BaseColor.png" id="1_6ghu4"]
+[ext_resource type="Texture2D" uid="uid://dxiekf640grrp" path="res://FinalAssets/Textures/PropAtlas/TX_propAtlas_v013_standardSurface1_OcclusionRoughnessMetallic.png" id="2_8jxxr"]
+
+[resource]
+albedo_texture = ExtResource("1_6ghu4")
+metallic = 1.0
+metallic_texture = ExtResource("2_8jxxr")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_8jxxr")
+roughness_texture_channel = 1
+ao_enabled = true
+ao_texture = ExtResource("2_8jxxr")

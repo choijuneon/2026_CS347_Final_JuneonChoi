@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bufm46gt5smuc"]
+
+[ext_resource type="Script" uid="uid://da0olhdsjnq5n" path="res://GTestStuff/Scripts/CheckPoint.gd" id="1_udpwe"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s5630"]
+transparency = 1
+albedo_color = Color(1, 0, 0, 0.50980395)
+
+[sub_resource type="BoxMesh" id="BoxMesh_q8jsa"]
+material = SubResource("StandardMaterial3D_s5630")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_peayc"]
+
+[node name="PCheckpoint" type="Area3D" unique_id=1454856157]
+script = ExtResource("1_udpwe")
+
+[node name="Track_Water" type="MeshInstance3D" parent="." unique_id=556284156]
+transform = Transform3D(10, 0, 0, 0, 5, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_q8jsa")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=661286726]
+transform = Transform3D(10, 0, 0, 0, 5, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_peayc")

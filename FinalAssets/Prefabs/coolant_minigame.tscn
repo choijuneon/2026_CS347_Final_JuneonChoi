@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://clurvmjulir6v"]
+
+[ext_resource type="Script" uid="uid://c0m1ueca154nx" path="res://FinalAssets/Scripts/HeartbeatMinigame.gd" id="1_pjb7u"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7afbq"]
+bg_color = Color(0, 0.3, 0.3, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qxy52"]
+bg_color = Color(0, 0.57, 0.57, 1)
+
+[node name="CoolantMinigame" type="Node" unique_id=1607652290]
+script = ExtResource("1_pjb7u")
+drainRate = 6
+pumpRate = 10
+ledNum = "9"
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1428239880]
+offset_left = 880.0
+offset_top = 611.0
+offset_right = 994.0
+offset_bottom = 638.0
+theme_override_styles/background = SubResource("StyleBoxFlat_7afbq")
+theme_override_styles/fill = SubResource("StyleBoxFlat_qxy52")
+value = 100.0

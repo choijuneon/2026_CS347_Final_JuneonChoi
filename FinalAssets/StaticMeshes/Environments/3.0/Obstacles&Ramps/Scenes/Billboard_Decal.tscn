@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://clw0x13rkkstc"]
+
+[ext_resource type="PackedScene" uid="uid://bfhdaq5tj8ukh" path="res://FinalAssets/StaticMeshes/Environments/3.0/Obstacles&Ramps/FBX/SM_WA_BillboardStand_v03.fbx" id="1_hb8au"]
+[ext_resource type="PackedScene" uid="uid://cvnfbchvospy4" path="res://FinalAssets/StaticMeshes/Environments/3.0/Obstacles&Ramps/FBX/SM_WA_LargeBillboard_v03.fbx" id="2_kwtwi"]
+[ext_resource type="Texture2D" uid="uid://bbnhtvrgtyk1v" path="res://FinalAssets/Textures/Decals/DCL_Tentacle.png" id="3_hra6a"]
+
+[node name="Node3D" type="Node3D" unique_id=1322114743]
+
+[node name="SM_WA_BillboardStand_v03" parent="." unique_id=579584148 instance=ExtResource("1_hb8au")]
+
+[node name="SM_WA_LargeBillboard_v03" parent="." unique_id=889997206 instance=ExtResource("2_kwtwi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.39511967, 7.639217, 0)
+
+[node name="Decal" type="Decal" parent="." unique_id=1358680411]
+transform = Transform3D(-2.3436823, -5.089761e-08, -1.02445604e-07, 1.02445604e-07, 1.1124027e-15, -2.3436823, 2.0489121e-07, -0.5822008, 4.4780396e-15, 6.651925, 9.959476, 0.39788866)
+texture_albedo = ExtResource("3_hra6a")

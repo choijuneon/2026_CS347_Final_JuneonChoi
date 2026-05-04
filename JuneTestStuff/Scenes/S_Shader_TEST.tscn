@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://dy6dulskqt1y0"]
+
+[ext_resource type="Material" uid="uid://cad3b312o746f" path="res://JuneTestStuff/Shader/Water_preset_03.tres" id="1_kwpwy"]
+[ext_resource type="Material" uid="uid://cbqv2c0lck03v" path="res://JuneTestStuff/Shader/Water_preset_02.tres" id="1_qn3gw"]
+[ext_resource type="Material" uid="uid://cc3ibr1lxdrtd" path="res://JuneTestStuff/Shader/Water_preset_01.tres" id="3_bdlcx"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_bpve3"]
+material = ExtResource("1_kwpwy")
+subdivide_width = 200
+subdivide_depth = 200
+orientation = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bpve3"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_qn3gw"]
+material = SubResource("StandardMaterial3D_bpve3")
+
+[sub_resource type="QuadMesh" id="QuadMesh_fhwlh"]
+material = ExtResource("1_qn3gw")
+subdivide_width = 200
+subdivide_depth = 200
+orientation = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_aryxw"]
+material = ExtResource("3_bdlcx")
+subdivide_width = 200
+subdivide_depth = 200
+orientation = 1
+
+[node name="SShaderTest" type="Node3D" unique_id=141543570]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=863978196]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0.721, -0.041)
+lod_bias = 0.001
+mesh = SubResource("QuadMesh_bpve3")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=1623427626]
+transform = Transform3D(2.078847, 0, 0, 0, 2.078847, 0, 0, 0, 2.078847, -2.9250407, 0, -0.7628398)
+mesh = SubResource("CapsuleMesh_qn3gw")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="." unique_id=761023241]
+transform = Transform3D(2.078847, 0, 0, 0, 2.078847, 0, 0, 0, 2.078847, 7.575, 0, -0.763)
+mesh = SubResource("CapsuleMesh_qn3gw")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="." unique_id=69488844]
+transform = Transform3D(2.078847, 0, 0, 0, 2.078847, 0, 0, 0, 2.078847, -13.425, 0, -0.763)
+mesh = SubResource("CapsuleMesh_qn3gw")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=512582970]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 10.5, 0.721, -0.041)
+material_override = ExtResource("1_qn3gw")
+lod_bias = 0.001
+mesh = SubResource("QuadMesh_fhwlh")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=1366381306]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -10.5, 0.721, -0.041)
+lod_bias = 0.001
+mesh = SubResource("QuadMesh_aryxw")

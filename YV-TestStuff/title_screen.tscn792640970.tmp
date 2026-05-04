@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dnhrcpwappcyn"]
+
+[ext_resource type="Script" uid="uid://rorycbrit1vh" path="res://TitleScreen.gd" id="1_q0yjj"]
+
+[node name="TitleScreen" type="Control" unique_id=407625962]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_q0yjj")
+
+[node name="StartButton" type="Button" parent="." unique_id=1680340564]
+layout_mode = 0
+offset_left = 481.0
+offset_top = 312.0
+offset_right = 654.0
+offset_bottom = 392.0
+text = "Start
+"
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]

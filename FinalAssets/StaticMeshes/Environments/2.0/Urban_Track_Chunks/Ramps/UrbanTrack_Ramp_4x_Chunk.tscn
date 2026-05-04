@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://drdbdkte6sovc"]
+
+[ext_resource type="PackedScene" uid="uid://bjkomotd4hdgu" path="res://FinalAssets/StaticMeshes/Environments/2.0/UrbanBuildKit/Scenes/BaseKit/SM_CementBarrier_Ramp_3M.tscn" id="1_gff3w"]
+[ext_resource type="PackedScene" uid="uid://bx7wfc0im5s18" path="res://FinalAssets/StaticMeshes/Environments/2.0/UrbanBuildKit/Scenes/BaseKit/SM_CementRamp_EdgeSlab_3M.tscn" id="2_lsoxv"]
+[ext_resource type="PackedScene" uid="uid://c0sp4pj4rx6dp" path="res://FinalAssets/StaticMeshes/Environments/2.0/UrbanBuildKit/Scenes/BaseKit/SM_CementRamp_3M.tscn" id="3_s62ua"]
+[ext_resource type="PackedScene" uid="uid://w36rtij1ur31" path="res://FinalAssets/StaticMeshes/Environments/2.0/UrbanBuildKit/Scenes/BaseKit/SM_CementPillar_Ramp_3M.tscn" id="4_tqiu8"]
+
+[node name="Node3D" type="Node3D" unique_id=1049606025]
+
+[node name="Node3D" parent="." unique_id=759704330 instance=ExtResource("1_gff3w")]
+
+[node name="Node3D5" parent="." unique_id=344477720 instance=ExtResource("1_gff3w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, 0)
+
+[node name="Node3D2" parent="." unique_id=329038710 instance=ExtResource("2_lsoxv")]
+
+[node name="Node3D4" parent="." unique_id=1884196698 instance=ExtResource("2_lsoxv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5, 0, 0)
+
+[node name="Node3D3" parent="." unique_id=1792499273 instance=ExtResource("3_s62ua")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0)
+
+[node name="Node3D6" parent="." unique_id=293211798 instance=ExtResource("3_s62ua")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 0)
+
+[node name="Node3D9" parent="." unique_id=2101564483 instance=ExtResource("3_s62ua")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, 0)
+
+[node name="Node3D10" parent="." unique_id=743563433 instance=ExtResource("3_s62ua")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, 0)
+
+[node name="Node3D7" parent="." unique_id=1876446945 instance=ExtResource("4_tqiu8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 1.5)
+
+[node name="Node3D8" parent="." unique_id=875422791 instance=ExtResource("4_tqiu8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1.5)

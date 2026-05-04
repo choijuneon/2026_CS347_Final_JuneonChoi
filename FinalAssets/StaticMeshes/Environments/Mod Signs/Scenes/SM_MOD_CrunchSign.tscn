@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cl4kamqaqgrqi"]
+
+[ext_resource type="PackedScene" uid="uid://cids5rxy5pwy1" path="res://FinalAssets/StaticMeshes/Environments/Mod Signs/SM_MOD_CrunchSign.fbx" id="1_r5o13"]
+[ext_resource type="Material" uid="uid://b5dru7s1fiu83" path="res://FinalAssets/Materials/MAT_ModSignAtlas.tres" id="2_yqhqf"]
+
+[node name="Node3D" type="Node3D" unique_id=247616879]
+
+[node name="SM_MOD_CrunchSign" parent="." unique_id=872372386 instance=ExtResource("1_r5o13")]
+
+[node name="crunchMod" parent="SM_MOD_CrunchSign" index="0" unique_id=704202968]
+material_override = ExtResource("2_yqhqf")
+
+[editable path="SM_MOD_CrunchSign"]

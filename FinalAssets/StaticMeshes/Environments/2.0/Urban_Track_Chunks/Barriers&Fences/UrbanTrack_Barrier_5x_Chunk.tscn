@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bhrb2rve8e4if"]
+
+[ext_resource type="PackedScene" uid="uid://247o1co5dtne" path="res://FinalAssets/StaticMeshes/Environments/2.0/UrbanBuildKit/Scenes/BaseKit/SM_CementBarrier_3M.tscn" id="1_r4x1w"]
+
+[node name="Node3D" type="Node3D" unique_id=1544140105]
+
+[node name="Node3D" parent="." unique_id=1335779035 instance=ExtResource("1_r4x1w")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.5, 0, 3)
+
+[node name="Node3D2" parent="." unique_id=587225885 instance=ExtResource("1_r4x1w")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.5, 0, 6)
+
+[node name="Node3D3" parent="." unique_id=2053951112 instance=ExtResource("1_r4x1w")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.5, 0, 9)
+
+[node name="Node3D4" parent="." unique_id=1521756153 instance=ExtResource("1_r4x1w")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.5, 0, 12)
+
+[node name="Node3D5" parent="." unique_id=1866828999 instance=ExtResource("1_r4x1w")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.5, 0, 15)

@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://cgjxpapdd5o12"]
+
+[ext_resource type="PackedScene" uid="uid://bjkomotd4hdgu" path="res://FinalAssets/StaticMeshes/Environments/2.0/UrbanBuildKit/Scenes/BaseKit/SM_CementBarrier_Ramp_3M.tscn" id="1_fih8e"]
+[ext_resource type="PackedScene" uid="uid://bx7wfc0im5s18" path="res://FinalAssets/StaticMeshes/Environments/2.0/UrbanBuildKit/Scenes/BaseKit/SM_CementRamp_EdgeSlab_3M.tscn" id="2_w8vcj"]
+[ext_resource type="PackedScene" uid="uid://c0sp4pj4rx6dp" path="res://FinalAssets/StaticMeshes/Environments/2.0/UrbanBuildKit/Scenes/BaseKit/SM_CementRamp_3M.tscn" id="3_rgu6p"]
+[ext_resource type="PackedScene" uid="uid://w36rtij1ur31" path="res://FinalAssets/StaticMeshes/Environments/2.0/UrbanBuildKit/Scenes/BaseKit/SM_CementPillar_Ramp_3M.tscn" id="4_fih8e"]
+
+[node name="Node3D" type="Node3D" unique_id=312067586]
+
+[node name="Node3D" parent="." unique_id=759704330 instance=ExtResource("1_fih8e")]
+
+[node name="Node3D5" parent="." unique_id=1810425142 instance=ExtResource("1_fih8e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0)
+
+[node name="Node3D2" parent="." unique_id=329038710 instance=ExtResource("2_w8vcj")]
+
+[node name="Node3D4" parent="." unique_id=1661721945 instance=ExtResource("2_w8vcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, 0)
+
+[node name="Node3D3" parent="." unique_id=1792499273 instance=ExtResource("3_rgu6p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0)
+
+[node name="Node3D6" parent="." unique_id=1266309918 instance=ExtResource("3_rgu6p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 0)
+
+[node name="Node3D7" parent="." unique_id=1876446945 instance=ExtResource("4_fih8e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 1.5)
+
+[node name="Node3D8" parent="." unique_id=939370454 instance=ExtResource("4_fih8e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1.5)

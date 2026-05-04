@@ -1,0 +1,112 @@
+[gd_scene format=3 uid="uid://bl4ukatjvw4ji"]
+
+[ext_resource type="Texture2D" uid="uid://cuhmiv0g6ddm2" path="res://FinalAssets/Textures/UI/UI_Icon_Oil_v01.png" id="2_34plf"]
+[ext_resource type="FontFile" uid="uid://dy5t1j0fogdl0" path="res://FinalAssets/Fonts/belligerent.ttf" id="2_aysgh"]
+[ext_resource type="Script" uid="uid://5j3osxgjjd1x" path="res://YV-TestStuff/engine_sanity.gd" id="2_f6evw"]
+[ext_resource type="FontFile" uid="uid://xog4hm1efxfq" path="res://FinalAssets/Fonts/boston.ttf" id="2_o3tmn"]
+[ext_resource type="Script" uid="uid://b17b1etqnte1i" path="res://YV-TestStuff/number_of_bolts.gd" id="3_34plf"]
+[ext_resource type="Texture2D" uid="uid://cm3kaor4pycbt" path="res://FinalAssets/Animations & Effects/Healthbar2.png" id="4_kc3k2"]
+[ext_resource type="Texture2D" uid="uid://do1e60bpw5mq" path="res://FinalAssets/Animations & Effects/Healthbar1.png" id="5_v8oqb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kqkh1"]
+bg_color = Color(0.17402825, 0.17402828, 0.17402813, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sj71h"]
+texture = ExtResource("4_kc3k2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dfkte"]
+texture = ExtResource("5_v8oqb")
+
+[node name="UserInterface" type="Control" unique_id=112705093]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="EngineSanity" type="Panel" parent="." unique_id=636248718]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 13.0
+offset_top = -82.0
+offset_right = 441.0
+offset_bottom = -22.0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_kqkh1")
+script = ExtResource("2_f6evw")
+
+[node name="EngineSanityTitle" type="Label" parent="EngineSanity" unique_id=1389202846]
+layout_mode = 0
+offset_left = -32.0
+offset_top = -50.0
+offset_right = 468.0
+offset_bottom = 3.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("2_o3tmn")
+theme_override_font_sizes/font_size = 34
+text = "ENGINE SANITY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HealthBar" type="ProgressBar" parent="EngineSanity" unique_id=1539261542]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -202.0
+offset_top = -23.0
+offset_right = 198.0
+offset_bottom = 22.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 19
+theme_override_fonts/font = ExtResource("2_aysgh")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/background = SubResource("StyleBoxTexture_sj71h")
+theme_override_styles/fill = SubResource("StyleBoxTexture_dfkte")
+value = 50.0
+
+[node name="Bolts" type="VBoxContainer" parent="." unique_id=388563157]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 13.0
+offset_top = -216.0
+offset_right = 88.0
+offset_bottom = -141.0
+grow_vertical = 0
+
+[node name="BoltsImage" type="TextureRect" parent="Bolts" unique_id=338865338]
+layout_mode = 2
+texture = ExtResource("2_34plf")
+expand_mode = 4
+
+[node name="NumberOfBolts" type="Label" parent="Bolts/BoltsImage" unique_id=93404630]
+layout_mode = 0
+offset_left = 78.0
+offset_top = 34.0
+offset_right = 139.0
+offset_bottom = 76.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.1882353)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("2_aysgh")
+theme_override_font_sizes/font_size = 30
+text = "Oil: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_34plf")

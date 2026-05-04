@@ -1,0 +1,1523 @@
+[gd_scene format=3 uid="uid://ckv5uor8ejsro"]
+
+[ext_resource type="Script" uid="uid://cfjekii1486s4" path="res://FinalAssets/Scripts/ArduinoTest.cs" id="1_3i3qb"]
+[ext_resource type="PackedScene" uid="uid://rhexo17jf7dq" path="res://FinalAssets/Prefabs/maintenance_minigame.tscn" id="2_2j1r0"]
+[ext_resource type="PackedScene" uid="uid://dvxkgrmy6b2qk" path="res://FinalAssets/StaticMeshes/Environments/Nature_Build_Kit/Ocean_Placeholder_M_01.fbx" id="2_kb56x"]
+[ext_resource type="PackedScene" uid="uid://cm84haw7giyi6" path="res://FinalAssets/StaticMeshes/Environments/Placeholder_Kit/TSCN/sm_track_base_01.tscn" id="2_s172f"]
+[ext_resource type="Script" uid="uid://pdjvsmt8kswh" path="res://GTestStuff/Scripts/SimonSays.gd" id="2_taedt"]
+[ext_resource type="Script" uid="uid://l2qx1r1uhy7o" path="res://JuneTestStuff/Scripts/ModInputControl.gd" id="3_2j1r0"]
+[ext_resource type="PackedScene" uid="uid://b63ciccr0skf0" path="res://FinalAssets/StaticMeshes/Environments/Placeholder_Kit/TSCN/sm_track_base_half_01.tscn" id="3_wvglt"]
+[ext_resource type="PackedScene" uid="uid://bgxxb6nielx53" path="res://FinalAssets/StaticMeshes/Environments/Placeholder_Kit/TSCN/sm_track_base_rail_block_01.tscn" id="4_1171w"]
+[ext_resource type="Script" uid="uid://d3k0smj4wj374" path="res://JuneTestStuff/Scripts/ModMethods.gd" id="4_d25n7"]
+[ext_resource type="PackedScene" uid="uid://bap4rspa7gbde" path="res://FinalAssets/StaticMeshes/Environments/Placeholder_Kit/TSCN/sm_track_base_quarter_01.tscn" id="4_wvglt"]
+[ext_resource type="Script" uid="uid://b8lokwpupmlk7" path="res://JuneTestStuff/Scripts/ChargeBar.gd" id="5_gqpl6"]
+[ext_resource type="PackedScene" uid="uid://lligq4rhww47" path="res://FinalAssets/StaticMeshes/Environments/Placeholder_Kit/TSCN/sm_track_base_eighth_01.tscn" id="5_kb56x"]
+[ext_resource type="PackedScene" uid="uid://c0k1fev3esqhx" path="res://FinalAssets/StaticMeshes/Environments/Placeholder_Kit/TSCN/sm_track_base_ramp_half_01.tscn" id="6_1171w"]
+[ext_resource type="Script" uid="uid://bd7h7c0qbwxcy" path="res://JuneTestStuff/Scripts/camera_test.gd" id="6_ynoda"]
+[ext_resource type="PackedScene" uid="uid://df5e2shjjvl2j" path="res://JuneTestStuff/Scenes/P_bike_TestingNewAssets.tscn" id="7_uyc3q"]
+[ext_resource type="PackedScene" uid="uid://ccpj8ikr17tns" path="res://FinalAssets/StaticMeshes/Environments/Placeholder_Kit/TSCN/island_sm_01_1.tscn" id="8_pcn02"]
+[ext_resource type="Script" uid="uid://cnyb3ke5q6ntu" path="res://JuneTestStuff/Scripts/collision_test.gd" id="9_taedt"]
+[ext_resource type="PackedScene" uid="uid://cxoa341lapfum" path="res://FinalAssets/Prefabs/P_StartingLine.tscn" id="18_d25n7"]
+[ext_resource type="PackedScene" uid="uid://bufm46gt5smuc" path="res://GTestStuff/Scenes/P_Checkpoint.tscn" id="19_gqpl6"]
+
+[sub_resource type="Curve" id="Curve_1quj0"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.24624625, 1), 0.0, 0.0, 0, 0, Vector2(0.4984985, 0.85167456), -0.7840053, -0.7840053, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fca2h"]
+sky_top_color = Color(0.25074077, 0.43474057, 0.7808944, 1)
+sky_horizon_color = Color(0.41316223, 0.45916218, 0.54570067, 1)
+ground_bottom_color = Color(0, 0, 0, 1)
+ground_horizon_color = Color(0.41316223, 0.45916218, 0.54570067, 1)
+energy_multiplier = 0.5
+
+[sub_resource type="Sky" id="Sky_8r5eb"]
+sky_material = SubResource("ProceduralSkyMaterial_fca2h")
+
+[sub_resource type="Environment" id="Environment_s2ryw"]
+background_mode = 2
+sky = SubResource("Sky_8r5eb")
+tonemap_mode = 2
+
+[sub_resource type="BoxMesh" id="BoxMesh_kb56x"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2j1r0"]
+transparency = 1
+albedo_color = Color(0, 0.5686275, 0.7921569, 0.5882353)
+
+[sub_resource type="BoxMesh" id="BoxMesh_d25n7"]
+material = SubResource("StandardMaterial3D_2j1r0")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gqpl6"]
+size = Vector3(1000, 10, 1000)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_vaqn4"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_s172f"]
+
+[node name="FinalMainScene" type="Node3D" unique_id=1582619210]
+
+[node name="ArduinoInput" type="Node" parent="." unique_id=343320572]
+script = ExtResource("1_3i3qb")
+
+[node name="MaintenanceMinigame" parent="." unique_id=1016574709 instance=ExtResource("2_2j1r0")]
+
+[node name="SimonSays" type="Node" parent="." unique_id=938564219]
+script = ExtResource("2_taedt")
+
+[node name="Panel" type="Panel" parent="SimonSays" unique_id=27823974]
+offset_left = 829.0
+offset_top = 577.0
+offset_right = 869.0
+offset_bottom = 617.0
+scale = Vector2(6.000002, 0.68940115)
+
+[node name="InputLabel" type="Label" parent="SimonSays" unique_id=1456863177]
+offset_left = 829.0
+offset_top = 578.0
+offset_right = 1068.0
+offset_bottom = 628.0
+text = "[\"right\", \"right\", \"right\", \"right\"]"
+horizontal_alignment = 1
+
+[node name="ModInputControl" type="Node" parent="." unique_id=744933627 node_paths=PackedStringArray("bike")]
+script = ExtResource("3_2j1r0")
+bike = NodePath("../Bike")
+
+[node name="ModMethods" type="Node" parent="." unique_id=1551570335 node_paths=PackedStringArray("bike")]
+script = ExtResource("4_d25n7")
+bike = NodePath("../Bike")
+fov_add_amount = 60.0
+fov_curve = SubResource("Curve_1quj0")
+
+[node name="Panel2" type="Panel" parent="ModMethods" unique_id=315638960]
+offset_left = 829.0
+offset_top = 543.0
+offset_right = 869.0
+offset_bottom = 583.0
+scale = Vector2(6.000002, 0.68940115)
+
+[node name="InputLabel2" type="Label" parent="ModMethods" unique_id=403526710]
+offset_left = 829.0
+offset_top = 544.0
+offset_right = 1068.0
+offset_bottom = 594.0
+text = "[\"right\", \"right\", \"right\", \"right\"]"
+horizontal_alignment = 1
+
+[node name="JumpChargeBar" type="Control" parent="." unique_id=1163887084]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 307.0
+offset_top = 407.0
+offset_right = 347.0
+offset_bottom = 447.0
+
+[node name="ProgressBar" type="ProgressBar" parent="JumpChargeBar" unique_id=1981757579 node_paths=PackedStringArray("bike")]
+layout_mode = 0
+offset_top = -228.0
+offset_right = 27.0
+offset_bottom = -7.0
+fill_mode = 3
+script = ExtResource("5_gqpl6")
+bike = NodePath("../../Bike")
+
+[node name="Panel" type="Panel" parent="JumpChargeBar" unique_id=1440146874]
+layout_mode = 0
+offset_left = -36.999996
+offset_right = 3.0000038
+offset_bottom = 40.0
+scale = Vector2(2.640002, 0.68940115)
+
+[node name="Label" type="Label" parent="JumpChargeBar" unique_id=1401160050]
+layout_mode = 0
+offset_left = -37.0
+offset_right = 62.0
+offset_bottom = 23.0
+text = "Jump Charge"
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=811988745 node_paths=PackedStringArray("target")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.5, 11.3842945, 302.3103)
+fov = 90.0
+script = ExtResource("6_ynoda")
+target = NodePath("../Bike")
+offset_y = 1.5
+offset_z = 2.0
+follow_speed = 12.0
+
+[node name="Bike" parent="." unique_id=2141863104 instance=ExtResource("7_uyc3q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.5, 8.9531765, 301.1553)
+acceleration = 2400.0
+max_speed = 15.0
+tire_max_turn_degrees = 20
+show_debug = false
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1588691793]
+transform = Transform3D(0.70710677, -0.3535534, 0.61237246, 0, 0.8660254, 0.5, -0.70710677, -0.3535534, 0.61237246, 0, 150, 0)
+light_color = Color(0.96586794, 0.96217054, 0.96519405, 1)
+shadow_enabled = true
+sky_mode = 1
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=295002972]
+environment = SubResource("Environment_s2ryw")
+
+[node name="EnvironmentAssets" type="Node3D" parent="." unique_id=731201504]
+
+[node name="Ocean_Placeholder_M_01" parent="EnvironmentAssets" unique_id=2041880194 instance=ExtResource("2_kb56x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="BoatBlock" type="Node3D" parent="EnvironmentAssets" unique_id=1402769593]
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="EnvironmentAssets/BoatBlock" unique_id=1999274057]
+transform = Transform3D(-4.371139e-06, 0, 25, 0, 15, 0, -100, 0, -1.0927847e-06, -17.438068, 5.5984254, 502.07635)
+mesh = SubResource("BoxMesh_kb56x")
+
+[node name="SpawnPoint" type="Node3D" parent="." unique_id=1837583979]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.5, 8.9531765, 301.1553)
+
+[node name="Water1" type="Area3D" parent="." unique_id=857933933 node_paths=PackedStringArray("locator")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+script = ExtResource("9_taedt")
+locator = NodePath("../SpawnPoint")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Water1" unique_id=1529285144]
+transform = Transform3D(750, 0, 0, 0, 10, 0, 0, 0, 750, 0, 0, 0)
+mesh = SubResource("BoxMesh_d25n7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Water1" unique_id=10160861]
+shape = SubResource("BoxShape3D_gqpl6")
+
+[node name="CourseAssets" type="Node3D" parent="." unique_id=581769330]
+
+[node name="Dock" type="Node" parent="CourseAssets" unique_id=1654797287]
+
+[node name="SM_Track_Base_01" parent="CourseAssets/Dock" unique_id=85972645 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 2.5, 252.5)
+
+[node name="SM_Track_Base_02" parent="CourseAssets/Dock" unique_id=1899249384 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 2.5, 252.5)
+
+[node name="SM_Track_Base_03" parent="CourseAssets/Dock" unique_id=1867295889 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 2.5, 252.5)
+
+[node name="SM_Track_Base_05" parent="CourseAssets/Dock" unique_id=851302570 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, 0, 252.5)
+
+[node name="SM_Track_Base_09" parent="CourseAssets/Dock" unique_id=49354064 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 2.5, 252.5)
+
+[node name="SM_Track_Base_194" parent="CourseAssets/Dock" unique_id=921088902 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 2.5, 247.5)
+
+[node name="SM_Track_Base_148" parent="CourseAssets/Dock" unique_id=358013596 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 2.5, 257.5)
+
+[node name="SM_Track_Base_149" parent="CourseAssets/Dock" unique_id=49605230 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 2.5, 257.5)
+
+[node name="SM_Track_Base_150" parent="CourseAssets/Dock" unique_id=962196348 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 2.5, 257.5)
+
+[node name="SM_Track_Base_151" parent="CourseAssets/Dock" unique_id=982766283 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 2.5, 257.5)
+
+[node name="SM_Track_Base_152" parent="CourseAssets/Dock" unique_id=1416167001 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, 2.5, 257.5)
+
+[node name="SM_Track_Base_153" parent="CourseAssets/Dock" unique_id=1778216675 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 2.5, 262.5)
+
+[node name="SM_Track_Base_154" parent="CourseAssets/Dock" unique_id=344212379 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 2.5, 262.5)
+
+[node name="SM_Track_Base_155" parent="CourseAssets/Dock" unique_id=121027055 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 2.5, 262.5)
+
+[node name="SM_Track_Base_156" parent="CourseAssets/Dock" unique_id=1623324417 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 2.5, 262.5)
+
+[node name="SM_Track_Base_157" parent="CourseAssets/Dock" unique_id=1346548321 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, 2.5, 262.5)
+
+[node name="SM_Track_Base_158" parent="CourseAssets/Dock" unique_id=1324143285 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 2.5, 267.5)
+
+[node name="SM_Track_Base_159" parent="CourseAssets/Dock" unique_id=1237430621 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 5, 267.5)
+
+[node name="SM_Track_Base_160" parent="CourseAssets/Dock" unique_id=833350646 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 5, 267.5)
+
+[node name="SM_Track_Base_161" parent="CourseAssets/Dock" unique_id=473928931 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 5, 267.5)
+
+[node name="SM_Track_Base_162" parent="CourseAssets/Dock" unique_id=896129297 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, 2.5, 267.5)
+
+[node name="SM_Track_Base_163" parent="CourseAssets/Dock" unique_id=205195634 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 2.5, 272.5)
+
+[node name="SM_Track_Base_164" parent="CourseAssets/Dock" unique_id=225506912 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 2.5, 272.5)
+
+[node name="SM_Track_Base_165" parent="CourseAssets/Dock" unique_id=458153835 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 2.5, 272.5)
+
+[node name="SM_Track_Base_166" parent="CourseAssets/Dock" unique_id=181387575 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 2.5, 272.5)
+
+[node name="SM_Track_Base_167" parent="CourseAssets/Dock" unique_id=1424387875 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, 2.5, 272.5)
+
+[node name="SM_Track_Base_168" parent="CourseAssets/Dock" unique_id=2103077112 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 2.5, 277.5)
+
+[node name="SM_Track_Base_169" parent="CourseAssets/Dock" unique_id=1071735315 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 2.5, 277.5)
+
+[node name="SM_Track_Base_170" parent="CourseAssets/Dock" unique_id=850326931 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 2.5, 277.5)
+
+[node name="SM_Track_Base_171" parent="CourseAssets/Dock" unique_id=1958744035 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 2.5, 277.5)
+
+[node name="SM_Track_Base_172" parent="CourseAssets/Dock" unique_id=1171938613 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, 2.5, 277.5)
+
+[node name="SM_Track_Base_173" parent="CourseAssets/Dock" unique_id=1708433916 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 2.5, 282.5)
+
+[node name="SM_Track_Base_174" parent="CourseAssets/Dock" unique_id=1943172636 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 2.5, 282.5)
+
+[node name="SM_Track_Base_175" parent="CourseAssets/Dock" unique_id=202439188 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 2.5, 282.5)
+
+[node name="SM_Track_Base_176" parent="CourseAssets/Dock" unique_id=1895337157 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 2.5, 282.5)
+
+[node name="SM_Track_Base_177" parent="CourseAssets/Dock" unique_id=486447937 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, 2.5, 282.5)
+
+[node name="SM_Track_Base_184" parent="CourseAssets/Dock" unique_id=1327210997 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 2.5, 287.5)
+
+[node name="SM_Track_Base_185" parent="CourseAssets/Dock" unique_id=1653184454 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 2.5, 287.5)
+
+[node name="SM_Track_Base_186" parent="CourseAssets/Dock" unique_id=746594836 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 2.5, 287.5)
+
+[node name="SM_Track_Base_187" parent="CourseAssets/Dock" unique_id=434128624 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 2.5, 287.5)
+
+[node name="SM_Track_Base_188" parent="CourseAssets/Dock" unique_id=867282339 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, 2.5, 287.5)
+
+[node name="SM_Track_Base_189" parent="CourseAssets/Dock" unique_id=1094158987 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 2.5, 292.5)
+
+[node name="SM_Track_Base_190" parent="CourseAssets/Dock" unique_id=537353348 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 2.5, 292.5)
+
+[node name="SM_Track_Base_191" parent="CourseAssets/Dock" unique_id=1377352358 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 2.5, 292.5)
+
+[node name="SM_Track_Base_192" parent="CourseAssets/Dock" unique_id=1698260513 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 2.5, 292.5)
+
+[node name="SM_Track_Base_193" parent="CourseAssets/Dock" unique_id=1147615327 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, 2.5, 292.5)
+
+[node name="SM_Track_Base_225" parent="CourseAssets/Dock" unique_id=1385511603 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 2.5, 297.5)
+
+[node name="SM_Track_Base_226" parent="CourseAssets/Dock" unique_id=221847085 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 2.5, 297.5)
+
+[node name="SM_Track_Base_227" parent="CourseAssets/Dock" unique_id=1419897640 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 2.5, 297.5)
+
+[node name="SM_Track_Base_228" parent="CourseAssets/Dock" unique_id=815168121 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 2.5, 297.5)
+
+[node name="SM_Track_Base_229" parent="CourseAssets/Dock" unique_id=1133214461 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, 2.5, 297.5)
+
+[node name="SM_Track_Base_230" parent="CourseAssets/Dock" unique_id=58198019 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 2.5, 302.5)
+
+[node name="SM_Track_Base_231" parent="CourseAssets/Dock" unique_id=852714755 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 2.5, 302.5)
+
+[node name="SM_Track_Base_232" parent="CourseAssets/Dock" unique_id=1650214948 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 2.5, 302.5)
+
+[node name="SM_Track_Base_233" parent="CourseAssets/Dock" unique_id=541007863 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 2.5, 302.5)
+
+[node name="SM_Track_Base_234" parent="CourseAssets/Dock" unique_id=1093982736 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, 2.5, 302.5)
+
+[node name="SM_Track_Base_06" parent="CourseAssets/Dock" unique_id=1665723414 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 2.5, 247.5)
+
+[node name="SM_Track_Base_07" parent="CourseAssets/Dock" unique_id=140198875 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 2.5, 247.5)
+
+[node name="SM_Track_Base_08" parent="CourseAssets/Dock" unique_id=408038392 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 2.5, 247.5)
+
+[node name="SM_Track_Base_10" parent="CourseAssets/Dock" unique_id=1481636099 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, 0, 247.5)
+
+[node name="SM_Track_Base_11" parent="CourseAssets/Dock" unique_id=251464842 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 5, 242.5)
+
+[node name="SM_Track_Base_12" parent="CourseAssets/Dock" unique_id=1614045731 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 5, 242.5)
+
+[node name="SM_Track_Base_13" parent="CourseAssets/Dock" unique_id=1126929186 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 2.5, 242.5)
+
+[node name="SM_Track_Base_19" parent="CourseAssets/Dock" unique_id=1001412175 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 2.5, 242.5)
+
+[node name="SM_Track_Base_14" parent="CourseAssets/Dock" unique_id=2137939444 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, 5, 242.5)
+
+[node name="SM_Track_Base_15" parent="CourseAssets/Dock" unique_id=1223389553 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, 0, 242.5)
+
+[node name="SM_Track_Base_16" parent="CourseAssets/Dock" unique_id=1418212105 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 5, 237.5)
+
+[node name="SM_Track_Base_17" parent="CourseAssets/Dock" unique_id=1701388381 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 5, 237.5)
+
+[node name="SM_Track_Base_18" parent="CourseAssets/Dock" unique_id=516059407 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 2.5, 237.5)
+
+[node name="SM_Track_Base_20" parent="CourseAssets/Dock" unique_id=1818369477 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, 0, 237.5)
+
+[node name="SM_Track_Base_21" parent="CourseAssets/Dock" unique_id=1863124696 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 5, 232.5)
+
+[node name="SM_Track_Base_23" parent="CourseAssets/Dock" unique_id=2112411505 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 2.5, 232.5)
+
+[node name="SM_Track_Base_25" parent="CourseAssets/Dock" unique_id=1897863301 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, 0, 232.5)
+
+[node name="SM_Track_Base_27" parent="CourseAssets/Dock" unique_id=1007184246 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 2.5, 232.5)
+
+[node name="SM_Track_Base_39" parent="CourseAssets/Dock" unique_id=299153893 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 2.5, 237.5)
+
+[node name="SM_Track_Base_26" parent="CourseAssets/Dock" unique_id=57848983 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 5, 227.5)
+
+[node name="SM_Track_Base_28" parent="CourseAssets/Dock" unique_id=1537382567 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 2.5, 227.5)
+
+[node name="SM_Track_Base_24" parent="CourseAssets/Dock" unique_id=1158907828 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 5, 232.5)
+
+[node name="SM_Track_Base_215" parent="CourseAssets/Dock" unique_id=690859118 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 5, 227.5)
+
+[node name="SM_Track_Base_29" parent="CourseAssets/Dock" unique_id=419186945 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 2.5, 227.5)
+
+[node name="SM_Track_Base_247" parent="CourseAssets/Dock" unique_id=20755726 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 2.5, 222.5)
+
+[node name="SM_Track_Base_30" parent="CourseAssets/Dock" unique_id=957815623 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, 0, 227.5)
+
+[node name="SM_Track_Base_31" parent="CourseAssets/Dock" unique_id=2016164640 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 5, 222.5)
+
+[node name="SM_Track_Base_32" parent="CourseAssets/Dock" unique_id=872750999 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 2.5, 222.5)
+
+[node name="SM_Track_Base_33" parent="CourseAssets/Dock" unique_id=1477525 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 2.5, 222.5)
+
+[node name="SM_Track_Base_35" parent="CourseAssets/Dock" unique_id=1088083007 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, 0, 222.5)
+
+[node name="SM_Track_Base_36" parent="CourseAssets/Dock" unique_id=945322244 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 5, 217.5)
+
+[node name="SM_Track_Base_37" parent="CourseAssets/Dock" unique_id=8158213 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 2.5, 217.5)
+
+[node name="SM_Track_Base_38" parent="CourseAssets/Dock" unique_id=1757446971 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 2.5, 217.5)
+
+[node name="SM_Track_Base_40" parent="CourseAssets/Dock" unique_id=38732502 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, 0, 217.5)
+
+[node name="SM_Track_Base_41" parent="CourseAssets/Dock" unique_id=254258683 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 5, 212.5)
+
+[node name="SM_Track_Base_42" parent="CourseAssets/Dock" unique_id=2012445242 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 2.5, 212.5)
+
+[node name="SM_Track_Base_43" parent="CourseAssets/Dock" unique_id=1754732581 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 2.5, 212.5)
+
+[node name="SM_Track_Base_45" parent="CourseAssets/Dock" unique_id=1388918453 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, 0, 212.5)
+
+[node name="SM_Track_Base_46" parent="CourseAssets/Dock" unique_id=1190540022 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 5, 207.5)
+
+[node name="SM_Track_Base_47" parent="CourseAssets/Dock" unique_id=2030129796 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 5, 207.5)
+
+[node name="SM_Track_Base_48" parent="CourseAssets/Dock" unique_id=1314647525 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 2.5, 207.5)
+
+[node name="SM_Track_Base_49" parent="CourseAssets/Dock" unique_id=2093550573 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 2.5, 207.5)
+
+[node name="SM_Track_Base_50" parent="CourseAssets/Dock" unique_id=1634368806 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, 0, 207.5)
+
+[node name="SM_Track_Base_51" parent="CourseAssets/Dock" unique_id=668315849 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 5, 202.5)
+
+[node name="SM_Track_Base_52" parent="CourseAssets/Dock" unique_id=2016212052 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 5, 202.5)
+
+[node name="SM_Track_Base_53" parent="CourseAssets/Dock" unique_id=24237384 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 2.5, 202.5)
+
+[node name="SM_Track_Base_54" parent="CourseAssets/Dock" unique_id=657064463 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 2.5, 202.5)
+
+[node name="SM_Track_Base_55" parent="CourseAssets/Dock" unique_id=418528545 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, 0, 202.5)
+
+[node name="SM_Track_Base_56" parent="CourseAssets/Dock" unique_id=1636506104 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 5, 197.5)
+
+[node name="SM_Track_Base_57" parent="CourseAssets/Dock" unique_id=738754802 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 5, 197.5)
+
+[node name="SM_Track_Base_58" parent="CourseAssets/Dock" unique_id=1934442736 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 2.5, 197.5)
+
+[node name="SM_Track_Base_59" parent="CourseAssets/Dock" unique_id=1626741451 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 2.5, 197.5)
+
+[node name="SM_Track_Base_60" parent="CourseAssets/Dock" unique_id=74293500 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, 0, 197.5)
+
+[node name="SM_Track_Base_61" parent="CourseAssets/Dock" unique_id=95384178 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 5, 192.5)
+
+[node name="SM_Track_Base_22" parent="CourseAssets/Dock" unique_id=1147789833 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 5, 232.5)
+
+[node name="SM_Track_Base_217" parent="CourseAssets/Dock" unique_id=1005477761 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 5, 227.5)
+
+[node name="SM_Track_Base_218" parent="CourseAssets/Dock" unique_id=1977439883 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 5, 222.5)
+
+[node name="SM_Track_Base_219" parent="CourseAssets/Dock" unique_id=1957161686 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 5, 217.5)
+
+[node name="SM_Track_Base_220" parent="CourseAssets/Dock" unique_id=936360198 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 5, 212.5)
+
+[node name="SM_Track_Base_221" parent="CourseAssets/Dock" unique_id=260866285 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 5, 207.5)
+
+[node name="SM_Track_Base_222" parent="CourseAssets/Dock" unique_id=398842583 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 5, 202.5)
+
+[node name="SM_Track_Base_223" parent="CourseAssets/Dock" unique_id=1778309401 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 5, 197.5)
+
+[node name="SM_Track_Base_224" parent="CourseAssets/Dock" unique_id=1066745676 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 5, 192.5)
+
+[node name="SM_Track_Base_241" parent="CourseAssets/Dock" unique_id=1305074791 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55, 5, 202.5)
+
+[node name="SM_Track_Base_242" parent="CourseAssets/Dock" unique_id=1136500698 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55, 5, 197.5)
+
+[node name="SM_Track_Base_243" parent="CourseAssets/Dock" unique_id=87281598 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55, 5, 192.5)
+
+[node name="SM_Track_Base_244" parent="CourseAssets/Dock" unique_id=1433989761 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 5, 202.5)
+
+[node name="SM_Track_Base_245" parent="CourseAssets/Dock" unique_id=329638803 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 7.5, 197.5)
+
+[node name="SM_Track_Base_246" parent="CourseAssets/Dock" unique_id=238065191 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 7.5, 192.5)
+
+[node name="SM_Track_Base_257" parent="CourseAssets/Dock" unique_id=1856342040 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 7.5, 197.5)
+
+[node name="SM_Track_Base_259" parent="CourseAssets/Dock" unique_id=1854652414 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 7.5, 202.5)
+
+[node name="SM_Track_Base_258" parent="CourseAssets/Dock" unique_id=1717068197 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 7.5, 192.5)
+
+[node name="SM_Track_Base_62" parent="CourseAssets/Dock" unique_id=694778471 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 2.5, 192.5)
+
+[node name="SM_Track_Base_63" parent="CourseAssets/Dock" unique_id=1692185553 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 2.5, 192.5)
+
+[node name="SM_Track_Base_64" parent="CourseAssets/Dock" unique_id=1770879666 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 2.5, 192.5)
+
+[node name="SM_Track_Base_65" parent="CourseAssets/Dock" unique_id=336213334 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, 0, 192.5)
+
+[node name="SM_Track_Base_66" parent="CourseAssets/Dock" unique_id=597403551 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 2.5, 187.5)
+
+[node name="SM_Track_Base_67" parent="CourseAssets/Dock" unique_id=1521864844 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 2.5, 187.5)
+
+[node name="SM_Track_Base_68" parent="CourseAssets/Dock" unique_id=874172672 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 2.5, 187.5)
+
+[node name="SM_Track_Base_69" parent="CourseAssets/Dock" unique_id=438005987 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 2.5, 187.5)
+
+[node name="SM_Track_Base_70" parent="CourseAssets/Dock" unique_id=1898795040 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, 2.5, 187.5)
+
+[node name="SM_Track_Base_71" parent="CourseAssets/Dock" unique_id=1401746991 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 2.5, 182.5)
+
+[node name="SM_Track_Base_72" parent="CourseAssets/Dock" unique_id=1100512226 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 2.5, 182.5)
+
+[node name="SM_Track_Base_73" parent="CourseAssets/Dock" unique_id=1638100072 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 2.5, 182.5)
+
+[node name="SM_Track_Base_74" parent="CourseAssets/Dock" unique_id=1587617521 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 2.5, 182.5)
+
+[node name="SM_Track_Base_75" parent="CourseAssets/Dock" unique_id=1651144662 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, 2.5, 182.5)
+
+[node name="SM_Track_Base_76" parent="CourseAssets/Dock" unique_id=1153484938 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 7.5, 177.5)
+
+[node name="SM_Track_Base_268" parent="CourseAssets/Dock" unique_id=1722576245 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 7.5, 177.5)
+
+[node name="SM_Track_Base_235" parent="CourseAssets/Dock" unique_id=302189846 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 2.5, 187.5)
+
+[node name="SM_Track_Base_236" parent="CourseAssets/Dock" unique_id=1078501438 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 2.5, 182.5)
+
+[node name="SM_Track_Base_237" parent="CourseAssets/Dock" unique_id=903639478 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 2.5, 177.5)
+
+[node name="SM_Track_Base_238" parent="CourseAssets/Dock" unique_id=809443181 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55, 2.5, 187.5)
+
+[node name="SM_Track_Base_239" parent="CourseAssets/Dock" unique_id=1747726294 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55, 2.5, 182.5)
+
+[node name="SM_Track_Base_240" parent="CourseAssets/Dock" unique_id=227764358 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55, 2.5, 177.5)
+
+[node name="SM_Track_Base_248" parent="CourseAssets/Dock" unique_id=1313005743 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55, 7.5, 187.5)
+
+[node name="SM_Track_Base_249" parent="CourseAssets/Dock" unique_id=916384030 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55, 7.5, 182.5)
+
+[node name="SM_Track_Base_250" parent="CourseAssets/Dock" unique_id=1086481692 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55, 7.5, 177.5)
+
+[node name="SM_Track_Base_251" parent="CourseAssets/Dock" unique_id=1453421693 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 7.5, 187.5)
+
+[node name="SM_Track_Base_252" parent="CourseAssets/Dock" unique_id=1240153751 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 7.5, 182.5)
+
+[node name="SM_Track_Base_253" parent="CourseAssets/Dock" unique_id=346423575 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 7.5, 177.5)
+
+[node name="SM_Track_Base_254" parent="CourseAssets/Dock" unique_id=190626777 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 7.5, 187.5)
+
+[node name="SM_Track_Base_255" parent="CourseAssets/Dock" unique_id=1569152909 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 7.5, 182.5)
+
+[node name="SM_Track_Base_256" parent="CourseAssets/Dock" unique_id=1340296974 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 7.5, 177.5)
+
+[node name="SM_Track_Base_77" parent="CourseAssets/Dock" unique_id=861218512 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 7.5, 177.5)
+
+[node name="SM_Track_Base_78" parent="CourseAssets/Dock" unique_id=463595366 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 0, 177.5)
+
+[node name="SM_Track_Base_79" parent="CourseAssets/Dock" unique_id=1499314376 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 7.5, 177.5)
+
+[node name="SM_Track_Base_80" parent="CourseAssets/Dock" unique_id=1864072254 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, 2.5, 177.5)
+
+[node name="SM_Track_Base_81" parent="CourseAssets/Dock" unique_id=1928048596 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 7.5, 172.5)
+
+[node name="SM_Track_Base_82" parent="CourseAssets/Dock" unique_id=185433181 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 7.5, 172.5)
+
+[node name="SM_Track_Base_83" parent="CourseAssets/Dock" unique_id=1442630689 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 0, 172.5)
+
+[node name="SM_Track_Base_84" parent="CourseAssets/Dock" unique_id=1551132355 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 7.5, 172.5)
+
+[node name="SM_Track_Base_85" parent="CourseAssets/Dock" unique_id=243363235 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, 2.5, 172.5)
+
+[node name="SM_Track_Base_86" parent="CourseAssets/Dock" unique_id=772667612 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 7.5, 167.5)
+
+[node name="SM_Track_Base_87" parent="CourseAssets/Dock" unique_id=1814304363 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 7.5, 167.5)
+
+[node name="SM_Track_Base_88" parent="CourseAssets/Dock" unique_id=1167263484 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 0, 167.5)
+
+[node name="SM_Track_Base_89" parent="CourseAssets/Dock" unique_id=577880479 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 7.5, 167.5)
+
+[node name="SM_Track_Base_90" parent="CourseAssets/Dock" unique_id=724291521 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, 2.5, 167.5)
+
+[node name="SM_Track_Base_91" parent="CourseAssets/Dock" unique_id=191055051 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 7.5, 162.5)
+
+[node name="SM_Track_Base_269" parent="CourseAssets/Dock" unique_id=1224398636 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 7.5, 172.5)
+
+[node name="SM_Track_Base_270" parent="CourseAssets/Dock" unique_id=997655711 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 7.5, 167.5)
+
+[node name="SM_Track_Base_271" parent="CourseAssets/Dock" unique_id=1326222066 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 7.5, 162.5)
+
+[node name="SM_Track_Base_272" parent="CourseAssets/Dock" unique_id=6462876 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55, 7.5, 172.5)
+
+[node name="SM_Track_Base_273" parent="CourseAssets/Dock" unique_id=690912122 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55, 7.5, 167.5)
+
+[node name="SM_Track_Base_274" parent="CourseAssets/Dock" unique_id=60052849 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55, 7.5, 162.5)
+
+[node name="SM_Track_Base_275" parent="CourseAssets/Dock" unique_id=1168478318 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 7.5, 172.5)
+
+[node name="SM_Track_Base_276" parent="CourseAssets/Dock" unique_id=1029826065 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 7.5, 167.5)
+
+[node name="SM_Track_Base_277" parent="CourseAssets/Dock" unique_id=1162359469 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 7.5, 162.5)
+
+[node name="SM_Track_Base_278" parent="CourseAssets/Dock" unique_id=1177526219 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 7.5, 172.5)
+
+[node name="SM_Track_Base_279" parent="CourseAssets/Dock" unique_id=1977409064 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 7.5, 167.5)
+
+[node name="SM_Track_Base_280" parent="CourseAssets/Dock" unique_id=1826042469 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 7.5, 162.5)
+
+[node name="SM_Track_Base_92" parent="CourseAssets/Dock" unique_id=1851620952 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 7.5, 162.5)
+
+[node name="SM_Track_Base_260" parent="CourseAssets/Dock" unique_id=1976941913 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 2.5, 177.5)
+
+[node name="SM_Track_Base_261" parent="CourseAssets/Dock" unique_id=1412025708 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 2.5, 172.5)
+
+[node name="SM_Track_Base_262" parent="CourseAssets/Dock" unique_id=387585028 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 2.5, 167.5)
+
+[node name="SM_Track_Base_263" parent="CourseAssets/Dock" unique_id=1317619128 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 2.5, 162.5)
+
+[node name="SM_Track_Base_93" parent="CourseAssets/Dock" unique_id=1886649403 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 0, 162.5)
+
+[node name="SM_Track_Base_94" parent="CourseAssets/Dock" unique_id=1676164335 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 7.5, 162.5)
+
+[node name="SM_Track_Base_130" parent="CourseAssets/Dock" unique_id=856402641 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 2.6188393, 177.5)
+
+[node name="SM_Track_Base_131" parent="CourseAssets/Dock" unique_id=1564281079 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 2.6188393, 172.5)
+
+[node name="SM_Track_Base_132" parent="CourseAssets/Dock" unique_id=1711796895 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 2.6188393, 167.5)
+
+[node name="SM_Track_Base_133" parent="CourseAssets/Dock" unique_id=856738085 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 2.6188393, 162.5)
+
+[node name="SM_Track_Base_95" parent="CourseAssets/Dock" unique_id=1655352628 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, 2.5, 162.5)
+
+[node name="SM_Track_Base_264" parent="CourseAssets/Dock" unique_id=1325997543 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, -2.5, 177.5)
+
+[node name="SM_Track_Base_265" parent="CourseAssets/Dock" unique_id=1816081221 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, -2.5, 172.5)
+
+[node name="SM_Track_Base_266" parent="CourseAssets/Dock" unique_id=246462865 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, -2.5, 167.5)
+
+[node name="SM_Track_Base_267" parent="CourseAssets/Dock" unique_id=651701690 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, -2.5, 162.5)
+
+[node name="SM_Track_Base_207" parent="CourseAssets/Dock" unique_id=463386157 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, 7.5, 177.5)
+
+[node name="SM_Track_Base_208" parent="CourseAssets/Dock" unique_id=1224058321 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, 7.5, 172.5)
+
+[node name="SM_Track_Base_209" parent="CourseAssets/Dock" unique_id=1553039341 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, 7.5, 167.5)
+
+[node name="SM_Track_Base_210" parent="CourseAssets/Dock" unique_id=1762516446 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, 7.5, 162.5)
+
+[node name="SM_Track_Base_96" parent="CourseAssets/Dock" unique_id=1761327122 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 2.5, 157.5)
+
+[node name="SM_Track_Base_97" parent="CourseAssets/Dock" unique_id=1397588782 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 2.5, 157.5)
+
+[node name="SM_Track_Base_98" parent="CourseAssets/Dock" unique_id=1947722500 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 2.5, 157.5)
+
+[node name="SM_Track_Base_99" parent="CourseAssets/Dock" unique_id=1068137442 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 2.5, 157.5)
+
+[node name="SM_Track_Base_100" parent="CourseAssets/Dock" unique_id=1737529962 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, 0, 157.5)
+
+[node name="SM_Track_Base_138" parent="CourseAssets/Dock" unique_id=1000111311 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90, 2.5, 182.5)
+
+[node name="SM_Track_Base_139" parent="CourseAssets/Dock" unique_id=27837688 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95, 2.5, 182.5)
+
+[node name="SM_Track_Base_195" parent="CourseAssets/Dock" unique_id=697452476 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 92.5, 0, 175)
+
+[node name="SM_Track_Base_196" parent="CourseAssets/Dock" unique_id=675535796 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 92.5, 5, 175)
+
+[node name="SM_Track_Base_197" parent="CourseAssets/Dock" unique_id=525427492 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 92.5, 0, 162.5)
+
+[node name="SM_Track_Base_198" parent="CourseAssets/Dock" unique_id=1455124987 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 92.5, 5, 162.5)
+
+[node name="SM_Track_Base_199" parent="CourseAssets/Dock" unique_id=514208424 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 92.5, 0, 150)
+
+[node name="SM_Track_Base_200" parent="CourseAssets/Dock" unique_id=943304521 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 92.5, 5, 150)
+
+[node name="SM_Track_Base_201" parent="CourseAssets/Dock" unique_id=1770647514 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 92.5, 0, 150)
+
+[node name="SM_Track_Base_202" parent="CourseAssets/Dock" unique_id=1301493381 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 92.5, 5, 150)
+
+[node name="SM_Track_Base_203" parent="CourseAssets/Dock" unique_id=628034130 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 92.5, 0, 137.5)
+
+[node name="SM_Track_Base_204" parent="CourseAssets/Dock" unique_id=2009583038 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 92.5, 5, 137.5)
+
+[node name="SM_Track_Base_205" parent="CourseAssets/Dock" unique_id=1683355774 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 92.5, 0, 125)
+
+[node name="SM_Track_Base_206" parent="CourseAssets/Dock" unique_id=1677822301 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 92.5, 5, 125)
+
+[node name="SM_Track_Base_140" parent="CourseAssets/Dock" unique_id=1720591876 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 100, 2.5, 182.5)
+
+[node name="SM_Track_Base_141" parent="CourseAssets/Dock" unique_id=1823636758 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 105, 2.5, 182.5)
+
+[node name="SM_Track_Base_142" parent="CourseAssets/Dock" unique_id=1309452895 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 110, 2.5, 182.5)
+
+[node name="SM_Track_Base_143" parent="CourseAssets/Dock" unique_id=235688137 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90, 2.5, 187.5)
+
+[node name="SM_Track_Base_144" parent="CourseAssets/Dock" unique_id=1156183991 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95, 2.5, 187.5)
+
+[node name="SM_Track_Base_145" parent="CourseAssets/Dock" unique_id=61439959 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 100, 2.5, 187.5)
+
+[node name="SM_Track_Base_146" parent="CourseAssets/Dock" unique_id=137551187 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 105, 2.5, 187.5)
+
+[node name="SM_Track_Base_147" parent="CourseAssets/Dock" unique_id=1032119483 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 110, 2.5, 187.5)
+
+[node name="SM_Track_Base_178" parent="CourseAssets/Dock" unique_id=1616059418 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 115, 2.5, 182.5)
+
+[node name="SM_Track_Base_179" parent="CourseAssets/Dock" unique_id=24333607 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 115, 2.5, 187.5)
+
+[node name="SM_Track_Base_180" parent="CourseAssets/Dock" unique_id=1266382069 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 120, 2.5, 182.5)
+
+[node name="SM_Track_Base_181" parent="CourseAssets/Dock" unique_id=1694441569 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 120, 2.5, 187.5)
+
+[node name="SM_Track_Base_182" parent="CourseAssets/Dock" unique_id=669211334 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 125, 2.5, 182.5)
+
+[node name="SM_Track_Base_183" parent="CourseAssets/Dock" unique_id=389885274 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 125, 2.5, 187.5)
+
+[node name="SM_Track_Base_101" parent="CourseAssets/Dock" unique_id=318026405 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 2.5, 152.5)
+
+[node name="SM_Track_Base_102" parent="CourseAssets/Dock" unique_id=743588180 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 2.5, 152.5)
+
+[node name="SM_Track_Base_103" parent="CourseAssets/Dock" unique_id=512894723 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 2.5, 152.5)
+
+[node name="SM_Track_Base_104" parent="CourseAssets/Dock" unique_id=2015845113 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 2.5, 152.5)
+
+[node name="SM_Track_Base_105" parent="CourseAssets/Dock" unique_id=1820338908 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, 0, 152.5)
+
+[node name="SM_Track_Base_128" parent="CourseAssets/Dock" unique_id=754339097 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, 5, 157.5)
+
+[node name="SM_Track_Base_129" parent="CourseAssets/Dock" unique_id=1343202224 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, 5, 152.5)
+
+[node name="SM_Track_Base_106" parent="CourseAssets/Dock" unique_id=337426285 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 2.5, 147.5)
+
+[node name="SM_Track_Base_107" parent="CourseAssets/Dock" unique_id=988728462 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 2.5, 147.5)
+
+[node name="SM_Track_Base_108" parent="CourseAssets/Dock" unique_id=875119420 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 2.5, 147.5)
+
+[node name="SM_Track_Base_109" parent="CourseAssets/Dock" unique_id=726914455 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 2.5, 147.5)
+
+[node name="SM_Track_Base_110" parent="CourseAssets/Dock" unique_id=2070554337 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, 0, 147.5)
+
+[node name="SM_Track_Base_111" parent="CourseAssets/Dock" unique_id=256229246 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 2.5, 142.5)
+
+[node name="SM_Track_Base_112" parent="CourseAssets/Dock" unique_id=859862705 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 2.5, 142.5)
+
+[node name="SM_Track_Base_113" parent="CourseAssets/Dock" unique_id=2123402802 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 2.5, 142.5)
+
+[node name="SM_Track_Base_114" parent="CourseAssets/Dock" unique_id=971136484 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 2.5, 142.5)
+
+[node name="SM_Track_Base_115" parent="CourseAssets/Dock" unique_id=658237370 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, 0, 142.5)
+
+[node name="SM_Track_Base_116" parent="CourseAssets/Dock" unique_id=1388421902 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 2.5, 142.5)
+
+[node name="SM_Track_Base_117" parent="CourseAssets/Dock" unique_id=530322469 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 2.5, 142.5)
+
+[node name="SM_Track_Base_118" parent="CourseAssets/Dock" unique_id=401517018 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 2.5, 142.5)
+
+[node name="SM_Track_Base_119" parent="CourseAssets/Dock" unique_id=1743063127 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 2.5, 142.5)
+
+[node name="SM_Track_Base_121" parent="CourseAssets/Dock" unique_id=182815205 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 2.5, 137.5)
+
+[node name="SM_Track_Base_122" parent="CourseAssets/Dock" unique_id=118466464 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, 0, 137.5)
+
+[node name="SM_Track_Base_123" parent="CourseAssets/Dock" unique_id=1507835229 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 2.5, 137.5)
+
+[node name="SM_Track_Base_124" parent="CourseAssets/Dock" unique_id=60025494 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 2.5, 137.5)
+
+[node name="SM_Track_Base_125" parent="CourseAssets/Dock" unique_id=423710008 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 2.5, 132.5)
+
+[node name="SM_Track_Base_126" parent="CourseAssets/Dock" unique_id=170992168 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, 0, 132.5)
+
+[node name="SM_Track_Base_211" parent="CourseAssets/Dock" unique_id=776169193 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, 5, 147.5)
+
+[node name="SM_Track_Base_212" parent="CourseAssets/Dock" unique_id=734571260 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, 5, 142.5)
+
+[node name="SM_Track_Base_213" parent="CourseAssets/Dock" unique_id=1719417147 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, 5, 137.5)
+
+[node name="SM_Track_Base_214" parent="CourseAssets/Dock" unique_id=1094380566 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, 5, 132.5)
+
+[node name="SM_Track_Base_127" parent="CourseAssets/Dock" unique_id=707521358 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 2.5, 132.5)
+
+[node name="SM_Track_Base_120" parent="CourseAssets/Dock" unique_id=2105722663 instance=ExtResource("2_s172f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, 2.5, 142.5)
+
+[node name="SM_Track_BaseQuarter_01" parent="CourseAssets/Dock" unique_id=1710774793 instance=ExtResource("4_wvglt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 87.5, 7.5, 257.5)
+
+[node name="SM_Track_BaseQuarter_23" parent="CourseAssets/Dock" unique_id=1396239518 instance=ExtResource("4_wvglt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 87.5, 7.5, 252.5)
+
+[node name="SM_Track_BaseQuarter_02" parent="CourseAssets/Dock" unique_id=210247462 instance=ExtResource("4_wvglt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 7.5, 257.5)
+
+[node name="SM_Track_BaseQuarter_03" parent="CourseAssets/Dock" unique_id=1037582172 instance=ExtResource("4_wvglt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 7.5, 252.5)
+
+[node name="SM_Track_BaseQuarter_04" parent="CourseAssets/Dock" unique_id=1838499547 instance=ExtResource("4_wvglt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 7.5, 247.5)
+
+[node name="SM_Track_BaseQuarter_12" parent="CourseAssets/Dock" unique_id=435515463 instance=ExtResource("4_wvglt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 10, 245)
+
+[node name="SM_Track_BaseQuarter_16" parent="CourseAssets/Dock" unique_id=1412524625 instance=ExtResource("4_wvglt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 10, 240)
+
+[node name="SM_Track_BaseQuarter_17" parent="CourseAssets/Dock" unique_id=1800908017 instance=ExtResource("4_wvglt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 10, 235)
+
+[node name="SM_Track_BaseQuarter_18" parent="CourseAssets/Dock" unique_id=1328027915 instance=ExtResource("4_wvglt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 10, 225)
+
+[node name="SM_Track_BaseQuarter_19" parent="CourseAssets/Dock" unique_id=1030451188 instance=ExtResource("4_wvglt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 10, 220)
+
+[node name="SM_Track_BaseQuarter_20" parent="CourseAssets/Dock" unique_id=1871106707 instance=ExtResource("4_wvglt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 10, 215)
+
+[node name="SM_Track_BaseQuarter_21" parent="CourseAssets/Dock" unique_id=1844112681 instance=ExtResource("4_wvglt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 10, 210)
+
+[node name="SM_Track_BaseQuarter_05" parent="CourseAssets/Dock" unique_id=1689257723 instance=ExtResource("4_wvglt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72.5, 7.5, 247.5)
+
+[node name="SM_Track_BaseQuarter_08" parent="CourseAssets/Dock" unique_id=1662052810 instance=ExtResource("4_wvglt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72.5, 10, 245)
+
+[node name="SM_Track_BaseQuarter_10" parent="CourseAssets/Dock" unique_id=136766157 instance=ExtResource("4_wvglt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.5, 10, 232.5)
+
+[node name="SM_Track_BaseQuarter_13" parent="CourseAssets/Dock" unique_id=1538833189 instance=ExtResource("4_wvglt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 10, 217.5)
+
+[node name="SM_Track_BaseQuarter_14" parent="CourseAssets/Dock" unique_id=1942918141 instance=ExtResource("4_wvglt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72.5, 10, 207.5)
+
+[node name="SM_Track_BaseQuarter_15" parent="CourseAssets/Dock" unique_id=20730406 instance=ExtResource("4_wvglt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72.5, 10, 202.5)
+
+[node name="SM_Track_BaseQuarter_22" parent="CourseAssets/Dock" unique_id=1840560498 instance=ExtResource("4_wvglt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72.5, 10, 197.5)
+
+[node name="SM_Track_BaseQuarter_24" parent="CourseAssets/Dock" unique_id=6348434 instance=ExtResource("4_wvglt")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 70, 10, 192.5)
+
+[node name="SM_Track_BaseQuarter_30" parent="CourseAssets/Dock" unique_id=1762708543 instance=ExtResource("4_wvglt")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 67.5, 12.5, 180)
+
+[node name="SM_Track_BaseQuarter_45" parent="CourseAssets/Dock" unique_id=1265262898 instance=ExtResource("4_wvglt")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 52.5, 12.5, 205)
+
+[node name="SM_Track_BaseQuarter_46" parent="CourseAssets/Dock" unique_id=2022638468 instance=ExtResource("4_wvglt")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 57.5, 12.5, 205)
+
+[node name="SM_Track_BaseQuarter_32" parent="CourseAssets/Dock" unique_id=999720871 instance=ExtResource("4_wvglt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.5, 12.5, 185)
+
+[node name="SM_Track_BaseQuarter_39" parent="CourseAssets/Dock" unique_id=414881592 instance=ExtResource("4_wvglt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.5, 12.5, 172.5)
+
+[node name="SM_Track_BaseQuarter_40" parent="CourseAssets/Dock" unique_id=1782793003 instance=ExtResource("4_wvglt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.5, 12.5, 177.5)
+
+[node name="SM_Track_BaseQuarter_41" parent="CourseAssets/Dock" unique_id=856027322 instance=ExtResource("4_wvglt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.5, 12.5, 182.5)
+
+[node name="SM_Track_BaseQuarter_42" parent="CourseAssets/Dock" unique_id=2084706074 instance=ExtResource("4_wvglt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.5, 12.5, 187.5)
+
+[node name="SM_Track_BaseQuarter_43" parent="CourseAssets/Dock" unique_id=434295366 instance=ExtResource("4_wvglt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.5, 12.5, 192.5)
+
+[node name="SM_Track_BaseQuarter_44" parent="CourseAssets/Dock" unique_id=2078605335 instance=ExtResource("4_wvglt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.5, 12.5, 197.5)
+
+[node name="SM_Track_BaseQuarter_31" parent="CourseAssets/Dock" unique_id=1324271268 instance=ExtResource("4_wvglt")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 72.5, 12.5, 180)
+
+[node name="SM_Track_BaseQuarter_35" parent="CourseAssets/Dock" unique_id=625776488 instance=ExtResource("4_wvglt")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 67.5, 12.5, 162.5)
+
+[node name="SM_Track_BaseQuarter_36" parent="CourseAssets/Dock" unique_id=1194513573 instance=ExtResource("4_wvglt")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 72.5, 12.5, 162.5)
+
+[node name="SM_Track_BaseQuarter_37" parent="CourseAssets/Dock" unique_id=1161594309 instance=ExtResource("4_wvglt")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 57.5, 12.5, 162.5)
+
+[node name="SM_Track_BaseQuarter_38" parent="CourseAssets/Dock" unique_id=662181649 instance=ExtResource("4_wvglt")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 62.5, 12.5, 162.5)
+
+[node name="SM_Track_BaseQuarter_33" parent="CourseAssets/Dock" unique_id=946260466 instance=ExtResource("4_wvglt")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 80, 15, 180)
+
+[node name="SM_Track_BaseQuarter_53" parent="CourseAssets/Dock" unique_id=228718705 instance=ExtResource("4_wvglt")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 75, 15, 180)
+
+[node name="SM_Track_BaseQuarter_47" parent="CourseAssets/Dock" unique_id=37544640 instance=ExtResource("4_wvglt")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 85, 12.5, 180)
+
+[node name="SM_Track_BaseQuarter_52" parent="CourseAssets/Dock" unique_id=434752479 instance=ExtResource("4_wvglt")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 85, 15, 180)
+
+[node name="SM_Track_BaseQuarter_49" parent="CourseAssets/Dock" unique_id=177607498 instance=ExtResource("4_wvglt")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 100, 12.5, 177.5)
+
+[node name="SM_Track_BaseQuarter_50" parent="CourseAssets/Dock" unique_id=1344098818 instance=ExtResource("4_wvglt")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 100, 12.5, 172.5)
+
+[node name="SM_Track_BaseQuarter_51" parent="CourseAssets/Dock" unique_id=1293040748 instance=ExtResource("4_wvglt")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 100, 12.5, 167.5)
+
+[node name="SM_Track_BaseQuarter_57" parent="CourseAssets/Dock" unique_id=826016555 instance=ExtResource("4_wvglt")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 100, 12.5, 162.5)
+
+[node name="SM_Track_BaseQuarter_58" parent="CourseAssets/Dock" unique_id=1949567240 instance=ExtResource("4_wvglt")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 100, 12.5, 157.5)
+
+[node name="SM_Track_BaseQuarter_59" parent="CourseAssets/Dock" unique_id=216106114 instance=ExtResource("4_wvglt")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 100, 12.5, 152.5)
+
+[node name="SM_Track_BaseQuarter_60" parent="CourseAssets/Dock" unique_id=564578423 instance=ExtResource("4_wvglt")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 100, 12.5, 147.5)
+
+[node name="SM_Track_BaseQuarter_65" parent="CourseAssets/Dock" unique_id=1528180357 instance=ExtResource("4_wvglt")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 100, 12.5, 142.5)
+
+[node name="SM_Track_BaseQuarter_66" parent="CourseAssets/Dock" unique_id=729483068 instance=ExtResource("4_wvglt")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 100, 12.5, 137.5)
+
+[node name="SM_Track_BaseQuarter_61" parent="CourseAssets/Dock" unique_id=1462136061 instance=ExtResource("4_wvglt")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 87.5, 12.5, 162.5)
+
+[node name="SM_Track_BaseQuarter_62" parent="CourseAssets/Dock" unique_id=128010069 instance=ExtResource("4_wvglt")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 87.5, 12.5, 157.5)
+
+[node name="SM_Track_BaseQuarter_63" parent="CourseAssets/Dock" unique_id=533488571 instance=ExtResource("4_wvglt")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 87.5, 12.5, 152.5)
+
+[node name="SM_Track_BaseQuarter_64" parent="CourseAssets/Dock" unique_id=199885021 instance=ExtResource("4_wvglt")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 87.5, 12.5, 147.5)
+
+[node name="SM_Track_BaseQuarter_34" parent="CourseAssets/Dock" unique_id=2063684825 instance=ExtResource("4_wvglt")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 80, 15, 162.5)
+
+[node name="SM_Track_BaseQuarter_54" parent="CourseAssets/Dock" unique_id=323386145 instance=ExtResource("4_wvglt")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 75, 15, 162.5)
+
+[node name="SM_Track_BaseQuarter_55" parent="CourseAssets/Dock" unique_id=562589430 instance=ExtResource("4_wvglt")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 85, 15, 162.5)
+
+[node name="SM_Track_BaseQuarter_25" parent="CourseAssets/Dock" unique_id=343649393 instance=ExtResource("4_wvglt")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 65, 10, 192.5)
+
+[node name="SM_Track_BaseQuarter_26" parent="CourseAssets/Dock" unique_id=194846675 instance=ExtResource("4_wvglt")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 60, 10, 192.5)
+
+[node name="SM_Track_BaseQuarter_06" parent="CourseAssets/Dock" unique_id=888382814 instance=ExtResource("4_wvglt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90, 7.5, 232.5)
+
+[node name="SM_Track_BaseQuarter_09" parent="CourseAssets/Dock" unique_id=1187212844 instance=ExtResource("4_wvglt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 82.5, 7.5, 217.5)
+
+[node name="SM_Track_BaseQuarter_11" parent="CourseAssets/Dock" unique_id=1563137160 instance=ExtResource("4_wvglt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 87.5, 7.5, 207.5)
+
+[node name="SM_Track_BaseQuarter_28" parent="CourseAssets/Dock" unique_id=1103333953 instance=ExtResource("4_wvglt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90, 7.5, 197.5)
+
+[node name="SM_Track_BaseQuarter_29" parent="CourseAssets/Dock" unique_id=584387588 instance=ExtResource("4_wvglt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90, 7.5, 192.5)
+
+[node name="SM_Track_BaseQuarter_07" parent="CourseAssets/Dock" unique_id=1005724115 instance=ExtResource("4_wvglt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 7.5, 217.5)
+
+[node name="SM_Track_Base_RailBlock_02" parent="CourseAssets/Dock" unique_id=1029217936 instance=ExtResource("4_1171w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, 7.5, 247.5)
+
+[node name="SM_Track_Base_RailBlock_03" parent="CourseAssets/Dock" unique_id=96693235 instance=ExtResource("4_1171w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 7.5, 227.5)
+
+[node name="SM_Track_Base_RailBlock_16" parent="CourseAssets/Dock" unique_id=891291904 instance=ExtResource("4_1171w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 10, 227.5)
+
+[node name="SM_Track_Base_RailBlock_05" parent="CourseAssets/Dock" unique_id=1831145068 instance=ExtResource("4_1171w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 7.5, 222.5)
+
+[node name="SM_Track_Base_RailBlock_07" parent="CourseAssets/Dock" unique_id=135374927 instance=ExtResource("4_1171w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 10, 222.5)
+
+[node name="SM_Track_Base_RailBlock_09" parent="CourseAssets/Dock" unique_id=447710508 instance=ExtResource("4_1171w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 10, 230)
+
+[node name="SM_Track_Base_RailBlock_06" parent="CourseAssets/Dock" unique_id=439204406 instance=ExtResource("4_1171w")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 75, 7.5, 212.5)
+
+[node name="SM_Track_Base_RailBlock_10" parent="CourseAssets/Dock" unique_id=345291860 instance=ExtResource("4_1171w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 7.5, 192.5)
+
+[node name="SM_Track_Base_RailBlock_11" parent="CourseAssets/Dock" unique_id=39870776 instance=ExtResource("4_1171w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 10, 192.5)
+
+[node name="SM_Track_Base_RailBlock_27" parent="CourseAssets/Dock" unique_id=1569813837 instance=ExtResource("4_1171w")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 92.5, 7.5, 202.5)
+
+[node name="SM_Track_Base_RailBlock_25" parent="CourseAssets/Dock" unique_id=348652968 instance=ExtResource("4_1171w")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 100, 12.5, 177.5)
+
+[node name="SM_Track_Base_RailBlock_26" parent="CourseAssets/Dock" unique_id=789802122 instance=ExtResource("4_1171w")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 87.5, 12.5, 160)
+
+[node name="SM_Track_Base_RailBlock_17" parent="CourseAssets/Dock" unique_id=404831532 instance=ExtResource("4_1171w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.5, 12.5, 190)
+
+[node name="SM_Track_Base_RailBlock_18" parent="CourseAssets/Dock" unique_id=1183647321 instance=ExtResource("4_1171w")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 62.5, 12.5, 180)
+
+[node name="SM_Track_Base_RailBlock_21" parent="CourseAssets/Dock" unique_id=342571610 instance=ExtResource("4_1171w")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 52.5, 12.5, 162.5)
+
+[node name="SM_Track_Base_RailBlock_22" parent="CourseAssets/Dock" unique_id=1701242979 instance=ExtResource("4_1171w")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 47.5, 12.5, 167.5)
+
+[node name="SM_Track_Base_RailBlock_23" parent="CourseAssets/Dock" unique_id=1473957655 instance=ExtResource("4_1171w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.5, 12.5, 202.5)
+
+[node name="SM_Track_Base_RailBlock_12" parent="CourseAssets/Dock" unique_id=1640271923 instance=ExtResource("4_1171w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.5, 10, 205)
+
+[node name="SM_Track_Base_RailBlock_24" parent="CourseAssets/Dock" unique_id=769440559 instance=ExtResource("4_1171w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.5, 12.5, 205)
+
+[node name="SM_Track_Base_RailBlock_08" parent="CourseAssets/Dock" unique_id=942930542 instance=ExtResource("4_1171w")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 75, 10, 212.5)
+
+[node name="SM_Track_Base_RailBlock_04" parent="CourseAssets/Dock" unique_id=2123291706 instance=ExtResource("4_1171w")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 92.5, 7.5, 237.5)
+
+[node name="SM_Track_Base_RailBlock_13" parent="CourseAssets/Dock" unique_id=576035238 instance=ExtResource("4_1171w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 87.5, 7.5, 227.5)
+
+[node name="SM_Track_Base_RailBlock_19" parent="CourseAssets/Dock" unique_id=976367634 instance=ExtResource("4_1171w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 82.5, 7.5, 222.5)
+
+[node name="SM_Track_Base_RailBlock_20" parent="CourseAssets/Dock" unique_id=853166591 instance=ExtResource("4_1171w")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 87.5, 7.5, 212.5)
+
+[node name="SM_Track_Base_RailBlock_14" parent="CourseAssets/Dock" unique_id=1113550826 instance=ExtResource("4_1171w")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 80, 7.5, 237.5)
+
+[node name="SM_Track_Base_RailBlock_15" parent="CourseAssets/Dock" unique_id=671285714 instance=ExtResource("4_1171w")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 80, 10, 237.5)
+
+[node name="SM_Track_BaseHalf_01" parent="CourseAssets/Dock" unique_id=542836405 instance=ExtResource("3_wvglt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, 5, 252.5)
+
+[node name="SM_Track_BaseHalf_05" parent="CourseAssets/Dock" unique_id=1453538026 instance=ExtResource("3_wvglt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, 5, 247.5)
+
+[node name="SM_Track_BaseHalf_02" parent="CourseAssets/Dock" unique_id=1043459531 instance=ExtResource("3_wvglt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, 5, 237.5)
+
+[node name="SM_Track_BaseHalf_03" parent="CourseAssets/Dock" unique_id=678473271 instance=ExtResource("3_wvglt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, 5, 232.5)
+
+[node name="SM_Track_BaseHalf_08" parent="CourseAssets/Dock" unique_id=1948907857 instance=ExtResource("3_wvglt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, 5, 222.5)
+
+[node name="SM_Track_BaseHalf_11" parent="CourseAssets/Dock" unique_id=1635435835 instance=ExtResource("3_wvglt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, 5, 217.5)
+
+[node name="SM_Track_BaseHalf_21" parent="CourseAssets/Dock" unique_id=321045630 instance=ExtResource("3_wvglt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90, 10, 177.5)
+
+[node name="SM_Track_BaseHalf_22" parent="CourseAssets/Dock" unique_id=263605491 instance=ExtResource("3_wvglt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90, 10, 172.5)
+
+[node name="SM_Track_BaseHalf_23" parent="CourseAssets/Dock" unique_id=328209272 instance=ExtResource("3_wvglt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90, 10, 167.5)
+
+[node name="SM_Track_BaseHalf_24" parent="CourseAssets/Dock" unique_id=22240311 instance=ExtResource("3_wvglt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90, 10, 162.5)
+
+[node name="SM_Track_BaseHalf_25" parent="CourseAssets/Dock" unique_id=197922028 instance=ExtResource("3_wvglt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95, 10, 177.5)
+
+[node name="SM_Track_BaseHalf_26" parent="CourseAssets/Dock" unique_id=2061289233 instance=ExtResource("3_wvglt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95, 10, 172.5)
+
+[node name="SM_Track_BaseHalf_27" parent="CourseAssets/Dock" unique_id=94963230 instance=ExtResource("3_wvglt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95, 10, 167.5)
+
+[node name="SM_Track_BaseHalf_28" parent="CourseAssets/Dock" unique_id=1215422279 instance=ExtResource("3_wvglt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95, 10, 162.5)
+
+[node name="SM_Track_BaseHalf_29" parent="CourseAssets/Dock" unique_id=878306847 instance=ExtResource("3_wvglt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90, 10, 157.5)
+
+[node name="SM_Track_BaseHalf_30" parent="CourseAssets/Dock" unique_id=1076992617 instance=ExtResource("3_wvglt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95, 10, 157.5)
+
+[node name="SM_Track_BaseHalf_31" parent="CourseAssets/Dock" unique_id=1719655991 instance=ExtResource("3_wvglt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90, 10, 152.5)
+
+[node name="SM_Track_BaseHalf_32" parent="CourseAssets/Dock" unique_id=641164190 instance=ExtResource("3_wvglt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95, 10, 152.5)
+
+[node name="SM_Track_BaseHalf_33" parent="CourseAssets/Dock" unique_id=1722488417 instance=ExtResource("3_wvglt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90, 10, 147.5)
+
+[node name="SM_Track_BaseHalf_34" parent="CourseAssets/Dock" unique_id=1416681747 instance=ExtResource("3_wvglt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95, 10, 147.5)
+
+[node name="SM_Track_BaseHalf_35" parent="CourseAssets/Dock" unique_id=1491296789 instance=ExtResource("3_wvglt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90, 10, 142.5)
+
+[node name="SM_Track_BaseHalf_36" parent="CourseAssets/Dock" unique_id=754541362 instance=ExtResource("3_wvglt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95, 10, 142.5)
+
+[node name="SM_Track_BaseHalf_37" parent="CourseAssets/Dock" unique_id=1168206234 instance=ExtResource("3_wvglt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90, 10, 137.5)
+
+[node name="SM_Track_BaseHalf_39" parent="CourseAssets/Dock" unique_id=1757498209 instance=ExtResource("3_wvglt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, 10, 157.5)
+
+[node name="SM_Track_BaseHalf_40" parent="CourseAssets/Dock" unique_id=1435556034 instance=ExtResource("3_wvglt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, 10, 152.5)
+
+[node name="SM_Track_BaseHalf_41" parent="CourseAssets/Dock" unique_id=242637778 instance=ExtResource("3_wvglt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, 10, 147.5)
+
+[node name="SM_Track_BaseHalf_42" parent="CourseAssets/Dock" unique_id=244433133 instance=ExtResource("3_wvglt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, 10, 142.5)
+
+[node name="SM_Track_BaseHalf_43" parent="CourseAssets/Dock" unique_id=370477887 instance=ExtResource("3_wvglt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, 10, 137.5)
+
+[node name="SM_Track_BaseHalf_38" parent="CourseAssets/Dock" unique_id=862514872 instance=ExtResource("3_wvglt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95, 10, 137.5)
+
+[node name="SM_Track_BaseHalf_44" parent="CourseAssets/Dock" unique_id=1891566148 instance=ExtResource("3_wvglt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90, 10, 132.5)
+
+[node name="SM_Track_BaseHalf_45" parent="CourseAssets/Dock" unique_id=1064617942 instance=ExtResource("3_wvglt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, 10, 132.5)
+
+[node name="SM_Track_BaseHalf_46" parent="CourseAssets/Dock" unique_id=366220750 instance=ExtResource("3_wvglt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95, 10, 132.5)
+
+[node name="SM_Track_BaseHalf_12" parent="CourseAssets/Dock" unique_id=569399582 instance=ExtResource("3_wvglt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, 5, 212.5)
+
+[node name="SM_Track_BaseHalf_13" parent="CourseAssets/Dock" unique_id=2113599893 instance=ExtResource("3_wvglt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, 5, 207.5)
+
+[node name="SM_Track_BaseHalf_14" parent="CourseAssets/Dock" unique_id=1994781025 instance=ExtResource("3_wvglt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, 5, 202.5)
+
+[node name="SM_Track_BaseHalf_15" parent="CourseAssets/Dock" unique_id=2036481871 instance=ExtResource("3_wvglt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, 5, 197.5)
+
+[node name="SM_Track_BaseHalf_17" parent="CourseAssets/Dock" unique_id=1226921379 instance=ExtResource("3_wvglt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 12.5, 177.5)
+
+[node name="SM_Track_BaseHalf_18" parent="CourseAssets/Dock" unique_id=1326792066 instance=ExtResource("3_wvglt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 12.5, 172.5)
+
+[node name="SM_Track_BaseHalf_19" parent="CourseAssets/Dock" unique_id=960996863 instance=ExtResource("3_wvglt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 12.5, 167.5)
+
+[node name="SM_Track_BaseHalf_20" parent="CourseAssets/Dock" unique_id=1482306929 instance=ExtResource("3_wvglt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 12.5, 162.5)
+
+[node name="SM_Track_BaseHalf_16" parent="CourseAssets/Dock" unique_id=1156454971 instance=ExtResource("3_wvglt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, 5, 192.5)
+
+[node name="SM_Track_BaseHalf_09" parent="CourseAssets/Dock" unique_id=637764072 instance=ExtResource("3_wvglt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 5, 217.5)
+
+[node name="SM_Track_BaseHalf_10" parent="CourseAssets/Dock" unique_id=1099575342 instance=ExtResource("3_wvglt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 5, 212.5)
+
+[node name="SM_Track_BaseHalf_07" parent="CourseAssets/Dock" unique_id=591923342 instance=ExtResource("3_wvglt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 10, 202.5)
+
+[node name="SM_Track_BaseHalf_06" parent="CourseAssets/Dock" unique_id=774628653 instance=ExtResource("3_wvglt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 7.5, 232.5)
+
+[node name="SM_Track_BaseHalf_04" parent="CourseAssets/Dock" unique_id=1235464995 instance=ExtResource("3_wvglt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, 5, 227.5)
+
+[node name="SM_Track_BaseRampHalf_01" parent="CourseAssets/Dock" unique_id=107232461 instance=ExtResource("6_1171w")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 72.5, 7.5, 247.5)
+
+[node name="SM_Track_BaseRampHalf_02" parent="CourseAssets/Dock" unique_id=984884676 instance=ExtResource("6_1171w")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 75, 5, 182.5)
+
+[node name="SM_Track_BaseRampHalf_03" parent="CourseAssets/Dock" unique_id=1135519708 instance=ExtResource("6_1171w")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 80, 5, 162.5)
+
+[node name="SM_Track_BaseEighth_01" parent="CourseAssets/Dock" unique_id=740284991 instance=ExtResource("5_kb56x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72.5, 10, 242.5)
+
+[node name="SM_Track_BaseEighth_02" parent="CourseAssets/Dock" unique_id=545930352 instance=ExtResource("5_kb56x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72.5, 12.5, 180)
+
+[node name="SM_Track_BaseEighth_03" parent="CourseAssets/Dock" unique_id=168520986 instance=ExtResource("5_kb56x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72.5, 12.5, 162.5)
+
+[node name="SM_Track_BaseEighth_04" parent="CourseAssets/Dock" unique_id=2046318639 instance=ExtResource("5_kb56x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 12.5, 162.5)
+
+[node name="StartLine" type="Node3D" parent="CourseAssets/Dock" unique_id=942047027]
+
+[node name="SM_Track_Base_RailBlock_01" parent="CourseAssets/Dock/StartLine" unique_id=1075007429 instance=ExtResource("4_1171w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 7.5, 262.5)
+
+[node name="SM_Track_Base_RailBlock_02" parent="CourseAssets/Dock/StartLine" unique_id=848461331 instance=ExtResource("4_1171w")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 90, 7.5, 262.5)
+
+[node name="SM_Track_Base_RailBlock_03" parent="CourseAssets/Dock/StartLine" unique_id=1910764495 instance=ExtResource("4_1171w")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 65, 7.5, 277.5)
+
+[node name="SM_Track_Base_RailBlock_04" parent="CourseAssets/Dock/StartLine" unique_id=60063665 instance=ExtResource("4_1171w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, 7.5, 272.5)
+
+[node name="SM_Track_BaseQuarter_01" parent="CourseAssets/Dock/StartLine" unique_id=1981621356 instance=ExtResource("4_wvglt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 67.5, 7.5, 267.5)
+
+[node name="SM_Track_BaseQuarter_02" parent="CourseAssets/Dock/StartLine" unique_id=888879649 instance=ExtResource("4_wvglt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, 7.5, 267.5)
+
+[node name="SM_Track_BaseRampHalf_01" parent="CourseAssets/Dock/StartLine" unique_id=992973380 instance=ExtResource("6_1171w")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 75, 7.5, 272.5)
+
+[node name="SM_Track_BaseRampHalf_02" parent="CourseAssets/Dock/StartLine" unique_id=1869152535 instance=ExtResource("6_1171w")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 80, 7.5, 272.5)
+
+[node name="SM_Track_BaseRampHalf_03" parent="CourseAssets/Dock/StartLine" unique_id=291365765 instance=ExtResource("6_1171w")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 85, 7.5, 272.5)
+
+[node name="SM_Track_BaseRampHalf_04" parent="CourseAssets/Dock/StartLine" unique_id=1897259482 instance=ExtResource("6_1171w")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 80, 7.5, 267.5)
+
+[node name="SM_Track_BaseRampHalf_05" parent="CourseAssets/Dock/StartLine" unique_id=1488810243 instance=ExtResource("6_1171w")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 75, 7.5, 267.5)
+
+[node name="SM_Track_BaseRampHalf_07" parent="CourseAssets/Dock/StartLine" unique_id=592118202 instance=ExtResource("6_1171w")]
+transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, 55.000008, 10, 200)
+
+[node name="SM_Track_BaseRampHalf_08" parent="CourseAssets/Dock/StartLine" unique_id=1200637252 instance=ExtResource("6_1171w")]
+transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, 55.000008, 10, 195)
+
+[node name="SM_Track_BaseRampHalf_10" parent="CourseAssets/Dock/StartLine" unique_id=1146895172 instance=ExtResource("6_1171w")]
+transform = Transform3D(-1, 0, 2.6226832e-07, 0, 1, 0, -2.6226832e-07, 0, -1, 75.000015, 12.5, 175)
+
+[node name="SM_Track_BaseRampHalf_12" parent="CourseAssets/Dock/StartLine" unique_id=1567939882 instance=ExtResource("6_1171w")]
+transform = Transform3D(-1, 0, 2.6226832e-07, 0, 1, 0, -2.6226832e-07, 0, -1, 75.000015, 12.5, 170)
+
+[node name="SM_Track_BaseRampHalf_11" parent="CourseAssets/Dock/StartLine" unique_id=662426681 instance=ExtResource("6_1171w")]
+transform = Transform3D(-1, 0, 2.6226832e-07, 0, 1, 0, -2.6226832e-07, 0, -1, 75.000015, 12.5, 180)
+
+[node name="SM_Track_BaseRampHalf_13" parent="CourseAssets/Dock/StartLine" unique_id=74252608 instance=ExtResource("6_1171w")]
+transform = Transform3D(1, 0, -3.496911e-07, 0, 1, 0, 3.496911e-07, 0, 1, 80.000015, 12.5, 175)
+
+[node name="SM_Track_BaseRampHalf_14" parent="CourseAssets/Dock/StartLine" unique_id=877621109 instance=ExtResource("6_1171w")]
+transform = Transform3D(1, 0, -3.496911e-07, 0, 1, 0, 3.496911e-07, 0, 1, 80.000015, 12.5, 170)
+
+[node name="SM_Track_BaseRampHalf_15" parent="CourseAssets/Dock/StartLine" unique_id=346753196 instance=ExtResource("6_1171w")]
+transform = Transform3D(1, 0, -3.496911e-07, 0, 1, 0, 3.496911e-07, 0, 1, 80.000015, 12.5, 165)
+
+[node name="SM_Track_BaseRampHalf_09" parent="CourseAssets/Dock/StartLine" unique_id=1678128474 instance=ExtResource("6_1171w")]
+transform = Transform3D(-2.1855695e-07, 0, -1, 0, 1, 0, 1, 0, -2.1855695e-07, 90.00001, 7.5, 192.5)
+
+[node name="SM_Track_BaseRampHalf_06" parent="CourseAssets/Dock/StartLine" unique_id=958842192 instance=ExtResource("6_1171w")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 70, 7.5, 267.5)
+
+[node name="Island_SM_01_1" parent="." unique_id=375070035 instance=ExtResource("8_pcn02")]
+
+[node name="PillTester" type="Node3D" parent="." unique_id=2004061824]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 87.5, 5, 265)
+visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PillTester" unique_id=1519465154]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 7.5, 2.5)
+mesh = SubResource("CapsuleMesh_vaqn4")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="PillTester/MeshInstance3D" unique_id=1736194120]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PillTester/MeshInstance3D/RigidBody3D" unique_id=849251525]
+shape = SubResource("CapsuleShape3D_s172f")
+
+[node name="PlayerStart" parent="." unique_id=351622580 instance=ExtResource("18_d25n7")]
+transform = Transform3D(128.1333, 0, 0.3445558, 0, 11.061513, 0, -3.9931688, 0, 11.056145, 83.659256, 8.272, 127.218475)
+
+[node name="PCheckpoint" parent="." unique_id=1454856157 instance=ExtResource("19_gqpl6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78.68486, 9.999999, 217.98373)
+
+[node name="PCheckpoint2" parent="." unique_id=229633350 instance=ExtResource("19_gqpl6")]
+transform = Transform3D(-4.407893, 0, 0, 0, 2.4239707, 0, 0, 0, 1, 78.68486, 9.999999, 217.98373)

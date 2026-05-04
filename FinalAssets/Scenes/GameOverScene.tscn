@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://deypcxf3snd7l"]
+
+[ext_resource type="Script" uid="uid://car0udfbxx8xj" path="res://GTestStuff/Scripts/game_over_scene.gd" id="1_d6yg2"]
+[ext_resource type="AudioStream" uid="uid://bu1haekmkusi1" path="res://GTestStuff/Sounds/AudioFromMT/Songs/Loser.mp3" id="2_phv45"]
+[ext_resource type="PackedScene" uid="uid://bgr3pgxii7iyo" path="res://GTestStuff/Scenes/P_Fade.tscn" id="3_4jwc6"]
+
+[node name="GameOverScene" type="Node2D" unique_id=1508137851]
+script = ExtResource("1_d6yg2")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=547605848]
+stream = ExtResource("2_phv45")
+
+[node name="PFade" parent="." unique_id=55214262 instance=ExtResource("3_4jwc6")]
+
+[node name="Button" type="Button" parent="PFade" unique_id=328054333]
+visible = false
+offset_left = 315.0
+offset_top = 114.0
+offset_right = 708.0
+offset_bottom = 390.0
+text = "Restart Game"
+
+[connection signal="pressed" from="PFade/Button" to="." method="_on_button_pressed"]

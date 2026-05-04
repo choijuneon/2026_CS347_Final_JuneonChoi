@@ -1,0 +1,65 @@
+[gd_scene format=4 uid="uid://cm84haw7giyi6"]
+
+[ext_resource type="Material" uid="uid://chrpoy47wdwnp" path="res://FinalAssets/Materials/GreyBoxBasic.tres" id="1_evtc7"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_2ud57"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 500, 500, 500),
+"format": 34359742465,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAgADAAAAAQAAAAQABAAAAAMABQACAAEAAwACAAUABAAGAAEAAQAGAAUAAwAHAAQABgAEAAcABQAHAAMABwAFAAYA"),
+"name": "openPBR_shader1",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAD6QwAA+kMAAPpDAAD6QwAAAAAAAPpDAAAAAAAAAAAAAPpDAAAAAAAA+kMAAPpDAAD6QwAA+kMAAAAAAAAAAAAAAAAAAAAAAAD6QwAAAAAAAAAAAAAAAAAA+kMAAAAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ungn4"]
+resource_name = "Base_Guide1"
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 500, 500, 500),
+"attribute_data": PackedByteArray("AAAgPwAAQD8AACA/AACAPwAAwD4AAIA/AADAPgAAQD8AACA/AAAAPwAAID8AAEA/AADAPgAAQD8AAMA+AAAAPwAAID8AAIA+AAAgPwAAAD8AAMA+AAAAPwAAwD4AAIA+AAAgPwAAAAAAACA/AACAPgAAwD4AAIA+AADAPgAAAAAAAGA/AABAPwAAYD8AAIA/AAAgPwAAgD8AACA/AABAPwAAwD4AAEA/AADAPgAAgD8AAAA+AACAPwAAAD4AAEA/"),
+"format": 34359742487,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQACAAJAAoACgALAAgADAANAA4ADgAPAAwAEAARABIAEgATABAAFAAVABYAFgAXABQA"),
+"material": ExtResource("1_evtc7"),
+"name": "openPBR_shader1",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("AAD6QwAA+kMAAPpDAAD6QwAAAAAAAPpDAAAAAAAAAAAAAPpDAAAAAAAA+kMAAPpDAAD6QwAA+kMAAAAAAAD6QwAA+kMAAPpDAAAAAAAA+kMAAPpDAAAAAAAA+kMAAAAAAAD6QwAAAAAAAAAAAAD6QwAA+kMAAAAAAAAAAAAA+kMAAAAAAAAAAAAAAAAAAAAAAAD6QwAAAAAAAPpDAAD6QwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPpDAAD6QwAA+kMAAAAAAAD6QwAAAAAAAAAAAAD6QwAAAAAAAPpDAAD6QwAA+kMAAPpDAAAAAAAA+kMAAPpDAAAAAAAAAAAAAPpDAAAAAAAAAAAAAAAAAAAAAAAA+kMAAAAA/3//f////7//f/9/////v/9//3////+//3//f////7//f///////v/9///////+//3///////7//f///////v/////////+//////////7//////////v/////////+//38AAP///7//fwAA////v/9/AAD///+//38AAP///7////9//////////3//////////f/////////9//////wAA/3//f/+/AAD/f/9//78AAP9//3//vwAA/3//f/+/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_2ud57")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_evtc7"]
+data = PackedVector3Array(500, 500, 500, 500, 0, 500, 0, 0, 500, 0, 0, 500, 0, 500, 500, 500, 500, 500, 500, 500, 0, 500, 500, 500, 0, 500, 500, 0, 500, 500, 0, 500, 0, 500, 500, 0, 500, 0, 0, 500, 500, 0, 0, 500, 0, 0, 500, 0, 0, 0, 0, 500, 0, 0, 500, 0, 500, 500, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 500, 500, 0, 500, 500, 500, 0, 500, 0, 0, 500, 0, 500, 500, 0, 500, 500, 500, 500, 500, 500, 0, 0, 500, 500, 0, 0, 500, 0, 0, 0, 0, 0, 0, 0, 500, 0, 0, 500, 500)
+
+[sub_resource type="Animation" id="Animation_be7sw"]
+resource_name = "Take 001"
+length = 4.9583335
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pguo3"]
+_data = {
+&"Take 001": SubResource("Animation_be7sw")
+}
+
+[node name="SM_Track_Base_01" type="Node3D" unique_id=856402641]
+
+[node name="Guides" type="Node3D" parent="." unique_id=1074233348]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, 0, 0)
+
+[node name="Base_Guide1" type="MeshInstance3D" parent="Guides" unique_id=821599177 groups=["Road"]]
+layers = 3
+mesh = SubResource("ArrayMesh_ungn4")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Guides/Base_Guide1" unique_id=1436977496 groups=["Road"]]
+collision_layer = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Guides/Base_Guide1/StaticBody3D" unique_id=1785372338]
+shape = SubResource("ConcavePolygonShape3D_evtc7")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2089117201]
+libraries/ = SubResource("AnimationLibrary_pguo3")

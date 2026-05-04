@@ -1,0 +1,119 @@
+[gd_scene format=4 uid="uid://tstgy5d4oglc"]
+
+[ext_resource type="Shader" uid="uid://bs6bpfb7prjg2" path="res://JuneTestStuff/Shader/Water_fall.gdshader" id="1_fei8u"]
+[ext_resource type="Texture2D" uid="uid://bm1vynx7kml6o" path="res://JuneTestStuff/Shader/WaterFallNoise.jpg" id="2_w5d5f"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_qn3gw"]
+noise_type = 2
+seed = 1
+frequency = 0.0074
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_bpve3"]
+noise = SubResource("FastNoiseLite_qn3gw")
+seamless = true
+as_normal_map = true
+bump_strength = 10.0
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_kwpwy"]
+noise_type = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_bdlcx"]
+noise = SubResource("FastNoiseLite_kwpwy")
+seamless = true
+as_normal_map = true
+bump_strength = 10.0
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_qc3al"]
+noise_type = 3
+frequency = 0.005
+fractal_octaves = 1
+fractal_gain = 1.5
+fractal_weighted_strength = 0.44
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_pp5y7"]
+noise = SubResource("FastNoiseLite_qc3al")
+seamless = true
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_bpve3"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_kwpwy"]
+noise = SubResource("FastNoiseLite_bpve3")
+seamless = true
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_aryxw"]
+fractal_type = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_xw021"]
+noise = SubResource("FastNoiseLite_aryxw")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w5d5f"]
+render_priority = 0
+shader = ExtResource("1_fei8u")
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 0.02
+shader_parameter/primary_color = Color(0.014608549, 0.5587423, 1.92523e-07, 1)
+shader_parameter/sink_color = Color(0.27591118, 4.6085192e-06, 0.20054838, 1)
+shader_parameter/wavefoam_texture_a = ExtResource("2_w5d5f")
+shader_parameter/wavefoam_texture_b = SubResource("NoiseTexture2D_xw021")
+shader_parameter/wavefoam_a_strength = 0.2999999932944
+shader_parameter/wavefoam_b_strength = 0.1499999966472
+shader_parameter/ripple_noise = SubResource("NoiseTexture2D_pp5y7")
+shader_parameter/ripple_color = Color(1.353256, 1.353256, 1.353256, 1)
+shader_parameter/ripple_strength = 0.999999977648
+shader_parameter/ripple_scale = 1.0
+shader_parameter/ripple_freq = 1.0
+shader_parameter/ripple_speed = 1.0
+shader_parameter/wave = SubResource("NoiseTexture2D_kwpwy")
+shader_parameter/wave_speed = 0.05999999865888
+shader_parameter/noise_scale = 1.0
+shader_parameter/height_scale = 0.15
+shader_parameter/normalmap_a = SubResource("NoiseTexture2D_bpve3")
+shader_parameter/normalmap_b = SubResource("NoiseTexture2D_bdlcx")
+shader_parameter/normalmap_a_strength = 0.499999988824
+shader_parameter/normalmap_b_strength = 0.499999988824
+shader_parameter/movement_direction = Vector2(0, 1)
+shader_parameter/movement_strength = 1.3
+shader_parameter/uv_scale = 0.02
+shader_parameter/depth_distance = 6.80000010132816
+shader_parameter/beers_law = 10.40000015497248
+shader_parameter/water_transparency = 0.5499999877064
+shader_parameter/refraction_strength = 0.50000002375
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_x1pts"]
+_surfaces = [{
+"aabb": AABB(-190.92885, -43.75361, -146.55617, 100.92884, 43.75361, 56.556435),
+"format": 34359742465,
+"index_count": 180,
+"index_data": PackedByteArray("AAABAAIAAgADAAAAAQAAAAQAAgABAAUABQAGAAIABgAFAAcABwAIAAYACQAHAAUABQAKAAkACgAFAAEACwAJAAoABAAMAAEAAQAMAAoADAAEAA0ADQAOAAwACgAMAA4ADgANAA8ACgAQAAsADgAQAAoAEQALABAADwASAA4AEAAOABIAEgAPABMAEAAUABEAEgAUABAAFQARABQAEwAWABIAFAASABYAFgATABcAFAAYABUAFgAYABQAGQAVABgAFwAaABYAGAAWABoAGAAbABkAGgAbABgAHAAZABsAGgAXAB0AGwAeABwAHgAbABoAHwAcAB4AHQAgABoAGgAgAB4AIQAgAB0AHQAiACEAIQAiACMAJAAeACAAIAAhACQAHgAkAB8AIwAlACEAJAAhACUAJQAjACYAJgAnACUAJQAnACgAJQApACQAHwAkACkAKAApACUAKQAqAB8AKQAoACsAKwAqACkA"),
+"name": "openPBR_shader1",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 44,
+"vertex_data": PackedByteArray("TC2+wmZu5r8AALTCTi2+wmZu5r8AANjCAQC0wgAAAAAAANjCAQC0wgAAAAAAALTC/LnFwmHmosAAALTCTi2+wmZu5r8AAPzCAQC0wgAAAAAAAPzCTC2+wmZu5r8AABDDAQC0wgAAAAAAABDD/LnFwmHmosAAABDDAbrFwmbmosAAAPzCr1LUwpQNT8EBABDDAbrFwmbmosAAANjCr1LUwpQNT8H9/7PCt1LUwo8NT8H//9fCcqbiwkgrpcH7/7PCt1LUwo8NT8EBAPzCb6biwkwrpcEDABDDeqbiwkUrpcH9/9fClvPwwqiPzMH4/7PCeqbiwkgrpcEDAPzClvPwwrSPzMEEABDDoPPwwqaPzMH8/9fCEHgXw0zRy8Hs/7PCoPPwwq2PzMEFAPzCEHgXw1jRy8ENABDDFXgXw1PRy8H2/9fCFXgXw1jRy8EOAPzCEjkkwwWDy8ERABDDEjkkw/iCy8Hk/7PCFzkkwwWDy8ESAPzCpskuw/Sq2MEUABDDFzkkwwCDy8Hy/9fCqckuw++q2MHu/9fCpskuw+iq2MHd/7PCKoQ2w2IMDMJyHLnCqckuw/Sq2MEUAPzCLYQ2w2YMDMKEHN3Cxu0+w60DL8JvHLnCye0+w7EDL8KBHN3Cye0+w7IDL8JXjgDDLYQ2w2gMDMJXjgDDLYQ2w2cMDMJhjhLDye0+w64DL8JhjhLD")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_yre25"]
+resource_name = "WaterFall"
+_surfaces = [{
+"aabb": AABB(-190.92885, -43.75361, -146.55617, 100.92884, 43.75361, 56.556435),
+"attribute_data": PackedByteArray("AAAAAAAAAAAAAIA/AAAAAAAAgD8AAIA/AAAAAAAAgD8AAIA/AAAAAAAAgD8AAIA/AAAAAAAAgD8AAAAAAAAAAAAAgD8AAAAAAACAPwAAgD8AAAAAAACAPwAAAAAAAAAAAAAAAAAAAAAAAIA/AAAAAAAAgD8AAIA/AAAAAAAAgD8AAIA/AAAAAAAAgD8AAIA/AAAAAAAAgD8AAAAAAAAAAAAAgD8AAAAAAACAPwAAgD8AAAAAAACAPwAAAAAAAAAAAAAAAAAAAAAAAIA/AAAAAAAAgD8AAIA/AAAAAAAAgD8AAAAAAAAAAAAAgD8AAAAAAACAPwAAgD8AAAAAAACAPwAAgD8AAAAAAACAPwAAgD8AAAAAAACAPwAAAAAAAAAAAAAAAAAAAAAAAIA/AAAAAAAAgD8AAIA/AAAAAAAAgD8AAAAAAAAAAAAAgD8AAAAAAACAPwAAgD8AAAAAAACAPwAAgD8AAAAAAACAPwAAgD8AAAAAAACAPwAAAAAAAAAAAAAAAAAAAAAAAIA/AAAAAAAAgD8AAIA/AAAAAAAAgD8AAAAAAAAAAAAAgD8AAAAAAACAPwAAgD8AAAAAAACAPwAAgD8AAAAAAACAPwAAgD8AAAAAAACAPwAAAAAAAAAAAAAAAAAAAAAAAIA/AAAAAAAAgD8AAIA/AAAAAAAAgD8AAAAAAAAAAAAAgD8AAAAAAACAPwAAgD8AAAAAAACAPwAAgD8AAAAAAACAPwAAgD8AAAAAAACAPwAAAAAAAAAAAAAAAAAAAAAAAIA/AAAAAAAAgD8AAIA/AAAAAAAAgD8AAIA/AAAAAAAAgD8AAIA/AAAAAAAAgD8AAAAAAAAAAAAAgD8AAAAAAACAPwAAgD8AAAAAAACAPwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAAAAAAIA/AAAAAAAAAAAAAIA/AAAAAAAAgD8AAIA/AAAAAAAAgD8AAAAAAAAAAAAAgD8AAAAAAACAPwAAgD8AAAAAAACAPwAAAAAAAAAAAAAAAAAAAAAAAIA/AAAAAAAAgD8AAIA/AAAAAAAAgD8AAAAAAAAAAAAAgD8AAAAAAACAPwAAgD8AAAAAAACAPwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAAAAAAIA/AAAAAAAAAAAAAIA/AAAAAAAAgD8AAIA/AAAAAAAAgD8AAIA/AAAAAAAAgD8AAIA/AAAAAAAAgD8AAAAAAAAAAAAAgD8AAAAAAACAPwAAgD8AAAAAAACAPwAAAAAAAAAA"),
+"format": 34359742487,
+"index_count": 180,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQACAAJAAoACgALAAgADAANAA4ADgAPAAwAEAARABIAEgATABAAFAAVABYAFgAXABQAGAAZABoAGgAbABgAHAAdAB4AHgAfABwAIAAhACIAIgAjACAAJAAlACYAJgAnACQAKAApACoAKgArACgALAAtAC4ALgAvACwAMAAxADIAMgAzADAANAA1ADYANgA3ADQAOAA5ADoAOgA7ADgAPAA9AD4APgA/ADwAQABBAEIAQgBDAEAARABFAEYARgBHAEQASABJAEoASgBLAEgATABNAE4ATgBPAEwAUABRAFIAUgBTAFAAVABVAFYAVgBXAFQAWABZAFoAWgBbAFgAXABdAF4AXgBfAFwAYABhAGIAYgBjAGAAZABlAGYAZgBnAGQAaABpAGoAagBrAGgAbABtAG4AbgBvAGwAcABxAHIAcgBzAHAAdAB1AHYAdgB3AHQA"),
+"material": SubResource("ShaderMaterial_w5d5f"),
+"name": "openPBR_shader1",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 120,
+"vertex_data": PackedByteArray("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")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_x1pts")
+
+[node name="WaterFall" type="Node3D" unique_id=1726501432]
+
+[node name="WaterFall2" type="MeshInstance3D" parent="." unique_id=2045449517]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -134.11736, 41.792793, 87.40395)
+mesh = SubResource("ArrayMesh_yre25")

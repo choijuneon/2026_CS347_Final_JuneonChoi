@@ -1,0 +1,52 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://dvxkgrmy6b2qk"
+path="res://.godot/imported/Ocean_Placeholder_M_01.fbx-080ad17a276657a265afb34810a39e95.scn"
+
+[deps]
+
+source_file="res://FinalAssets/StaticMeshes/Environments/2.0/Nature_Build_Kit/Ocean_Placeholder_M_01.fbx"
+dest_files=["res://.godot/imported/Ocean_Placeholder_M_01.fbx-080ad17a276657a265afb34810a39e95.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/root_script=null
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_name_suffixes=true
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=true
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+materials/extract=0
+materials/extract_format=0
+materials/extract_path=""
+_subresources={
+"materials": {
+"openPBR_shader1": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://FinalAssets/Materials/GreyBoxWater.tres",
+"use_external/path": "uid://can0qbj00c0ey"
+}
+}
+}
+fbx/importer=0
+fbx/allow_geometry_helper_nodes=false
+fbx/embedded_image_handling=1
+fbx/naming_version=2

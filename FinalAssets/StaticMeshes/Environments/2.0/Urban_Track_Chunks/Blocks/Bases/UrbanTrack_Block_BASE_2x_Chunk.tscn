@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://cku0hvhpkl8va"]
+
+[ext_resource type="PackedScene" uid="uid://8nsxdj3ibrsc" path="res://FinalAssets/StaticMeshes/Environments/2.0/UrbanBuildKit/Scenes/BaseKit/SM_CementWall_3M.tscn" id="1_vcx82"]
+[ext_resource type="PackedScene" uid="uid://ch5bojkmxndit" path="res://FinalAssets/StaticMeshes/Environments/2.0/UrbanBuildKit/Scenes/BaseKit/SM_CementPillar_3M.tscn" id="2_a2a0x"]
+
+[node name="Node3D" type="Node3D" unique_id=2008404948]
+
+[node name="Node3D19" parent="." unique_id=1371707816 instance=ExtResource("1_vcx82")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 6)
+
+[node name="Node3D20" parent="." unique_id=1694548397 instance=ExtResource("1_vcx82")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 6)
+
+[node name="Node3D25" parent="." unique_id=1415237152 instance=ExtResource("1_vcx82")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 4.5, 0, 0)
+
+[node name="Node3D26" parent="." unique_id=1555035388 instance=ExtResource("1_vcx82")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 7.5, 0, 2.6226832e-07)
+
+[node name="Node3D27" parent="." unique_id=317791175 instance=ExtResource("1_vcx82")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 7.5, 0, 6)
+
+[node name="Node3D28" parent="." unique_id=501396590 instance=ExtResource("1_vcx82")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 7.5, 0, 2.9999998)
+
+[node name="Node3D21" parent="." unique_id=1743190429 instance=ExtResource("1_vcx82")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.5, 0, 0)
+
+[node name="Node3D22" parent="." unique_id=178500713 instance=ExtResource("1_vcx82")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.5, 0, 3)
+
+[node name="Node3D23" parent="." unique_id=739573883 instance=ExtResource("2_a2a0x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 1)
+
+[node name="Node3D24" parent="." unique_id=522956154 instance=ExtResource("2_a2a0x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 4)
+
+[node name="Node3D29" parent="." unique_id=429567323 instance=ExtResource("2_a2a0x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, 1)
+
+[node name="Node3D30" parent="." unique_id=1734804355 instance=ExtResource("2_a2a0x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, 4)

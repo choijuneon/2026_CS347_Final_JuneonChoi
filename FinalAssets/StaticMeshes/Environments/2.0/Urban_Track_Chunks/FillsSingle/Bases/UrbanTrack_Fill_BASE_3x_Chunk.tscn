@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://bl53wy4ho14mt"]
+
+[ext_resource type="PackedScene" uid="uid://8nsxdj3ibrsc" path="res://FinalAssets/StaticMeshes/Environments/2.0/UrbanBuildKit/Scenes/BaseKit/SM_CementWall_3M.tscn" id="1_osard"]
+[ext_resource type="PackedScene" uid="uid://ch5bojkmxndit" path="res://FinalAssets/StaticMeshes/Environments/2.0/UrbanBuildKit/Scenes/BaseKit/SM_CementPillar_3M.tscn" id="2_hllwl"]
+
+[node name="Node3D" type="Node3D" unique_id=1591890155]
+
+[node name="Node3D20" parent="." unique_id=1371707816 instance=ExtResource("1_osard")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 4.5, 0, 0)
+
+[node name="Node3D68" parent="." unique_id=1139784806 instance=ExtResource("1_osard")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 7.5, 0, 2.6226832e-07)
+
+[node name="Node3D78" parent="." unique_id=371530706 instance=ExtResource("1_osard")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 10.5, 0, 5.2453663e-07)
+
+[node name="Node3D17" parent="." unique_id=1683010902 instance=ExtResource("1_osard")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10.5, 0, 2.999999)
+
+[node name="Node3D21" parent="." unique_id=744956726 instance=ExtResource("1_osard")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.5, 0, 0)
+
+[node name="Node3D23" parent="." unique_id=739573883 instance=ExtResource("2_hllwl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 1)
+
+[node name="Node3D18" parent="." unique_id=1797285982 instance=ExtResource("2_hllwl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0, 1)
+
+[node name="Node3D9" parent="." unique_id=148362718 instance=ExtResource("1_osard")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, 3)
+
+[node name="Node3D14" parent="." unique_id=185027195 instance=ExtResource("1_osard")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0, 3)
+
+[node name="Node3D16" parent="." unique_id=2088091556 instance=ExtResource("1_osard")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 3)

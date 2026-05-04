@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://dq1u0niiv1lu5"]
+
+[ext_resource type="Script" uid="uid://xqyfvuv4htmn" path="res://YV-TestStuff/collectible_health.gd" id="1_wjv4g"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3vnxw"]
+albedo_color = Color(0, 1, 0, 1)
+metallic = 1.0
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_od5xb"]
+material = SubResource("StandardMaterial3D_3vnxw")
+height = 1.5
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_le8k1"]
+
+[node name="CollectibleHealth" type="Area3D" unique_id=814614715]
+script = ExtResource("1_wjv4g")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=500179533]
+mesh = SubResource("CapsuleMesh_od5xb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1348333070]
+shape = SubResource("CapsuleShape3D_le8k1")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

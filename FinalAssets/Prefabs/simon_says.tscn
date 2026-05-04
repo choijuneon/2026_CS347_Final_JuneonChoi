@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bobkqo61dpk13"]
+
+[ext_resource type="Script" uid="uid://pdjvsmt8kswh" path="res://FinalAssets/Scripts/SimonSays.gd" id="1_lss3g"]
+
+[node name="SimonSays" type="Node" unique_id=306175912]
+script = ExtResource("1_lss3g")
+
+[node name="Panel" type="Panel" parent="." unique_id=1490180254]
+offset_left = 829.0
+offset_top = 577.0
+offset_right = 869.0
+offset_bottom = 617.0
+scale = Vector2(6.000002, 0.68940115)
+
+[node name="InputLabel" type="Label" parent="." unique_id=921898700]
+offset_left = 829.0
+offset_top = 578.0
+offset_right = 1068.0
+offset_bottom = 628.0
+text = "[\"right\", \"right\", \"right\", \"right\"]"
+horizontal_alignment = 1

@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://p8kaglxfep4t"]
+
+[ext_resource type="PackedScene" uid="uid://ocm7x28x14i5" path="res://FinalAssets/StaticMeshes/Environments/3.0/Obstacles&Ramps/FBX/SM_ENV_FencePole_v04.fbx" id="1_yopq6"]
+[ext_resource type="Material" uid="uid://c1jv3mwgakd58" path="res://FinalAssets/Materials/MAT_PropAtlas.tres" id="2_uthnm"]
+
+[node name="Node3D" type="Node3D" unique_id=2114237115]
+
+[node name="SM_ENV_FencePole_v04" parent="." unique_id=790863616 instance=ExtResource("1_yopq6")]
+
+[node name="SM_ENV_FencePole_v01" parent="SM_ENV_FencePole_v04" index="0" unique_id=1775414439]
+material_override = ExtResource("2_uthnm")
+
+[editable path="SM_ENV_FencePole_v04"]

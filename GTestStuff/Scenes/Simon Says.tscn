@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://bbvrngg1p5cdl"]
+
+[ext_resource type="Script" uid="uid://pdjvsmt8kswh" path="res://FinalAssets/Scripts/SimonSays.gd" id="1_8j4y3"]
+[ext_resource type="Script" uid="uid://b0d3hf2vhjhxd" path="res://GTestStuff/Scenes/ButtonPresses.gd" id="1_x1ud2"]
+[ext_resource type="Script" uid="uid://dg368xm8lr8ds" path="res://GTestStuff/Scripts/TestSimonSays.gd" id="2_o11ah"]
+[ext_resource type="Script" uid="uid://7qvevurt5nda" path="res://GTestStuff/Scenes/button.gd" id="3_w0cvy"]
+[ext_resource type="Script" uid="uid://dfq08o058lxn6" path="res://GTestStuff/Scenes/showInput.gd" id="4_a42ge"]
+
+[node name="SimonSays" type="Node2D" unique_id=580146874]
+script = ExtResource("1_x1ud2")
+
+[node name="SimonSaysCode" type="Node" parent="." unique_id=33389326]
+script = ExtResource("1_8j4y3")
+
+[node name="Wanted" type="Label" parent="." unique_id=634873603]
+offset_left = 246.2922
+offset_top = 241.28787
+offset_right = 580.0
+offset_bottom = 292.0
+text = "Test
+"
+script = ExtResource("2_o11ah")
+
+[node name="Clear" type="Button" parent="." unique_id=1993302289]
+offset_left = 770.0
+offset_top = 94.0
+offset_right = 919.0
+offset_bottom = 164.0
+text = "Clear"
+script = ExtResource("3_w0cvy")
+
+[node name="Label" type="Label" parent="." unique_id=843739351]
+offset_left = 249.0
+offset_top = 170.0
+offset_right = 289.0
+offset_bottom = 193.0
+script = ExtResource("4_a42ge")
+
+[node name="Buttons" type="Node" parent="." unique_id=1438989709]
+
+[node name="Button2" type="Button" parent="Buttons" unique_id=1184437005]
+offset_left = 824.0
+offset_top = 264.0
+offset_right = 1106.0
+offset_bottom = 427.0
+text = "Up"
+
+[node name="Button" type="Button" parent="Buttons/Button2" unique_id=259276314]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 161.0
+offset_right = 285.0
+offset_bottom = 324.0
+text = "Left"
+
+[node name="Button" type="Button" parent="Buttons" unique_id=32184353]
+offset_left = 540.0
+offset_top = 261.0
+offset_right = 822.0
+offset_bottom = 424.0
+text = "Down"
+
+[node name="Button" type="Button" parent="Buttons/Button" unique_id=2040858934]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 169.0
+offset_right = 274.0
+offset_bottom = 332.0
+text = "Right"
+
+[connection signal="button_down" from="Clear" to="Clear" method="_on_button_down"]
+[connection signal="button_up" from="Buttons/Button2" to="." method="_on_button_up"]
+[connection signal="button_up" from="Buttons/Button2/Button" to="." method="_on_button_left"]
+[connection signal="button_up" from="Buttons/Button" to="." method="_on_button_down"]
+[connection signal="button_up" from="Buttons/Button/Button" to="." method="_on_button_right"]

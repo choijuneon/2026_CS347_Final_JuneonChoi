@@ -1,0 +1,51 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://dyowef3vjcpqv"]
+
+[ext_resource type="Shader" uid="uid://cgsai7y6u00bo" path="res://JuneTestStuff/Shader/Lava.gdshader" id="1_63wql"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_r0du0"]
+noise_type = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_cm0pq"]
+noise = SubResource("FastNoiseLite_r0du0")
+seamless = true
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_fos0i"]
+noise_type = 2
+frequency = 0.05
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_3dxm6"]
+noise = SubResource("FastNoiseLite_fos0i")
+seamless = true
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_63wql"]
+noise_type = 2
+frequency = 0.0046
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_2rjg0"]
+noise = SubResource("FastNoiseLite_63wql")
+seamless = true
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_lgr22"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_trn2v"]
+noise = SubResource("FastNoiseLite_lgr22")
+seamless = true
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_63wql")
+shader_parameter/primary_color = Color(1.6149065, 0.7141226, 0, 1)
+shader_parameter/emission_color = Color(0.92078304, 0.8352567, 0.9999997, 1)
+shader_parameter/emission_str = 12.0
+shader_parameter/uv_scale = 0.05
+shader_parameter/texture_speed = 0.03
+shader_parameter/lava_noise_a = SubResource("NoiseTexture2D_cm0pq")
+shader_parameter/lava_noise_b = SubResource("NoiseTexture2D_3dxm6")
+shader_parameter/lava_b_str = 0.9450000448875
+shader_parameter/lava_noise_c = SubResource("NoiseTexture2D_2rjg0")
+shader_parameter/lava_c_str = 0.59200002812
+shader_parameter/lava_contrast = 1.75
+shader_parameter/wave_noise = SubResource("NoiseTexture2D_trn2v")
+shader_parameter/noise_scale = 1.00000004424012
+shader_parameter/wave_speed = 0.02000000095
+shader_parameter/wave_height = 0.50000002375

@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://chm7fsb1jeyki"]
+
+[ext_resource type="Texture2D" uid="uid://dyrdwvn4asqa4" path="res://FinalAssets/Textures/ConcreteTest/plaster_wall_02_basecolor_2k.png" id="1_fxhea"]
+[ext_resource type="Texture2D" uid="uid://ck2r73cx0t6tr" path="res://FinalAssets/Textures/ConcreteTest/plaster_wall_02_normal_dx_2k.png" id="2_llj6y"]
+[ext_resource type="Texture2D" uid="uid://ciayow220pxh4" path="res://FinalAssets/Textures/ConcreteTest/plaster_wall_02_roughness_2k.png" id="3_gvthg"]
+
+[resource]
+albedo_texture = ExtResource("1_fxhea")
+roughness_texture = ExtResource("3_gvthg")
+normal_enabled = true
+normal_texture = ExtResource("2_llj6y")

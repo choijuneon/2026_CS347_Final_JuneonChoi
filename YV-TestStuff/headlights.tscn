@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dqlb0mkly8iqd"]
+
+[ext_resource type="Script" uid="uid://2c2uoasqn5mk" path="res://YV-TestStuff/headlights.gd" id="1_gkf6r"]
+
+[node name="SpotLight3D" type="SpotLight3D" unique_id=1089508015]
+light_energy = 6.0
+light_indirect_energy = 0.3
+shadow_enabled = true
+spot_range = 100.0
+spot_angle = 35.0
+script = ExtResource("1_gkf6r")

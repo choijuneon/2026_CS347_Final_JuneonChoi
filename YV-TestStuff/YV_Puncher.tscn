@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://br872x7115ggq"]
+
+[ext_resource type="Script" uid="uid://ci4skmw8q6ona" path="res://YV-TestStuff/YV_Puncher.gd" id="1_uevim"]
+[ext_resource type="Script" path="res://YV-TestStuff/YV_Puncher-hitbox.gd" id="2_opcpj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_opcpj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rkwev"]
+albedo_color = Color(1, 0, 0, 1)
+metallic = 1.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_wkotp"]
+material = SubResource("StandardMaterial3D_rkwev")
+
+[node name="Puncher (Node3D)" type="Node3D" unique_id=295459325]
+script = ExtResource("1_uevim")
+
+[node name="Hitbox" type="Area3D" parent="." unique_id=259950665 groups=["punch_hitbox"]]
+script = ExtResource("2_opcpj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox" unique_id=49142071]
+shape = SubResource("BoxShape3D_opcpj")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1726988612]
+mesh = SubResource("BoxMesh_wkotp")
+
+[connection signal="body_entered" from="Hitbox" to="Hitbox" method="_on_body_entered"]

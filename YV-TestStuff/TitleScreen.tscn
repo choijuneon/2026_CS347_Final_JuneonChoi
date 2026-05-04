@@ -1,0 +1,511 @@
+[gd_scene format=3 uid="uid://vg7bjg4ohahn"]
+
+[ext_resource type="Script" uid="uid://ms5e72n5rptj" path="res://YV-TestStuff/title_screen.gd" id="1_0oyas"]
+[ext_resource type="Script" uid="uid://cfjekii1486s4" path="res://FinalAssets/Scripts/ArduinoTest.cs" id="2_hiuxe"]
+[ext_resource type="FontFile" uid="uid://bevxfgm8s3edr" path="res://FinalAssets/Fonts/hetilica.ttf" id="2_qn82v"]
+[ext_resource type="Texture2D" uid="uid://b6st4p5hjkm7y" path="res://FinalAssets/Textures/UI/Driven to Madness Logo vFinal.png" id="3_t7snl"]
+[ext_resource type="PackedScene" uid="uid://bnwo34kpv2261" path="res://GTestStuff/Scenes/VolumeSliders.tscn" id="3_ul042"]
+[ext_resource type="Texture2D" uid="uid://62685pbk3ljj" path="res://FinalAssets/Animations & Effects/Probe State.png" id="4_ri0jk"]
+[ext_resource type="Script" uid="uid://cpal4n563s3f6" path="res://FinalAssets/Scripts/ProbeState.gd" id="5_iqqei"]
+[ext_resource type="FontFile" uid="uid://dy5t1j0fogdl0" path="res://FinalAssets/Fonts/belligerent.ttf" id="8_t7snl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_te1jn"]
+bg_color = Color(0.08632169, 0.6886288, 0.6552157, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hiuxe"]
+bg_color = Color(0.027064715, 0.33345714, 0.3151306, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ul042"]
+bg_color = Color(0.046468146, 0.44065967, 0.41725892, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_te1jn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iqqei"]
+atlas = ExtResource("4_ri0jk")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dtjyv"]
+atlas = ExtResource("4_ri0jk")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qn82v"]
+atlas = ExtResource("4_ri0jk")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ul042"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iqqei")
+}],
+"loop": true,
+"name": &"failed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dtjyv")
+}],
+"loop": true,
+"name": &"probing",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qn82v")
+}],
+"loop": true,
+"name": &"success",
+"speed": 5.0
+}]
+
+[node name="TitleScreen" type="Control" unique_id=1488495818]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0oyas")
+
+[node name="MainMenu" type="Control" parent="." unique_id=1272859321]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GridContainer" type="GridContainer" parent="MainMenu" unique_id=96021716]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 178.0
+offset_top = 399.0
+offset_right = 936.0
+offset_bottom = 586.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/h_separation = 50
+theme_override_constants/v_separation = 25
+columns = 2
+
+[node name="Button" type="Button" parent="MainMenu/GridContainer" unique_id=758167449]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_qn82v")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_te1jn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hiuxe")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ul042")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_te1jn")
+text = "Start Game"
+
+[node name="Button2" type="Button" parent="MainMenu/GridContainer" unique_id=857479330]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_qn82v")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_te1jn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hiuxe")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ul042")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_te1jn")
+text = "Options"
+
+[node name="Button3" type="Button" parent="MainMenu/GridContainer" unique_id=1696657437]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_qn82v")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_te1jn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hiuxe")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ul042")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_te1jn")
+text = "Credits"
+
+[node name="Button4" type="Button" parent="MainMenu/GridContainer" unique_id=949708124]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_qn82v")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_te1jn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hiuxe")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ul042")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_te1jn")
+text = "Exit"
+
+[node name="TitleName" type="Label" parent="MainMenu" unique_id=2072152110]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 341.5
+offset_top = 332.0
+offset_right = 770.5
+offset_bottom = 608.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 80
+text = "Driven to
+Madness"
+
+[node name="TitleLogo" type="TextureRect" parent="MainMenu" unique_id=1589591672]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 240.0
+offset_top = -38.0
+offset_right = 1640.0
+offset_bottom = 962.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("3_t7snl")
+
+[node name="ArduinoInput" type="Node" parent="MainMenu" unique_id=526463086]
+script = ExtResource("2_hiuxe")
+
+[node name="VolumeSliders" parent="MainMenu" unique_id=1212851701 instance=ExtResource("3_ul042")]
+visible = false
+layout_mode = 1
+offset_left = 44.0
+offset_top = 275.0
+offset_right = 4.0
+offset_bottom = 235.0
+
+[node name="ConnectionChecker" type="AnimatedSprite2D" parent="MainMenu" unique_id=615706811]
+position = Vector2(1122, 620)
+sprite_frames = SubResource("SpriteFrames_ul042")
+animation = &"failed"
+script = ExtResource("5_iqqei")
+
+[node name="Control" type="Control" parent="MainMenu/ConnectionChecker" unique_id=2103092398]
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -56.0
+offset_top = -56.0
+offset_right = -16.0
+offset_bottom = -16.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="CreditsPanel" type="Control" parent="." unique_id=1827649278]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CreditsBG" type="ColorRect" parent="CreditsPanel" unique_id=1454059247]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.24115604, 0.24115604, 0.24115604, 1)
+
+[node name="CreditsTitle" type="Label" parent="CreditsPanel/CreditsBG" unique_id=886811690]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -542.0
+offset_top = 24.0
+offset_right = 542.0
+offset_bottom = 104.075
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("2_qn82v")
+theme_override_font_sizes/font_size = 80
+text = "Credits"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="CreditsPanel/CreditsBG" unique_id=2102622472]
+layout_mode = 1
+offset_left = 83.0
+offset_top = 30.0
+offset_right = 273.0
+offset_bottom = 100.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_qn82v")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_te1jn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hiuxe")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ul042")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_te1jn")
+text = "<  Back"
+
+[node name="Artists" type="Label" parent="CreditsPanel/CreditsBG" unique_id=1065119440]
+layout_mode = 1
+offset_left = 91.0
+offset_top = 140.0
+offset_right = 319.0
+offset_bottom = 300.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("2_qn82v")
+theme_override_font_sizes/font_size = 40
+text = "Artists
+"
+horizontal_alignment = 1
+
+[node name="ArtistNames" type="Label" parent="CreditsPanel/CreditsBG/Artists" unique_id=1756609985]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -150.0
+offset_top = -99.0
+offset_right = 169.0
+offset_bottom = 58.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("8_t7snl")
+theme_override_font_sizes/font_size = 40
+text = "Jonah Bechard
+Stephan Halverson
+Mia Hazen
+Amari Robinson"
+horizontal_alignment = 1
+
+[node name="Programmers" type="Label" parent="CreditsPanel/CreditsBG" unique_id=2069450958]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -194.0
+offset_top = 140.0
+offset_right = 143.0
+offset_bottom = 301.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("2_qn82v")
+theme_override_font_sizes/font_size = 40
+text = "Programmers
+
+"
+horizontal_alignment = 1
+
+[node name="ProgrammerNames" type="Label" parent="CreditsPanel/CreditsBG/Programmers" unique_id=600777191]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -121.0
+offset_top = -99.0
+offset_right = 140.0
+offset_bottom = 58.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("8_t7snl")
+theme_override_font_sizes/font_size = 40
+text = "Juneon Choi
+G Paracha
+Yeeleng Vang
+Braden Wohlfeil"
+horizontal_alignment = 1
+
+[node name="Audio" type="Label" parent="CreditsPanel/CreditsBG" unique_id=1777920387]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -411.0
+offset_top = 140.0
+offset_right = -21.0
+offset_bottom = 263.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("2_qn82v")
+theme_override_font_sizes/font_size = 40
+text = "Audio
+"
+horizontal_alignment = 1
+
+[node name="AudioNames" type="Label" parent="CreditsPanel/CreditsBG/Audio" unique_id=320856343]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -112.0
+offset_top = -59.0
+offset_right = 131.0
+offset_bottom = 58.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("8_t7snl")
+theme_override_font_sizes/font_size = 40
+text = "Gavin Mackey
+David Seidel
+Kemi"
+horizontal_alignment = 1
+
+[node name="SpecialMentions" type="Label" parent="CreditsPanel/CreditsBG" unique_id=1342782810]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -232.0
+offset_top = -238.0
+offset_right = 190.0
+offset_bottom = -74.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("2_qn82v")
+theme_override_font_sizes/font_size = 40
+text = "Special Mentions"
+horizontal_alignment = 1
+
+[node name="SpecialMentionNames" type="Label" parent="CreditsPanel/CreditsBG/SpecialMentions" unique_id=1096366358]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -316.5
+offset_top = -112.045044
+offset_right = -15.5
+offset_bottom = 22.954956
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("8_t7snl")
+theme_override_font_sizes/font_size = 40
+text = "André Henderson
+Andrew Hirl
+Karl Koehle"
+horizontal_alignment = 1
+
+[node name="SpecialMentionNames2" type="Label" parent="CreditsPanel/CreditsBG/SpecialMentions" unique_id=1027445830]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 48.0
+offset_top = -93.045044
+offset_right = 320.0
+offset_bottom = 23.954956
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = ExtResource("8_t7snl")
+theme_override_font_sizes/font_size = 40
+text = "Kim Loken
+Rose Schlemmer
+Andrew Williams"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="MainMenu/GridContainer/Button" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="MainMenu/GridContainer/Button2" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="MainMenu/GridContainer/Button3" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="MainMenu/GridContainer/Button4" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="CreditsPanel/CreditsBG/Button" to="." method="_on_back_pressed"]

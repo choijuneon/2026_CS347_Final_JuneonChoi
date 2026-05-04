@@ -1,0 +1,132 @@
+[gd_scene format=3 uid="uid://5b6silvc4tip"]
+
+[ext_resource type="Shader" uid="uid://dctnfk03xixuv" path="res://JuneTestStuff/Shader/Mud.gdshader" id="1_72rv2"]
+[ext_resource type="Script" uid="uid://kuy0g6nf8tg" path="res://JuneTestStuff/Scripts/Water_Pit.gd" id="2_exwku"]
+[ext_resource type="Material" uid="uid://cbqv2c0lck03v" path="res://JuneTestStuff/Shader/Water_preset_02.tres" id="3_jflvg"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_qn3gw"]
+noise_type = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_bpve3"]
+noise = SubResource("FastNoiseLite_qn3gw")
+seamless = true
+as_normal_map = true
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_kwpwy"]
+noise_type = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_bdlcx"]
+noise = SubResource("FastNoiseLite_kwpwy")
+seamless = true
+as_normal_map = true
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_qc3al"]
+noise_type = 3
+frequency = 0.005
+fractal_octaves = 1
+fractal_gain = 1.5
+fractal_weighted_strength = 0.44
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_0o6li"]
+noise = SubResource("FastNoiseLite_qc3al")
+seamless = true
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_bpve3"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_kwpwy"]
+noise = SubResource("FastNoiseLite_bpve3")
+seamless = true
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_bdlcx"]
+fractal_type = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_fhwlh"]
+noise = SubResource("FastNoiseLite_bdlcx")
+seamless = true
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_aryxw"]
+fractal_type = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_xw021"]
+noise = SubResource("FastNoiseLite_aryxw")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r53tw"]
+render_priority = 0
+shader = ExtResource("1_72rv2")
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 0.02
+shader_parameter/alpha = 0.95
+shader_parameter/primary_color = Color(0, 0, 0, 1)
+shader_parameter/sink_color = Color(0, 0, 0, 1)
+shader_parameter/frensel_color = Color(0, 0, 0, 1)
+shader_parameter/wavefoam_texture_a = SubResource("NoiseTexture2D_fhwlh")
+shader_parameter/wavefoam_texture_b = SubResource("NoiseTexture2D_xw021")
+shader_parameter/wavefoam_a_strength = 0.0
+shader_parameter/wavefoam_b_strength = 0.0
+shader_parameter/ripple_noise = SubResource("NoiseTexture2D_0o6li")
+shader_parameter/ripple_color = Color(1, 1, 1, 1)
+shader_parameter/ripple_strength = 0.5999999865888
+shader_parameter/ripple_scale = 0.5
+shader_parameter/ripple_freq = 4.0
+shader_parameter/ripple_speed = 1.8
+shader_parameter/wave = SubResource("NoiseTexture2D_kwpwy")
+shader_parameter/wave_speed = 0.025
+shader_parameter/noise_scale = 20.0
+shader_parameter/height_scale = 0.04
+shader_parameter/normalmap_a = SubResource("NoiseTexture2D_bpve3")
+shader_parameter/normalmap_b = SubResource("NoiseTexture2D_bdlcx")
+shader_parameter/normalmap_a_strength = 0.5
+shader_parameter/normalmap_b_strength = 0.499999988824
+shader_parameter/movement_direction = Vector2(0.2, 0.1)
+shader_parameter/movement_strength = 0.12
+shader_parameter/uv_scale = 1.0
+shader_parameter/depth_distance = 4.0000000596048
+shader_parameter/beers_law = 12.0
+shader_parameter/water_transparency = 0.8999999798832
+shader_parameter/refraction_strength = 0.418000019855
+
+[sub_resource type="BoxMesh" id="BoxMesh_p5aep"]
+material = SubResource("ShaderMaterial_r53tw")
+size = Vector3(12, 5, 40)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_52nqr"]
+size = Vector3(12, 10, 25)
+
+[sub_resource type="QuadMesh" id="QuadMesh_52nqr"]
+material = ExtResource("3_jflvg")
+size = Vector2(12, 20)
+orientation = 1
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_52nqr"]
+data = PackedVector3Array(6, 0, 10, -6, 0, 10, 6, 0, -10, -6, 0, 10, -6, 0, -10, 6, 0, -10)
+
+[node name="WaterPit01" type="Node3D" unique_id=1462268104]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+script = ExtResource("2_exwku")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1956016170]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
+mesh = SubResource("BoxMesh_p5aep")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=386812221]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=751058151]
+shape = SubResource("BoxShape3D_52nqr")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1903933346 groups=["Water"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+collision_layer = 4
+collision_mask = 4
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=1946587157]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9533262, 0)
+visible = false
+mesh = SubResource("QuadMesh_52nqr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=765636475]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9533262, 0)
+shape = SubResource("ConcavePolygonShape3D_52nqr")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://b3fr6w6xi16d7"]
+
+[ext_resource type="PackedScene" uid="uid://dx5hfcsey1d4a" path="res://FinalAssets/StaticMeshes/Environments/2.0/UrbanBuildKit/FBX/Slabs/SM_CementSlab_SA_6x15_3M.fbx" id="1_isl1l"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_astti"]
+size = Vector3(15, 0.5, 6)
+
+[node name="Slab_SA_6x15_3M" type="Node3D" unique_id=37814939]
+
+[node name="SM_CementSlab_SA_6x15_3M" parent="." unique_id=33704963 instance=ExtResource("1_isl1l")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="SM_CementSlab_SA_6x15_3M" unique_id=835023144 groups=["Road"]]
+collision_layer = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SM_CementSlab_SA_6x15_3M/StaticBody3D" unique_id=1703982673 groups=["Road"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0.25, 3)
+shape = SubResource("BoxShape3D_astti")

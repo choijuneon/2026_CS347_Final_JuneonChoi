@@ -1,0 +1,19 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://buqaki0085yku"]
+
+[ext_resource type="Texture2D" uid="uid://blr0leu2dran6" path="res://JuneTestStuff/Props(temp)/Mat/MAT_propAtlas_v013_standardSurface1_BaseColor.png" id="1_mvac6"]
+
+[sub_resource type="Gradient" id="Gradient_mvac6"]
+colors = PackedColorArray(0.3515629, 0.3515629, 0.35156286, 1, 0.60392326, 0.60392326, 0.6039232, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_41l2j"]
+frequency = 0.1
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_6v7cs"]
+noise = SubResource("FastNoiseLite_41l2j")
+color_ramp = SubResource("Gradient_mvac6")
+seamless = true
+
+[resource]
+albedo_texture = ExtResource("1_mvac6")
+metallic = 1.0
+roughness_texture = SubResource("NoiseTexture2D_6v7cs")

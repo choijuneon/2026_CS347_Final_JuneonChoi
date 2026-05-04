@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://hvu0e4gvvgic"
+path="res://.godot/imported/Engine High Gear.wav-ebbbf457b899cc7db775165c9d7b75ef.sample"
+
+[deps]
+
+source_file="res://GTestStuff/Sounds/AudioFromMT/Finished SFX/Engine High Gear.wav"
+dest_files=["res://.godot/imported/Engine High Gear.wav-ebbbf457b899cc7db775165c9d7b75ef.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

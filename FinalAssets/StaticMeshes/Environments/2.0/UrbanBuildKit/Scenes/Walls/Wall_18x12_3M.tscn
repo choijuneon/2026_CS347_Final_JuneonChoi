@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://clsc34eecet2i"]
+
+[ext_resource type="PackedScene" uid="uid://cwaexoeb8usxx" path="res://FinalAssets/StaticMeshes/Environments/2.0/UrbanBuildKit/Scenes/Walls/Wall_3x12_3M.tscn" id="1_44m7m"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fuskb"]
+size = Vector3(18, 12, 1)
+
+[node name="Wall_15x12_3M" type="Node3D" unique_id=60219765]
+
+[node name="Wall_3x12_3M" parent="." unique_id=394306456 instance=ExtResource("1_44m7m")]
+
+[node name="Wall_3x12_3M2" parent="." unique_id=1903191392 instance=ExtResource("1_44m7m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="Wall_3x12_3M3" parent="." unique_id=1848685378 instance=ExtResource("1_44m7m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+
+[node name="Wall_3x12_3M4" parent="." unique_id=1615284522 instance=ExtResource("1_44m7m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 0)
+
+[node name="Wall_3x12_3M5" parent="." unique_id=1157388585 instance=ExtResource("1_44m7m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0)
+
+[node name="Wall_3x12_3M6" parent="." unique_id=873515053 instance=ExtResource("1_44m7m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=2002033969 groups=["Wall"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=868789245]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 6, 0.5)
+shape = SubResource("BoxShape3D_fuskb")

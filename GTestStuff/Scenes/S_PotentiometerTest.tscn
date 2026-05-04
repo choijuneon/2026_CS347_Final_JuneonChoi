@@ -1,0 +1,103 @@
+[gd_scene format=3 uid="uid://bq14uhommc41g"]
+
+[ext_resource type="Script" uid="uid://85xd7n62lf55" path="res://GTestStuff/Scripts/RandomNumber.gd" id="1_vkcgp"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_vnrjm"]
+
+[node name="SPotentiometerTest" type="Node2D" unique_id=446685944]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=386562910]
+position = Vector2(158.30463, 83.250015)
+scale = Vector2(99.50341, 89.500015)
+mesh = SubResource("SphereMesh_vnrjm")
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="." unique_id=267961472]
+position = Vector2(891.9999, 78)
+scale = Vector2(99.50341, 89.500015)
+mesh = SubResource("SphereMesh_vnrjm")
+
+[node name="MeshInstance2D3" type="MeshInstance2D" parent="." unique_id=772703479]
+position = Vector2(160.99998, 377)
+scale = Vector2(99.50341, 89.500015)
+mesh = SubResource("SphereMesh_vnrjm")
+
+[node name="MeshInstance2D4" type="MeshInstance2D" parent="." unique_id=874443311]
+position = Vector2(905.00006, 356)
+scale = Vector2(99.50341, 89.500015)
+mesh = SubResource("SphereMesh_vnrjm")
+
+[node name="Button" type="Button" parent="." unique_id=1168463841]
+offset_left = 400.0
+offset_top = 151.0
+offset_right = 538.0
+offset_bottom = 271.0
+
+[node name="Label4" type="Label" parent="." unique_id=1281039368]
+offset_left = 789.0
+offset_top = 429.0
+offset_right = 981.0
+offset_bottom = 478.0
+text = "Expected: 20
+"
+script = ExtResource("1_vkcgp")
+
+[node name="Label3" type="Label" parent="." unique_id=2137495435]
+offset_left = 62.0
+offset_top = 447.0
+offset_right = 254.0
+offset_bottom = 496.0
+text = "Expected: 20
+"
+script = ExtResource("1_vkcgp")
+
+[node name="Label2" type="Label" parent="." unique_id=1721131907]
+offset_left = 805.0
+offset_top = 152.0
+offset_right = 997.0
+offset_bottom = 201.0
+text = "Expected: 20
+"
+script = ExtResource("1_vkcgp")
+
+[node name="Label" type="Label" parent="." unique_id=528410359]
+offset_left = 63.0
+offset_top = 147.0
+offset_right = 255.0
+offset_bottom = 196.0
+text = "Expected: 20
+"
+script = ExtResource("1_vkcgp")
+
+[node name="Actual" type="Node" parent="." unique_id=1527173599]
+
+[node name="Label8" type="Label" parent="Actual" unique_id=1375125382]
+offset_left = 803.0
+offset_top = 477.0
+offset_right = 870.0
+offset_bottom = 500.0
+text = "Actual: 0"
+
+[node name="Label7" type="Label" parent="Actual" unique_id=1017307410]
+offset_left = 73.0
+offset_top = 499.0
+offset_right = 140.0
+offset_bottom = 522.0
+text = "Actual: 0"
+
+[node name="Label6" type="Label" parent="Actual" unique_id=158963616]
+offset_left = 833.0
+offset_top = 197.0
+offset_right = 900.0
+offset_bottom = 220.0
+text = "Actual: 0"
+
+[node name="Label5" type="Label" parent="Actual" unique_id=305143204]
+offset_left = 79.0
+offset_top = 201.0
+offset_right = 146.0
+offset_bottom = 224.0
+text = "Actual: 0"
+
+[node name="Expected" type="Node" parent="." unique_id=470506125]
+
+[connection signal="pressed" from="Button" to="Label4" method="_on_button_pressed"]
