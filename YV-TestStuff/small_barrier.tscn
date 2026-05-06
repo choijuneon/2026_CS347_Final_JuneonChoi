@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bkf7j70dyplvb"]
+[gd_scene load_steps=13 format=3 uid="uid://bkf7j70dyplvb"]
 
 [ext_resource type="PackedScene" uid="uid://dbq0r57jmi67h" path="res://FinalAssets/StaticMeshes/Environments/3.0/Obstacles&Ramps/SM_BreakableBarrier_3M.fbx" id="2_88xix"]
 
@@ -13,7 +13,7 @@ albedo_texture = SubResource("MeshTexture_5lmx3")
 [sub_resource type="PrismMesh" id="PrismMesh_iquqa"]
 
 [sub_resource type="Curve" id="Curve_88xix"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.6689655), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.668966), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="CurveTexture" id="CurveTexture_n2gld"]
@@ -42,7 +42,7 @@ material = SubResource("StandardMaterial3D_5lmx3")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_88xix"]
 albedo_color = Color(1, 0, 0, 1)
 emission_enabled = true
-emission = Color(0.86522603, 0.24643344, 2.1947622e-05, 1)
+emission = Color(0.865226, 0.246433, 2.19476e-05, 1)
 emission_energy_multiplier = 10.0
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_n2gld"]
@@ -50,28 +50,28 @@ material = SubResource("StandardMaterial3D_88xix")
 radius = 0.05
 height = 0.15
 
-[node name="Small Barrier (Node3D)" type="Node3D" unique_id=261643983]
+[node name="Small Barrier (Node3D)" type="Node3D"]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1405230812]
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1834368906]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 top_level = true
 shape = SubResource("BoxShape3D_iquqa")
 debug_fill = false
 
-[node name="Area3D" type="Area3D" parent="." unique_id=181075987]
+[node name="Area3D" type="Area3D" parent="."]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1203547934]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 top_level = true
 shape = SubResource("BoxShape3D_iquqa")
 debug_fill = false
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1004483432]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 visible = false
 material_override = SubResource("ORMMaterial3D_88xix")
 mesh = SubResource("PrismMesh_iquqa")
 
-[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=322364977]
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.435, 0)
 emitting = false
 amount = 35
@@ -81,15 +81,15 @@ randomness = 1.0
 process_material = SubResource("ParticleProcessMaterial_88xix")
 draw_pass_1 = SubResource("QuadMesh_n2gld")
 
-[node name="SM_BreakableBarrier_3M" parent="." unique_id=1040000381 instance=ExtResource("2_88xix")]
+[node name="SM_BreakableBarrier_3M" parent="." instance=ExtResource("2_88xix")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, -0.49, 0)
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="SM_BreakableBarrier_3M" unique_id=229945204]
-transform = Transform3D(3.333333, 0, 0, 0, 3.333333, 0, 0, 0, 3.333333, 0.5185952, 3.1228116, 1.985509)
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="SM_BreakableBarrier_3M"]
+transform = Transform3D(3.33333, 0, 0, 0, 3.33333, 0, 0, 0, 3.33333, 0.518595, 3.12281, 1.98551)
 mesh = SubResource("CapsuleMesh_n2gld")
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="SM_BreakableBarrier_3M" unique_id=750072809]
-transform = Transform3D(3.333333, 0, 0, 0, 3.333333, 0, 0, 0, 3.333333, 0.519, 3.123, -1.986)
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="SM_BreakableBarrier_3M"]
+transform = Transform3D(3.33333, 0, 0, 0, 3.33333, 0, 0, 0, 3.33333, 0.519, 3.123, -1.986)
 mesh = SubResource("CapsuleMesh_n2gld")
 
 [connection signal="area_entered" from="Area3D" to="." method="_on_area_entered"]

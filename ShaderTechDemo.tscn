@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://do1gorjohewme"]
+[gd_scene load_steps=174 format=4 uid="uid://do1gorjohewme"]
 
 [ext_resource type="Shader" uid="uid://bs6bpfb7prjg2" path="res://JuneTestStuff/Shader/Water_fall.gdshader" id="7_4eky6"]
 [ext_resource type="Texture2D" uid="uid://bm1vynx7kml6o" path="res://JuneTestStuff/Shader/WaterFallNoise.jpg" id="8_see0q"]
@@ -26,7 +26,6 @@
 [ext_resource type="PackedScene" uid="uid://tstgy5d4oglc" path="res://FinalAssets/StaticMeshes/Environments/3.0/Nature_Build_Kit/water_fall.tscn" id="38_g8wia"]
 [ext_resource type="PackedScene" uid="uid://cwdhgyfc8461e" path="res://YV-TestStuff/collectible.tscn" id="40_o65ns"]
 [ext_resource type="PackedScene" uid="uid://cjyciu6c2l1rj" path="res://YV-TestStuff/collectible_speed.tscn" id="41_jlbj7"]
-[ext_resource type="PackedScene" uid="uid://bkf7j70dyplvb" path="res://YV-TestStuff/small_barrier.tscn" id="42_5kx5x"]
 [ext_resource type="PackedScene" uid="uid://5b6silvc4tip" path="res://FinalAssets/StaticMeshes/Environments/3.0/Obstacles&Ramps/Scenes/WaterPit.tscn" id="43_ypv8o"]
 [ext_resource type="PackedScene" uid="uid://v4malr3bv5kj" path="res://FinalAssets/StaticMeshes/Environments/3.0/TrackSections/Section_08.tscn" id="44_288si"]
 [ext_resource type="PackedScene" uid="uid://pqaka08u8nw0" path="res://FinalAssets/StaticMeshes/Environments/3.0/TrackSections/Section_07.tscn" id="45_qf24h"]
@@ -41,15 +40,15 @@
 [ext_resource type="VoxelGIData" uid="uid://ceslcybrk0x2q" path="res://FinalAssets/LightMaps/FinalMainScene.VoxelGI_data.res" id="54_l28at"]
 
 [sub_resource type="Gradient" id="Gradient_tceoj"]
-colors = PackedColorArray(0.43519205, 0.43519235, 0.43519217, 1, 1, 1, 1, 1)
+colors = PackedColorArray(0.435192, 0.435192, 0.435192, 1, 1, 1, 1, 1)
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_tceoj"]
 noise_type = 4
 frequency = 0.005
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_iccsf"]
-noise = SubResource("FastNoiseLite_tceoj")
 color_ramp = SubResource("Gradient_tceoj")
+noise = SubResource("FastNoiseLite_tceoj")
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_cq5rp"]
 noise_type = 2
@@ -57,19 +56,19 @@ seed = 1
 frequency = 0.0074
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_4eky6"]
-noise = SubResource("FastNoiseLite_cq5rp")
 seamless = true
 as_normal_map = true
 bump_strength = 10.0
+noise = SubResource("FastNoiseLite_cq5rp")
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_see0q"]
 noise_type = 2
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_1yagt"]
-noise = SubResource("FastNoiseLite_see0q")
 seamless = true
 as_normal_map = true
 bump_strength = 10.0
+noise = SubResource("FastNoiseLite_see0q")
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_qh3mg"]
 noise_type = 3
@@ -79,14 +78,14 @@ fractal_gain = 1.5
 fractal_weighted_strength = 0.44
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_mmb40"]
-noise = SubResource("FastNoiseLite_qh3mg")
 seamless = true
+noise = SubResource("FastNoiseLite_qh3mg")
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_ywnpd"]
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_p87iy"]
-noise = SubResource("FastNoiseLite_ywnpd")
 seamless = true
+noise = SubResource("FastNoiseLite_ywnpd")
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_h3cgg"]
 noise_type = 2
@@ -94,49 +93,49 @@ fractal_type = 2
 fractal_weighted_strength = 1.0
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_peny8"]
-noise = SubResource("FastNoiseLite_h3cgg")
 seamless = true
+noise = SubResource("FastNoiseLite_h3cgg")
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_c2lca"]
 fractal_type = 2
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_hxiyp"]
-noise = SubResource("FastNoiseLite_c2lca")
 seamless = true
+noise = SubResource("FastNoiseLite_c2lca")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gr31o"]
 render_priority = -2
 shader = ExtResource("29_wvoeg")
 shader_parameter/metallic = 0.0
 shader_parameter/roughness = 0.02
-shader_parameter/primary_color = Color(0.036344975, 0.8318672, 0, 1)
-shader_parameter/sink_color = Color(0.27591118, 4.6085192e-06, 0.20054838, 1)
-shader_parameter/frensel_color = Color(0.35945725, 0.0018456217, 0.69157004, 1)
+shader_parameter/primary_color = Color(0.036345, 0.831867, 0, 1)
+shader_parameter/sink_color = Color(0.275911, 4.60852e-06, 0.200548, 1)
+shader_parameter/frensel_color = Color(0.359457, 0.00184562, 0.69157, 1)
 shader_parameter/wavefoam_texture_a = SubResource("NoiseTexture2D_peny8")
 shader_parameter/wavefoam_texture_b = SubResource("NoiseTexture2D_hxiyp")
-shader_parameter/wavefoam_a_strength = 0.2999999932944
-shader_parameter/wavefoam_b_strength = 0.23999999463552
+shader_parameter/wavefoam_a_strength = 0.3
+shader_parameter/wavefoam_b_strength = 0.24
 shader_parameter/ripple_noise = SubResource("NoiseTexture2D_mmb40")
-shader_parameter/ripple_color = Color(1.353256, 1.353256, 1.353256, 1)
-shader_parameter/ripple_strength = 0.999999977648
+shader_parameter/ripple_color = Color(1.35326, 1.35326, 1.35326, 1)
+shader_parameter/ripple_strength = 1.0
 shader_parameter/ripple_scale = 1.0
 shader_parameter/ripple_freq = 2.0
 shader_parameter/ripple_speed = 1.5
 shader_parameter/wave = SubResource("NoiseTexture2D_p87iy")
-shader_parameter/wave_speed = 0.05999999865888
+shader_parameter/wave_speed = 0.06
 shader_parameter/noise_scale = 25.0
 shader_parameter/height_scale = 0.5
 shader_parameter/normalmap_a = SubResource("NoiseTexture2D_4eky6")
 shader_parameter/normalmap_b = SubResource("NoiseTexture2D_1yagt")
-shader_parameter/normalmap_a_strength = 0.499999988824
-shader_parameter/normalmap_b_strength = 0.499999988824
+shader_parameter/normalmap_a_strength = 0.5
+shader_parameter/normalmap_b_strength = 0.5
 shader_parameter/movement_direction = Vector2(0.1, 0.1)
 shader_parameter/movement_strength = 0.5
 shader_parameter/uv_scale = 1.0
-shader_parameter/depth_distance = 6.80000010132816
-shader_parameter/beers_law = 2.30000003427276
+shader_parameter/depth_distance = 6.8
+shader_parameter/beers_law = 2.3
 shader_parameter/water_transparency = 0.0
-shader_parameter/refraction_strength = 0.50000002375
+shader_parameter/refraction_strength = 0.5
 
 [sub_resource type="QuadMesh" id="QuadMesh_41aie"]
 material = SubResource("ShaderMaterial_gr31o")
@@ -153,19 +152,19 @@ seed = 1
 frequency = 0.0074
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_bpve3"]
-noise = SubResource("FastNoiseLite_qn3gw")
 seamless = true
 as_normal_map = true
 bump_strength = 10.0
+noise = SubResource("FastNoiseLite_qn3gw")
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_kwpwy"]
 noise_type = 2
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_bdlcx"]
-noise = SubResource("FastNoiseLite_kwpwy")
 seamless = true
 as_normal_map = true
 bump_strength = 10.0
+noise = SubResource("FastNoiseLite_kwpwy")
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_qc3al"]
 noise_type = 3
@@ -175,58 +174,58 @@ fractal_gain = 1.5
 fractal_weighted_strength = 0.44
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_pp5y7"]
-noise = SubResource("FastNoiseLite_qc3al")
 seamless = true
+noise = SubResource("FastNoiseLite_qc3al")
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_bpve3"]
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_kwpwy"]
-noise = SubResource("FastNoiseLite_bpve3")
 seamless = true
+noise = SubResource("FastNoiseLite_bpve3")
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_aryxw"]
 fractal_type = 2
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_xw021"]
-noise = SubResource("FastNoiseLite_aryxw")
 seamless = true
+noise = SubResource("FastNoiseLite_aryxw")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1yagt"]
 render_priority = -2
 shader = ExtResource("7_4eky6")
 shader_parameter/metallic = 0.0
 shader_parameter/roughness = 0.02
-shader_parameter/primary_color = Color(0.014608549, 0.5587423, 1.92523e-07, 1)
-shader_parameter/sink_color = Color(0.27591118, 4.6085192e-06, 0.20054838, 1)
+shader_parameter/primary_color = Color(0.0146085, 0.558742, 1.92523e-07, 1)
+shader_parameter/sink_color = Color(0.275911, 4.60852e-06, 0.200548, 1)
 shader_parameter/wavefoam_texture_a = ExtResource("8_see0q")
 shader_parameter/wavefoam_texture_b = SubResource("NoiseTexture2D_xw021")
-shader_parameter/wavefoam_a_strength = 0.2999999932944
-shader_parameter/wavefoam_b_strength = 0.1499999966472
+shader_parameter/wavefoam_a_strength = 0.3
+shader_parameter/wavefoam_b_strength = 0.15
 shader_parameter/ripple_noise = SubResource("NoiseTexture2D_pp5y7")
-shader_parameter/ripple_color = Color(1.353256, 1.353256, 1.353256, 1)
-shader_parameter/ripple_strength = 0.999999977648
+shader_parameter/ripple_color = Color(1.35326, 1.35326, 1.35326, 1)
+shader_parameter/ripple_strength = 1.0
 shader_parameter/ripple_scale = 1.0
 shader_parameter/ripple_freq = 1.0
 shader_parameter/ripple_speed = 1.0
 shader_parameter/wave = SubResource("NoiseTexture2D_kwpwy")
-shader_parameter/wave_speed = 0.05999999865888
+shader_parameter/wave_speed = 0.06
 shader_parameter/noise_scale = 1.0
 shader_parameter/height_scale = 0.15
 shader_parameter/normalmap_a = SubResource("NoiseTexture2D_bpve3")
 shader_parameter/normalmap_b = SubResource("NoiseTexture2D_bdlcx")
-shader_parameter/normalmap_a_strength = 0.499999988824
-shader_parameter/normalmap_b_strength = 0.499999988824
+shader_parameter/normalmap_a_strength = 0.5
+shader_parameter/normalmap_b_strength = 0.5
 shader_parameter/movement_direction = Vector2(0, -1)
 shader_parameter/movement_strength = 1.8
 shader_parameter/uv_scale = 0.1
-shader_parameter/depth_distance = 6.80000010132816
-shader_parameter/beers_law = 10.40000015497248
-shader_parameter/water_transparency = 0.5499999877064
-shader_parameter/refraction_strength = 0.50000002375
+shader_parameter/depth_distance = 6.8
+shader_parameter/beers_law = 10.4
+shader_parameter/water_transparency = 0.55
+shader_parameter/refraction_strength = 0.5
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_qh3mg"]
 _surfaces = [{
-"aabb": AABB(-190.92885, -43.75361, -146.55617, 100.92884, 43.75361, 56.556435),
+"aabb": AABB(-190.929, -43.7536, -146.556, 100.929, 43.7536, 56.5564),
 "format": 34359742465,
 "index_count": 180,
 "index_data": PackedByteArray("AAABAAIAAgADAAAAAQAAAAQAAgABAAUABQAGAAIABgAFAAcABwAIAAYACQAHAAUABQAKAAkACgAFAAEACwAJAAoABAAMAAEAAQAMAAoADAAEAA0ADQAOAAwACgAMAA4ADgANAA8ACgAQAAsADgAQAAoAEQALABAADwASAA4AEAAOABIAEgAPABMAEAAUABEAEgAUABAAFQARABQAEwAWABIAFAASABYAFgATABcAFAAYABUAFgAYABQAGQAVABgAFwAaABYAGAAWABoAGAAbABkAGgAbABgAHAAZABsAGgAXAB0AGwAeABwAHgAbABoAHwAcAB4AHQAgABoAGgAgAB4AIQAgAB0AHQAiACEAIQAiACMAJAAeACAAIAAhACQAHgAkAB8AIwAlACEAJAAhACUAJQAjACYAJgAnACUAJQAnACgAJQApACQAHwAkACkAKAApACUAKQAqAB8AKQAoACsAKwAqACkA"),
@@ -241,7 +240,7 @@ blend_shape_mode = 0
 [sub_resource type="ArrayMesh" id="ArrayMesh_mmb40"]
 resource_name = "WaterFall"
 _surfaces = [{
-"aabb": AABB(-190.92885, -43.75361, -146.55617, 100.92884, 43.75361, 56.556435),
+"aabb": AABB(-190.929, -43.7536, -146.556, 100.929, 43.7536, 56.5564),
 "attribute_data": PackedByteArray("AAAAAAAAAAAAAIA/AAAAAAAAgD8AAIA/AAAAAAAAgD8AAIA/AAAAAAAAgD8AAIA/AAAAAAAAgD8AAAAAAAAAAAAAgD8AAAAAAACAPwAAgD8AAAAAAACAPwAAAAAAAAAAAAAAAAAAAAAAAIA/AAAAAAAAgD8AAIA/AAAAAAAAgD8AAIA/AAAAAAAAgD8AAIA/AAAAAAAAgD8AAAAAAAAAAAAAgD8AAAAAAACAPwAAgD8AAAAAAACAPwAAAAAAAAAAAAAAAAAAAAAAAIA/AAAAAAAAgD8AAIA/AAAAAAAAgD8AAAAAAAAAAAAAgD8AAAAAAACAPwAAgD8AAAAAAACAPwAAgD8AAAAAAACAPwAAgD8AAAAAAACAPwAAAAAAAAAAAAAAAAAAAAAAAIA/AAAAAAAAgD8AAIA/AAAAAAAAgD8AAAAAAAAAAAAAgD8AAAAAAACAPwAAgD8AAAAAAACAPwAAgD8AAAAAAACAPwAAgD8AAAAAAACAPwAAAAAAAAAAAAAAAAAAAAAAAIA/AAAAAAAAgD8AAIA/AAAAAAAAgD8AAAAAAAAAAAAAgD8AAAAAAACAPwAAgD8AAAAAAACAPwAAgD8AAAAAAACAPwAAgD8AAAAAAACAPwAAAAAAAAAAAAAAAAAAAAAAAIA/AAAAAAAAgD8AAIA/AAAAAAAAgD8AAAAAAAAAAAAAgD8AAAAAAACAPwAAgD8AAAAAAACAPwAAgD8AAAAAAACAPwAAgD8AAAAAAACAPwAAAAAAAAAAAAAAAAAAAAAAAIA/AAAAAAAAgD8AAIA/AAAAAAAAgD8AAIA/AAAAAAAAgD8AAIA/AAAAAAAAgD8AAAAAAAAAAAAAgD8AAAAAAACAPwAAgD8AAAAAAACAPwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAAAAAAIA/AAAAAAAAAAAAAIA/AAAAAAAAgD8AAIA/AAAAAAAAgD8AAAAAAAAAAAAAgD8AAAAAAACAPwAAgD8AAAAAAACAPwAAAAAAAAAAAAAAAAAAAAAAAIA/AAAAAAAAgD8AAIA/AAAAAAAAgD8AAAAAAAAAAAAAgD8AAAAAAACAPwAAgD8AAAAAAACAPwAAAAAAAAAAAACAPwAAAAAAAIA/AACAPwAAAAAAAIA/AAAAAAAAAAAAAIA/AAAAAAAAgD8AAIA/AAAAAAAAgD8AAIA/AAAAAAAAgD8AAIA/AAAAAAAAgD8AAAAAAAAAAAAAgD8AAAAAAACAPwAAgD8AAAAAAACAPwAAAAAAAAAA"),
 "format": 34359742487,
 "index_count": 180,
@@ -257,14 +256,14 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_qh3mg")
 
 [sub_resource type="Curve" id="Curve_52nqr"]
-_data = [Vector2(0, 0.7482759), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 0.748276), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="CurveTexture" id="CurveTexture_h4kpy"]
 curve = SubResource("Curve_52nqr")
 
 [sub_resource type="Curve" id="Curve_r53tw"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.25172418), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.251724), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="CurveTexture" id="CurveTexture_p5aep"]
@@ -286,7 +285,7 @@ transparency = 1
 vertex_color_use_as_albedo = true
 albedo_texture = ExtResource("28_std3t")
 emission_enabled = true
-emission = Color(0.5314238, 0.5759479, 0.5294785, 1)
+emission = Color(0.531424, 0.575948, 0.529478, 1)
 emission_energy_multiplier = 0.5
 emission_texture = ExtResource("36_ti32u")
 billboard_mode = 3
@@ -314,7 +313,7 @@ transparency = 1
 vertex_color_use_as_albedo = true
 albedo_texture = ExtResource("28_std3t")
 emission_enabled = true
-emission = Color(0.7158466, 0.7508453, 0.71231693, 1)
+emission = Color(0.715847, 0.750845, 0.712317, 1)
 emission_energy_multiplier = 1.5
 emission_texture = ExtResource("36_ti32u")
 billboard_mode = 3
@@ -331,49 +330,49 @@ size = Vector2(1, 0.6)
 noise_type = 2
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_l40sp"]
-noise = SubResource("FastNoiseLite_u88p2")
 seamless = true
+noise = SubResource("FastNoiseLite_u88p2")
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_ohkcn"]
 noise_type = 2
 frequency = 0.05
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_xrqok"]
-noise = SubResource("FastNoiseLite_ohkcn")
 seamless = true
+noise = SubResource("FastNoiseLite_ohkcn")
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_uu5l2"]
 noise_type = 2
 frequency = 0.0046
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_3pv4d"]
-noise = SubResource("FastNoiseLite_uu5l2")
 seamless = true
+noise = SubResource("FastNoiseLite_uu5l2")
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_oxlkx"]
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_get6g"]
-noise = SubResource("FastNoiseLite_oxlkx")
 seamless = true
+noise = SubResource("FastNoiseLite_oxlkx")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7snvn"]
 render_priority = 0
 shader = ExtResource("33_y2ylg")
-shader_parameter/primary_color = Color(1.6149065, 0.7141226, 0, 1)
-shader_parameter/emission_color = Color(0.92078304, 0.8352567, 0.9999997, 1)
+shader_parameter/primary_color = Color(1.61491, 0.714123, 0, 1)
+shader_parameter/emission_color = Color(0.920783, 0.835257, 1, 1)
 shader_parameter/emission_str = 1.0
 shader_parameter/uv_scale = 0.1
 shader_parameter/texture_speed = 0.03
 shader_parameter/lava_noise_a = SubResource("NoiseTexture2D_l40sp")
 shader_parameter/lava_noise_b = SubResource("NoiseTexture2D_xrqok")
-shader_parameter/lava_b_str = 0.9450000448875
+shader_parameter/lava_b_str = 0.945
 shader_parameter/lava_noise_c = SubResource("NoiseTexture2D_3pv4d")
-shader_parameter/lava_c_str = 0.59200002812
+shader_parameter/lava_c_str = 0.592
 shader_parameter/lava_contrast = 1.75
 shader_parameter/wave_noise = SubResource("NoiseTexture2D_get6g")
-shader_parameter/noise_scale = 1.00000004424012
-shader_parameter/wave_speed = 0.02000000095
-shader_parameter/wave_height = 0.30000001425
+shader_parameter/noise_scale = 1.0
+shader_parameter/wave_speed = 0.02
+shader_parameter/wave_height = 0.3
 
 [sub_resource type="QuadMesh" id="QuadMesh_170iu"]
 material = SubResource("ShaderMaterial_7snvn")
@@ -386,16 +385,16 @@ orientation = 1
 noise_type = 2
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ywnpd"]
-noise = SubResource("FastNoiseLite_mmb40")
-seamless = true
 invert = true
+seamless = true
+noise = SubResource("FastNoiseLite_mmb40")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_p87iy"]
 render_priority = 0
 shader = ExtResource("12_1yagt")
 shader_parameter/uv_scale = 1.0
 shader_parameter/primary_color = Color(0, 0, 0, 1)
-shader_parameter/effect_color = Color(0.9949258, 0.5105566, 0, 1)
+shader_parameter/effect_color = Color(0.994926, 0.510557, 0, 1)
 shader_parameter/emission_str = 15.0
 shader_parameter/magma_noise = SubResource("NoiseTexture2D_ywnpd")
 shader_parameter/magma_contrast_a = 1.0
@@ -409,28 +408,28 @@ material = SubResource("ShaderMaterial_p87iy")
 size = Vector3(2, 2, 2)
 
 [sub_resource type="Curve" id="Curve_mwngx"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.10344827, 0.79148227), 0.0, 0.0, 0, 0, Vector2(1, 0.5110619), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.103448, 0.791482), 0.0, 0.0, 0, 0, Vector2(1, 0.511062), 0.0, 0.0, 0, 0]
 point_count = 3
 
 [sub_resource type="CurveTexture" id="CurveTexture_grvbc"]
 curve = SubResource("Curve_mwngx")
 
 [sub_resource type="Gradient" id="Gradient_we7ly"]
-colors = PackedColorArray(1.615, 0.714, 0, 1, 0.99999326, 0.34163207, 0.3760065, 1)
+colors = PackedColorArray(1.615, 0.714, 0, 1, 0.999993, 0.341632, 0.376007, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_1gsdm"]
 gradient = SubResource("Gradient_we7ly")
 
 [sub_resource type="Gradient" id="Gradient_eij4d"]
-offsets = PackedFloat32Array(0, 0.25773194, 0.52577317)
-colors = PackedColorArray(1.615, 0.714, 0, 1, 1.6148783, 0.23068406, 0, 1, 0.23370834, 0.2075, 0.25, 1)
+offsets = PackedFloat32Array(0, 0.257732, 0.525773)
+colors = PackedColorArray(1.615, 0.714, 0, 1, 1.61488, 0.230684, 0, 1, 0.233708, 0.2075, 0.25, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_ow3en"]
 gradient = SubResource("Gradient_eij4d")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_c2lca"]
 angle_min = -360.0
-angle_max = 360.00003
+angle_max = 360.0
 direction = Vector3(0, 1, 0)
 spread = 30.0
 initial_velocity_min = 5.0
@@ -444,7 +443,7 @@ sub_emitter_mode = 2
 sub_emitter_amount_at_end = 14
 
 [sub_resource type="Curve" id="Curve_f46n5"]
-_data = [Vector2(0.0035714358, 0.77946424), 0.0, -7.2500005, 0, 0, Vector2(0.15, 0.22812504), -0.6770835, -0.6770835, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+_data = [Vector2(0.00357144, 0.779464), 0.0, -7.25, 0, 0, Vector2(0.15, 0.228125), -0.677083, -0.677083, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 3
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i5omd"]
@@ -454,7 +453,7 @@ cull_mode = 2
 vertex_color_use_as_albedo = true
 albedo_texture = ExtResource("28_std3t")
 emission_enabled = true
-emission = Color(1.4030886, 0.7178594, 4.3311218e-07, 1)
+emission = Color(1.40309, 0.717859, 4.33112e-07, 1)
 emission_energy_multiplier = 5.0
 emission_texture = ExtResource("29_t2p2p")
 billboard_mode = 1
@@ -467,8 +466,8 @@ section_length = 0.06
 curve = SubResource("Curve_f46n5")
 
 [sub_resource type="Gradient" id="Gradient_r53tw"]
-offsets = PackedFloat32Array(0.004716981, 1)
-colors = PackedColorArray(1.615, 0.714, 0, 1, 0.8350327, 0.27801841, 0, 1)
+offsets = PackedFloat32Array(0.00471698, 1)
+colors = PackedColorArray(1.615, 0.714, 0, 1, 0.835033, 0.278018, 0, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_asord"]
 gradient = SubResource("Gradient_r53tw")
@@ -500,20 +499,20 @@ point_count = 2
 curve = SubResource("Curve_gxrrw")
 
 [sub_resource type="Gradient" id="Gradient_vx5cy"]
-colors = PackedColorArray(1.615, 0.714, 0, 1, 0.99999326, 0.34163207, 0.3760065, 1)
+colors = PackedColorArray(1.615, 0.714, 0, 1, 0.999993, 0.341632, 0.376007, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_ku1kc"]
 gradient = SubResource("Gradient_vx5cy")
 
 [sub_resource type="Gradient" id="Gradient_nkobl"]
-offsets = PackedFloat32Array(0, 0.25773194, 0.52577317)
-colors = PackedColorArray(1.615, 0.714, 0, 1, 1.6148783, 0.23068406, 0, 1, 0.23370834, 0.2075, 0.25, 1)
+offsets = PackedFloat32Array(0, 0.257732, 0.525773)
+colors = PackedColorArray(1.615, 0.714, 0, 1, 1.61488, 0.230684, 0, 1, 0.233708, 0.2075, 0.25, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_jry08"]
 gradient = SubResource("Gradient_nkobl")
 
 [sub_resource type="Curve" id="Curve_r7xsg"]
-_data = [Vector2(0, 1), 0.0, -2.0993915, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 1), 0.0, -2.09939, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="CurveTexture" id="CurveTexture_ubbj4"]
@@ -543,7 +542,7 @@ sub_emitter_amount_at_end = 1
 transparency = 1
 vertex_color_use_as_albedo = true
 emission_enabled = true
-emission = Color(0.99999994, 0.51176196, 0.21756557, 1)
+emission = Color(1, 0.511762, 0.217566, 1)
 emission_energy_multiplier = 20.0
 billboard_mode = 1
 
@@ -552,14 +551,14 @@ material = SubResource("StandardMaterial3D_ku1kc")
 size = Vector3(0.1, 0.1, 0.1)
 
 [sub_resource type="Gradient" id="Gradient_li14u"]
-offsets = PackedFloat32Array(0, 0.3152174, 1)
-colors = PackedColorArray(0, 0, 0, 1, 0.53436106, 0.53436106, 0.534361, 1, 0, 0, 0, 1)
+offsets = PackedFloat32Array(0, 0.315217, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.534361, 0.534361, 0.534361, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_hhf0w"]
 gradient = SubResource("Gradient_li14u")
 
 [sub_resource type="Curve" id="Curve_iccsf"]
-_data = [Vector2(0.004504502, 0.14383566), 0.0, 0.0, 0, 0, Vector2(0.54131055, 0.20527971), 0.8080009, 0.8080009, 0, 0, Vector2(1, 1), 0.50050265, 0.0, 0, 0]
+_data = [Vector2(0.0045045, 0.143836), 0.0, 0.0, 0, 0, Vector2(0.541311, 0.20528), 0.808001, 0.808001, 0, 0, Vector2(1, 1), 0.500503, 0.0, 0, 0]
 point_count = 3
 
 [sub_resource type="CurveTexture" id="CurveTexture_7ft2i"]
@@ -568,11 +567,11 @@ curve = SubResource("Curve_iccsf")
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1yagt"]
 emission_shape = 1
 emission_sphere_radius = 0.5
-angle_min = -179.99998
-angle_max = 180.00002
+angle_min = -180.0
+angle_max = 180.0
 gravity = Vector3(0, 5, 0)
-radial_accel_min = -2.2351742e-06
-radial_accel_max = -2.2351742e-06
+radial_accel_min = -2.23517e-06
+radial_accel_max = -2.23517e-06
 scale_curve = SubResource("CurveTexture_7ft2i")
 color_ramp = SubResource("GradientTexture1D_hhf0w")
 
@@ -586,14 +585,14 @@ material = SubResource("ShaderMaterial_qh3mg")
 size = Vector2(50, 50)
 
 [sub_resource type="Curve" id="Curve_j8bk8"]
-_data = [Vector2(0, 0), 0.0, 1.5451572, 0, 0, Vector2(0.25225228, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 0), 0.0, 1.54516, 0, 0, Vector2(0.252252, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 3
 
 [sub_resource type="CurveTexture" id="CurveTexture_v7pc0"]
 curve = SubResource("Curve_j8bk8")
 
 [sub_resource type="Gradient" id="Gradient_a6260"]
-colors = PackedColorArray(0.8295537, 0.5575355, 5.7756904e-07, 1, 1, 1, 1, 1)
+colors = PackedColorArray(0.829554, 0.557536, 5.77569e-07, 1, 1, 1, 1, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_231cf"]
 gradient = SubResource("Gradient_a6260")
@@ -621,8 +620,8 @@ emission_ring_radius = 0.5
 emission_ring_inner_radius = 0.0
 emission_ring_cone_angle = 90.0
 gravity = Vector3(0, 9.8, 0)
-scale_min = 0.099999994
-scale_max = 0.79999995
+scale_min = 0.1
+scale_max = 0.8
 scale_curve = SubResource("CurveTexture_lumh6")
 color_ramp = SubResource("GradientTexture1D_231cf")
 alpha_curve = SubResource("CurveTexture_v7pc0")
@@ -637,7 +636,7 @@ transparency = 1
 vertex_color_use_as_albedo = true
 vertex_color_is_srgb = true
 emission_enabled = true
-emission = Color(0.99656636, 0.5032897, 7.70092e-07, 1)
+emission = Color(0.996566, 0.50329, 7.70092e-07, 1)
 emission_energy_multiplier = 4.82
 billboard_mode = 3
 billboard_keep_scale = true
@@ -652,11 +651,11 @@ size = Vector2(0.3, 0.3)
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_jry08"]
 emission_shape = 1
 emission_sphere_radius = 5.0
-angle_min = -179.99998
-angle_max = 180.00002
+angle_min = -180.0
+angle_max = 180.0
 gravity = Vector3(0, 5, 0)
-radial_accel_min = -2.2351742e-06
-radial_accel_max = -2.2351742e-06
+radial_accel_min = -2.23517e-06
+radial_accel_max = -2.23517e-06
 scale_curve = SubResource("CurveTexture_7ft2i")
 color_ramp = SubResource("GradientTexture1D_hhf0w")
 
@@ -673,8 +672,8 @@ emission_ring_radius = 5.25
 emission_ring_inner_radius = 0.0
 emission_ring_cone_angle = 90.0
 gravity = Vector3(0, 9.8, 0)
-scale_min = 0.099999994
-scale_max = 0.79999995
+scale_min = 0.1
+scale_max = 0.8
 scale_curve = SubResource("CurveTexture_lumh6")
 color_ramp = SubResource("GradientTexture1D_231cf")
 alpha_curve = SubResource("CurveTexture_v7pc0")
@@ -689,7 +688,7 @@ material = SubResource("StandardMaterial3D_hn113")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_52nqr"]
 angle_min = -360.0
-angle_max = 360.00003
+angle_max = 360.0
 direction = Vector3(0, 1, 0)
 spread = 30.0
 initial_velocity_min = 30.0
@@ -736,15 +735,15 @@ size = Vector3(3, 3, 3)
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_0jy2u"]
 particle_flag_rotate_y = true
 angle_min = -360.0
-angle_max = 360.00003
+angle_max = 360.0
 direction = Vector3(0, 1, 0)
 spread = 30.0
 initial_velocity_min = 15.0
 initial_velocity_max = 30.0
 angular_velocity_min = -300.0
-angular_velocity_max = 299.99997
+angular_velocity_max = 300.0
 gravity = Vector3(0, -20, 0)
-scale_min = 0.19999999
+scale_min = 0.2
 color_ramp = SubResource("GradientTexture1D_ow3en")
 color_initial_ramp = SubResource("GradientTexture1D_1gsdm")
 alpha_curve = SubResource("CurveTexture_grvbc")
@@ -756,7 +755,7 @@ size = Vector3(9, 9, 9)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_ku1kc"]
 _surfaces = [{
-"aabb": AABB(-29.374401, -1.3468289, -60.990757, 34.937397, 23.908539, 32.04027),
+"aabb": AABB(-29.3744, -1.34683, -60.9908, 34.9374, 23.9085, 32.0403),
 "attribute_data": PackedByteArray("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"),
 "format": 34359738391,
 "material": ExtResource("32_haidt"),
@@ -770,49 +769,49 @@ _surfaces = [{
 noise_type = 2
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_nkobl"]
-noise = SubResource("FastNoiseLite_li14u")
 seamless = true
+noise = SubResource("FastNoiseLite_li14u")
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_jry08"]
 noise_type = 2
 frequency = 0.05
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_r7xsg"]
-noise = SubResource("FastNoiseLite_jry08")
 seamless = true
+noise = SubResource("FastNoiseLite_jry08")
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_ubbj4"]
 noise_type = 2
 frequency = 0.0046
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_gajuo"]
-noise = SubResource("FastNoiseLite_ubbj4")
 seamless = true
+noise = SubResource("FastNoiseLite_ubbj4")
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_j8bk8"]
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_a6260"]
-noise = SubResource("FastNoiseLite_j8bk8")
 seamless = true
+noise = SubResource("FastNoiseLite_j8bk8")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yhtk2"]
 render_priority = 0
 shader = ExtResource("33_y2ylg")
-shader_parameter/primary_color = Color(1.6149065, 0.7141226, 0, 1)
-shader_parameter/emission_color = Color(0.92078304, 0.8352567, 0.9999997, 1)
+shader_parameter/primary_color = Color(1.61491, 0.714123, 0, 1)
+shader_parameter/emission_color = Color(0.920783, 0.835257, 1, 1)
 shader_parameter/emission_str = 1.0
 shader_parameter/uv_scale = 0.05
 shader_parameter/texture_speed = 0.01
 shader_parameter/lava_noise_a = SubResource("NoiseTexture2D_nkobl")
 shader_parameter/lava_noise_b = SubResource("NoiseTexture2D_r7xsg")
-shader_parameter/lava_b_str = 0.9450000448875
+shader_parameter/lava_b_str = 0.945
 shader_parameter/lava_noise_c = SubResource("NoiseTexture2D_gajuo")
-shader_parameter/lava_c_str = 0.59200002812
+shader_parameter/lava_c_str = 0.592
 shader_parameter/lava_contrast = 1.75
 shader_parameter/wave_noise = SubResource("NoiseTexture2D_a6260")
-shader_parameter/noise_scale = 1.00000004424012
-shader_parameter/wave_speed = 0.010000000475
-shader_parameter/wave_height = 0.50000002375
+shader_parameter/noise_scale = 1.0
+shader_parameter/wave_speed = 0.01
+shader_parameter/wave_height = 0.5
 
 [sub_resource type="QuadMesh" id="QuadMesh_58nln"]
 material = SubResource("ShaderMaterial_yhtk2")
@@ -835,8 +834,8 @@ transparency = 1
 vertex_color_use_as_albedo = true
 albedo_texture = ExtResource("28_std3t")
 emission_enabled = true
-emission = Color(0.7158466, 0.7508453, 0.71231693, 1)
-emission_energy_multiplier = 1.5
+emission = Color(0.715847, 0.750845, 0.712317, 1)
+emission_energy_multiplier = 0.1
 emission_texture = ExtResource("36_ti32u")
 billboard_mode = 3
 billboard_keep_scale = true
@@ -846,11 +845,11 @@ particles_anim_loop = false
 
 [sub_resource type="QuadMesh" id="QuadMesh_wsfqs"]
 material = SubResource("StandardMaterial3D_0jy2u")
-size = Vector2(7, 4)
+size = Vector2(1, 0.5)
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_un26f"]
 emission_shape = 3
-emission_box_extents = Vector3(1, 1, 28)
+emission_box_extents = Vector3(0.4, 0.4, 8)
 scale_min = 0.5
 scale_max = 2.0
 scale_curve = SubResource("CurveTexture_p5aep")
@@ -864,8 +863,8 @@ transparency = 1
 vertex_color_use_as_albedo = true
 albedo_texture = ExtResource("28_std3t")
 emission_enabled = true
-emission = Color(0.5314238, 0.5759479, 0.5294785, 1)
-emission_energy_multiplier = 2.0
+emission = Color(0.531424, 0.575948, 0.529478, 1)
+emission_energy_multiplier = 0.5
 emission_texture = ExtResource("36_ti32u")
 billboard_mode = 3
 billboard_keep_scale = true
@@ -875,7 +874,7 @@ particles_anim_loop = false
 
 [sub_resource type="QuadMesh" id="QuadMesh_w07eq"]
 material = SubResource("StandardMaterial3D_a15w7")
-size = Vector2(5, 3.5)
+size = Vector2(3, 1.5)
 
 [sub_resource type="QuadMesh" id="QuadMesh_iccsf"]
 material = ExtResource("23_5x5hf")
@@ -886,7 +885,7 @@ orientation = 1
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h4kpy"]
 transparency = 1
-albedo_color = Color(0, 0.5686275, 0.7921569, 0.5882353)
+albedo_color = Color(0, 0.568627, 0.792157, 0.588235)
 
 [sub_resource type="BoxMesh" id="BoxMesh_d25n7"]
 material = SubResource("StandardMaterial3D_h4kpy")
@@ -912,7 +911,7 @@ glow_bloom = 0.43
 glow_hdr_threshold = 2.0
 glow_hdr_scale = 1.5
 fog_enabled = true
-fog_light_color = Color(0.046411164, 0.052765556, 0.07355473, 1)
+fog_light_color = Color(0.0464112, 0.0527656, 0.0735547, 1)
 fog_light_energy = 4.0
 fog_sky_affect = 0.562
 volumetric_fog_enabled = true
@@ -924,10 +923,10 @@ adjustment_brightness = 1.6
 adjustment_contrast = 1.3
 adjustment_saturation = 1.3
 
-[node name="FinalMainScene" type="Node3D" unique_id=1582619210]
+[node name="FinalMainScene" type="Node3D"]
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=811988745 node_paths=PackedStringArray("target")]
-transform = Transform3D(1, 0, -1.1920929e-07, 0, 1, 0, 1.1920929e-07, 0, 1, 79.99998, 11.376968, 313.74405)
+[node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("target")]
+transform = Transform3D(1, 0, -1.19209e-07, 0, 1, 0, 1.19209e-07, 0, 1, 80, 11.377, 313.744)
 fov = 90.0
 script = ExtResource("17_v7kim")
 target = NodePath("../Bike")
@@ -935,112 +934,112 @@ offset_y = 3.0
 offset_z = 2.0
 follow_speed = 7.0
 
-[node name="Bike" parent="." unique_id=2141863104 instance=ExtResource("18_qh3w7")]
-transform = Transform3D(1, 0, -1.1920929e-07, 0, 1, 0, 1.1920929e-07, 0, 1, 79.99998, 9.470602, 311.94125)
+[node name="Bike" parent="." instance=ExtResource("18_qh3w7")]
+transform = Transform3D(1, 0, -1.19209e-07, 0, 1, 0, 1.19209e-07, 0, 1, 80, 9.4706, 311.941)
 acceleration = 2400.0
 max_speed = 15.0
 tire_max_turn_degrees = 20
 show_debug = false
 jump_extra_max_force = 30.0
 
-[node name="SpotLight3D3" type="SpotLight3D" parent="Bike" unique_id=1752556279]
+[node name="SpotLight3D3" type="SpotLight3D" parent="Bike"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.722, -1.023)
-light_color = Color(0.981368, 0.9442987, 0.8319473, 1)
+light_color = Color(0.981368, 0.944299, 0.831947, 1)
 light_volumetric_fog_energy = 0.3
 light_projector = SubResource("NoiseTexture2D_iccsf")
 light_bake_mode = 1
 shadow_enabled = true
-spot_range = 90.20194
+spot_range = 90.2019
 spot_angle = 65.13
 
-[node name="Label3D4" type="Label3D" parent="." unique_id=165353526]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.518654, 15.824572, 303.58487)
+[node name="Label3D4" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.5187, 15.8246, 303.585)
 text = "Samples of Shaders & Particles"
 font_size = 250
 outline_size = 100
 
-[node name="Label3D5" type="Label3D" parent="." unique_id=1810956200]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.518654, 13.5655, 303.58487)
+[node name="Label3D5" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.5187, 13.5655, 303.585)
 text = "Explore Scene to See Applications of 
 Shaders / Particles."
 font_size = 150
 outline_size = 10
 
-[node name="Examples_group" type="Node3D" parent="." unique_id=1609086210]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84.84382, 10.25, 291.9843)
+[node name="Examples_group" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84.8438, 10.25, 291.984)
 
-[node name="Label3D" type="Label3D" parent="Examples_group" unique_id=1116645261]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 2.5, 0)
+[node name="Label3D" type="Label3D" parent="Examples_group"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 2.5, 0)
 text = "Pickup Item "
 font_size = 100
 
-[node name="Collectible_Oil" parent="Examples_group" unique_id=814614715 instance=ExtResource("40_o65ns")]
+[node name="Collectible_Oil" parent="Examples_group" instance=ExtResource("40_o65ns")]
 
-[node name="Collectible_Speed" parent="Examples_group" unique_id=1801912787 instance=ExtResource("41_jlbj7")]
+[node name="Collectible_Speed" parent="Examples_group" instance=ExtResource("41_jlbj7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
 
-[node name="CollectibleHealth" parent="Examples_group" unique_id=172075111 instance=ExtResource("21_a34yx")]
+[node name="CollectibleHealth" parent="Examples_group" instance=ExtResource("21_a34yx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
 
-[node name="Examples_group2" type="Node3D" parent="." unique_id=985342042]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75.61209, 10.25, 291.9843)
+[node name="Examples_group2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75.6121, 10.25, 291.984)
 
-[node name="Label3D2" type="Label3D" parent="Examples_group2" unique_id=134540908]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 2.5, 0)
+[node name="Label3D2" type="Label3D" parent="Examples_group2"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 2.5, 0)
 text = "Water & Lava Shdaer"
 font_size = 100
 
-[node name="Water" type="MeshInstance3D" parent="Examples_group2" unique_id=1321705772]
-transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0.54914856, -0.44600582, 3)
+[node name="Water" type="MeshInstance3D" parent="Examples_group2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.549149, -0.446006, 3)
 mesh = SubResource("QuadMesh_41aie")
 
-[node name="Object" type="MeshInstance3D" parent="Examples_group2/Water" unique_id=376468815]
+[node name="Object" type="MeshInstance3D" parent="Examples_group2/Water"]
 mesh = SubResource("CapsuleMesh_wvoeg")
 
-[node name="WaterFall2" type="MeshInstance3D" parent="Examples_group2/Water" unique_id=580320266]
-transform = Transform3D(-0.07999975, -0.00019826919, 1.2079626e-08, -0.0001982692, 0.07999975, 2.993782e-11, -1.2079664e-08, 0, -0.08, -17.208588, 3.3785172, -9.523346)
+[node name="WaterFall2" type="MeshInstance3D" parent="Examples_group2/Water"]
+transform = Transform3D(-0.0799998, -0.000198269, 1.20796e-08, -0.000198269, 0.0799998, 2.99378e-11, -1.20797e-08, 0, -0.08, -17.2086, 3.37852, -9.52335)
 mesh = SubResource("ArrayMesh_mmb40")
 
-[node name="FallBubble" type="GPUParticles3D" parent="Examples_group2/Water" unique_id=150405813]
-transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -2.406517, 0.38573933, 0)
+[node name="FallBubble" type="GPUParticles3D" parent="Examples_group2/Water"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.40652, 0.385739, 0)
 amount = 25
 sub_emitter = NodePath("Fallsplash")
 lifetime = 0.4
 process_material = SubResource("ParticleProcessMaterial_ywnpd")
 draw_pass_1 = SubResource("QuadMesh_h3cgg")
 
-[node name="Fallsplash" type="GPUParticles3D" parent="Examples_group2/Water/FallBubble" unique_id=2084447148]
+[node name="Fallsplash" type="GPUParticles3D" parent="Examples_group2/Water/FallBubble"]
 amount = 15
 lifetime = 0.2
 process_material = SubResource("ParticleProcessMaterial_peny8")
 draw_pass_1 = SubResource("QuadMesh_hxiyp")
 
-[node name="Lava" type="MeshInstance3D" parent="Examples_group2" unique_id=1859592308]
-transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0.54914856, -0.44600582, -3)
+[node name="Lava" type="MeshInstance3D" parent="Examples_group2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.549149, -0.446006, -3)
 mesh = SubResource("QuadMesh_170iu")
 
-[node name="Object" type="MeshInstance3D" parent="Examples_group2/Lava" unique_id=376854778]
-transform = Transform3D(0.9999999, 0, 0, 0, -4.371139e-08, -0.9999999, 0, 1, -4.3711385e-08, 0, 0.53462505, 0)
+[node name="Object" type="MeshInstance3D" parent="Examples_group2/Lava"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.534625, 0)
 mesh = SubResource("BoxMesh_see0q")
 
-[node name="Examples_group3" type="Node3D" parent="." unique_id=859331062]
+[node name="Examples_group3" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84.844, 10.25, 274.114)
 
-[node name="Label3D3" type="Label3D" parent="Examples_group3" unique_id=2102696975]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 2.5, 0)
+[node name="Label3D3" type="Label3D" parent="Examples_group3"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 2.5, 0)
 text = "Smoke and Meteor Particles"
 font_size = 100
 
-[node name="Meteor" type="Node3D" parent="Examples_group3" unique_id=597027910 node_paths=PackedStringArray("particles")]
+[node name="Meteor" type="Node3D" parent="Examples_group3" node_paths=PackedStringArray("particles")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, -4)
 script = ExtResource("27_1jf8j")
 particles = [NodePath("Meteor_Lights"), NodePath("Meteor_Rock"), NodePath("Meteor_Debris")]
 
-[node name="MeteorTimer" type="Timer" parent="Examples_group3/Meteor" unique_id=1168216177]
+[node name="MeteorTimer" type="Timer" parent="Examples_group3/Meteor"]
 wait_time = 17.5
 autostart = true
 
-[node name="Meteor_Lights" type="GPUParticles3D" parent="Examples_group3/Meteor" unique_id=2003725133]
+[node name="Meteor_Lights" type="GPUParticles3D" parent="Examples_group3/Meteor"]
 amount = 4
 lifetime = 10.0
 speed_scale = 2.0
@@ -1048,13 +1047,13 @@ explosiveness = 0.7
 randomness = 0.8
 use_fixed_seed = true
 seed = 3245624809
-visibility_aabb = AABB(-155.47884, -81.13734, -170.6343, 301.96466, 198.40329, 335.19666)
+visibility_aabb = AABB(-155.479, -81.1373, -170.634, 301.965, 198.403, 335.197)
 trail_enabled = true
 trail_lifetime = 1.0
 process_material = SubResource("ParticleProcessMaterial_c2lca")
 draw_pass_1 = SubResource("RibbonTrailMesh_hxiyp")
 
-[node name="Meteor_Rock" type="GPUParticles3D" parent="Examples_group3/Meteor" unique_id=433829059]
+[node name="Meteor_Rock" type="GPUParticles3D" parent="Examples_group3/Meteor"]
 material_overlay = SubResource("ShaderMaterial_udi0b")
 cast_shadow = 0
 amount = 4
@@ -1064,12 +1063,12 @@ explosiveness = 0.7
 randomness = 0.8
 use_fixed_seed = true
 seed = 3245624809
-visibility_aabb = AABB(-161.1376, -409.93726, -126.584755, 300.8603, 463.9078, 272.4781)
+visibility_aabb = AABB(-161.138, -409.937, -126.585, 300.86, 463.908, 272.478)
 trail_lifetime = 0.85
 process_material = SubResource("ParticleProcessMaterial_c2lca")
 draw_pass_1 = SubResource("BoxMesh_u88p2")
 
-[node name="Meteor_Debris" type="GPUParticles3D" parent="Examples_group3/Meteor" unique_id=1631819510]
+[node name="Meteor_Debris" type="GPUParticles3D" parent="Examples_group3/Meteor"]
 amount = 30
 lifetime = 10.0
 speed_scale = 2.5
@@ -1077,22 +1076,22 @@ explosiveness = 0.7
 randomness = 0.8
 use_fixed_seed = true
 seed = 3245624809
-visibility_aabb = AABB(-163.7022, -432.73987, -146.35126, 311.5232, 491.13885, 278.549)
+visibility_aabb = AABB(-163.702, -432.74, -146.351, 311.523, 491.139, 278.549)
 trail_lifetime = 1.0
 process_material = SubResource("ParticleProcessMaterial_gr31o")
 draw_pass_1 = SubResource("BoxMesh_41aie")
 
-[node name="Smoke_Black" type="GPUParticles3D" parent="Examples_group3" unique_id=1350491723]
+[node name="Smoke_Black" type="GPUParticles3D" parent="Examples_group3"]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 4)
 amount = 100
 lifetime = 15.0
 preprocess = 15.0
 randomness = 0.48
-visibility_aabb = AABB(-84.164894, -82.88476, -119.88452, 167.87848, 417.17935, 203.51509)
+visibility_aabb = AABB(-84.1649, -82.8848, -119.885, 167.878, 417.179, 203.515)
 process_material = SubResource("ParticleProcessMaterial_1yagt")
 draw_pass_1 = SubResource("QuadMesh_mmb40")
 
-[node name="Fire_Particles" type="GPUParticles3D" parent="Examples_group3/Smoke_Black" unique_id=1049129067]
+[node name="Fire_Particles" type="GPUParticles3D" parent="Examples_group3/Smoke_Black"]
 amount = 45
 lifetime = 15.0
 speed_scale = 1.5
@@ -1100,34 +1099,34 @@ randomness = 0.58
 process_material = SubResource("ParticleProcessMaterial_p87iy")
 draw_pass_1 = SubResource("QuadMesh_peny8")
 
-[node name="Examples_group4" type="Node3D" parent="." unique_id=2033805722]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75.61209, 10.25, 274.11365)
+[node name="Examples_group4" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75.6121, 10.25, 274.114)
 
-[node name="Label3D4" type="Label3D" parent="Examples_group4" unique_id=1227981747]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 2.5, 0)
+[node name="Label3D4" type="Label3D" parent="Examples_group4"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 2.5, 0)
 text = "Confetti Particles using Sub Emitter"
 font_size = 100
 
-[node name="BlueConfetti03" parent="Examples_group4" unique_id=646711714 instance=ExtResource("34_fnoa3")]
-transform = Transform3D(0.9659258, -0.25881904, 0, 0.25881904, 0.9659258, 0, 0, 0, 1, 0, 0, 4)
+[node name="BlueConfetti03" parent="Examples_group4" instance=ExtResource("34_fnoa3")]
+transform = Transform3D(0.965926, -0.258819, 0, 0.258819, 0.965926, 0, 0, 0, 1, 0, 0, 4)
 
-[node name="PinkConfetti03" parent="Examples_group4" unique_id=524593006 instance=ExtResource("35_1s2qw")]
-transform = Transform3D(0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 0, 0, 0, 1, 0, 0, -4)
+[node name="PinkConfetti03" parent="Examples_group4" instance=ExtResource("35_1s2qw")]
+transform = Transform3D(0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 0, 0, 1, 0, 0, -4)
 
-[node name="Island_SM_01_1" parent="." unique_id=375070035 instance=ExtResource("25_ip6vk")]
+[node name="Island_SM_01_1" parent="." instance=ExtResource("25_ip6vk")]
 
-[node name="Smoke_Black" type="GPUParticles3D" parent="Island_SM_01_1" unique_id=108117307]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0.8409214, 108.25441, -133.98685)
+[node name="Smoke_Black" type="GPUParticles3D" parent="Island_SM_01_1"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0.840921, 108.254, -133.987)
 amount = 100
 lifetime = 15.0
 preprocess = 15.0
 randomness = 0.48
-visibility_aabb = AABB(-84.164894, -82.88476, -119.88452, 167.87848, 417.17935, 203.51509)
+visibility_aabb = AABB(-84.1649, -82.8848, -119.885, 167.878, 417.179, 203.515)
 process_material = SubResource("ParticleProcessMaterial_jry08")
 draw_pass_1 = SubResource("QuadMesh_r7xsg")
 
-[node name="Fire_Particles" type="GPUParticles3D" parent="Island_SM_01_1" unique_id=1423169296]
-transform = Transform3D(3.2001216, -0.9588151, 2.1999767, 5.9604645e-08, 3.666875, 1.598133, -2.3998382, -1.2785548, 2.9336112, -5.8724627, 119.887054, -143.7438)
+[node name="Fire_Particles" type="GPUParticles3D" parent="Island_SM_01_1"]
+transform = Transform3D(3.20012, -0.958815, 2.19998, 5.96046e-08, 3.66687, 1.59813, -2.39984, -1.27855, 2.93361, -5.87246, 119.887, -143.744)
 amount = 45
 lifetime = 15.0
 speed_scale = 1.5
@@ -1135,16 +1134,16 @@ randomness = 0.58
 process_material = SubResource("ParticleProcessMaterial_kiqmh")
 draw_pass_1 = SubResource("QuadMesh_florc")
 
-[node name="Meteor" type="Node3D" parent="Island_SM_01_1" unique_id=1887318085 node_paths=PackedStringArray("particles")]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -5.8724627, 122.042015, -143.7438)
+[node name="Meteor" type="Node3D" parent="Island_SM_01_1" node_paths=PackedStringArray("particles")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -5.87246, 122.042, -143.744)
 script = ExtResource("27_1jf8j")
 particles = [NodePath("Meteor_Lights"), NodePath("Meteor_Rock"), NodePath("Meteor_Debris")]
 
-[node name="MeteorTimer" type="Timer" parent="Island_SM_01_1/Meteor" unique_id=581841296]
+[node name="MeteorTimer" type="Timer" parent="Island_SM_01_1/Meteor"]
 wait_time = 17.5
 autostart = true
 
-[node name="Meteor_Lights" type="GPUParticles3D" parent="Island_SM_01_1/Meteor" unique_id=1509980319]
+[node name="Meteor_Lights" type="GPUParticles3D" parent="Island_SM_01_1/Meteor"]
 emitting = false
 amount = 14
 lifetime = 6.0
@@ -1154,14 +1153,14 @@ explosiveness = 0.7
 randomness = 0.8
 use_fixed_seed = true
 seed = 3245624809
-visibility_aabb = AABB(-155.47884, -81.13734, -170.6343, 301.96466, 198.40329, 335.19666)
+visibility_aabb = AABB(-155.479, -81.1373, -170.634, 301.965, 198.403, 335.197)
 trail_enabled = true
 trail_lifetime = 1.0
 process_material = SubResource("ParticleProcessMaterial_52nqr")
 draw_pass_1 = SubResource("RibbonTrailMesh_h4kpy")
 
-[node name="Meteor_Debris" type="GPUParticles3D" parent="Island_SM_01_1/Meteor" unique_id=460327736]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0437794, -2.6149387, 1.3441315)
+[node name="Meteor_Debris" type="GPUParticles3D" parent="Island_SM_01_1/Meteor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.04378, -2.61494, 1.34413)
 emitting = false
 amount = 100
 lifetime = 4.0
@@ -1171,12 +1170,12 @@ explosiveness = 0.7
 randomness = 0.8
 use_fixed_seed = true
 seed = 3245624809
-visibility_aabb = AABB(-163.7022, -432.73987, -146.35126, 311.5232, 491.13885, 278.549)
+visibility_aabb = AABB(-163.702, -432.74, -146.351, 311.523, 491.139, 278.549)
 trail_lifetime = 1.0
 process_material = SubResource("ParticleProcessMaterial_gajuo")
 draw_pass_1 = SubResource("BoxMesh_li14u")
 
-[node name="Meteor_Rock" type="GPUParticles3D" parent="Island_SM_01_1/Meteor" unique_id=1309499131]
+[node name="Meteor_Rock" type="GPUParticles3D" parent="Island_SM_01_1/Meteor"]
 material_overlay = SubResource("ShaderMaterial_udi0b")
 cast_shadow = 0
 emitting = false
@@ -1188,180 +1187,176 @@ explosiveness = 0.7
 randomness = 0.8
 use_fixed_seed = true
 seed = 3245624809
-visibility_aabb = AABB(-161.1376, -409.93726, -126.584755, 300.8603, 463.9078, 272.4781)
+visibility_aabb = AABB(-161.138, -409.937, -126.585, 300.86, 463.908, 272.478)
 trail_lifetime = 0.85
 process_material = SubResource("ParticleProcessMaterial_0jy2u")
 draw_pass_1 = SubResource("BoxMesh_wsfqs")
 
-[node name="Lava" type="Node3D" parent="Island_SM_01_1" unique_id=1390730311]
+[node name="Lava" type="Node3D" parent="Island_SM_01_1"]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 25, 0)
 
-[node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="Island_SM_01_1/Lava" unique_id=1826610826]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.027004242, -0.02129364, -0.0103263855)
+[node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="Island_SM_01_1/Lava"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0270042, -0.0212936, -0.0103264)
 mesh = SubResource("ArrayMesh_ku1kc")
 
-[node name="Lava" type="MeshInstance3D" parent="Island_SM_01_1/Lava" unique_id=527574254]
-transform = Transform3D(2.0026119, 0.076356724, 2.2428312, 9.439655e-09, 1.2498648, -0.25638556, -2.145586, 0.07126859, 2.0933778, 50.53851, -0.638453, -76.38701)
+[node name="Lava" type="MeshInstance3D" parent="Island_SM_01_1/Lava"]
+transform = Transform3D(2.00261, 0.0763567, 2.24283, 9.43966e-09, 1.24986, -0.256386, -2.14559, 0.0712686, 2.09338, 50.5385, -0.638453, -76.387)
 mesh = SubResource("QuadMesh_58nln")
 
-[node name="Lava2" type="MeshInstance3D" parent="Island_SM_01_1/Lava" unique_id=1782844121]
-transform = Transform3D(3.1612644, 0.07635672, 4.7070837, 1.4901161e-08, 1.2498649, -0.5380825, -3.3869586, 0.0712686, 4.393421, 62.985855, 1.6129255, -69.08045)
+[node name="Lava2" type="MeshInstance3D" parent="Island_SM_01_1/Lava"]
+transform = Transform3D(3.16126, 0.0763567, 4.70708, 1.49012e-08, 1.24986, -0.538082, -3.38696, 0.0712686, 4.39342, 62.9859, 1.61293, -69.0805)
 mesh = SubResource("QuadMesh_58nln")
 
-[node name="Lava3" type="MeshInstance3D" parent="Island_SM_01_1/Lava" unique_id=723229182]
-transform = Transform3D(1.859717, 0.15605374, 2.1238706, -0.25727433, 1.2443876, -0.24278678, -2.0239985, -0.014789142, 1.9823438, 73.05177, -0.7785411, -48.15184)
+[node name="Lava3" type="MeshInstance3D" parent="Island_SM_01_1/Lava"]
+transform = Transform3D(1.85972, 0.156054, 2.12387, -0.257274, 1.24439, -0.242787, -2.024, -0.0147891, 1.98234, 73.0518, -0.778541, -48.1518)
 mesh = SubResource("QuadMesh_58nln")
 
-[node name="Lava4" type="MeshInstance3D" parent="Island_SM_01_1/Lava" unique_id=489507647]
-transform = Transform3D(4.1593704, 0.03884994, -0.0029171964, -0.12612456, 1.2198496, -0.92591584, -0.0267748, 0.28901514, 3.9084158, -54.99366, -2.8042898, 72.71544)
+[node name="Lava4" type="MeshInstance3D" parent="Island_SM_01_1/Lava"]
+transform = Transform3D(4.15937, 0.0388499, -0.0029172, -0.126125, 1.21985, -0.925916, -0.0267748, 0.289015, 3.90842, -54.9937, -2.80429, 72.7154)
 mesh = SubResource("QuadMesh_58nln")
 
-[node name="Lava5" type="MeshInstance3D" parent="Island_SM_01_1/Lava" unique_id=1676032059]
-transform = Transform3D(7.568641, -0.05521137, 0, 0.33349812, 1.2530059, 0, 0, 0, 8.3629675, -65.897125, -1.9797988, 67.8442)
+[node name="Lava5" type="MeshInstance3D" parent="Island_SM_01_1/Lava"]
+transform = Transform3D(7.56864, -0.0552114, 0, 0.333498, 1.25301, 0, 0, 0, 8.36297, -65.8971, -1.9798, 67.8442)
 mesh = SubResource("QuadMesh_58nln")
 
-[node name="Lava10" type="MeshInstance3D" parent="Island_SM_01_1/Lava" unique_id=1518717013]
-transform = Transform3D(3.627395, -0.025416974, -0.049070783, 0.15983443, 0.5768308, 1.1136469, 0, -0.16717932, 3.8499558, -61.89409, 0.5625777, 34.51014)
+[node name="Lava10" type="MeshInstance3D" parent="Island_SM_01_1/Lava"]
+transform = Transform3D(3.62739, -0.025417, -0.0490708, 0.159834, 0.576831, 1.11365, 0, -0.167179, 3.84996, -61.8941, 0.562578, 34.5101)
 mesh = SubResource("QuadMesh_58nln")
 
-[node name="Lava11" type="MeshInstance3D" parent="Island_SM_01_1/Lava" unique_id=1187882031]
-transform = Transform3D(5.6341934, -0.01786695, 0.0015744946, 0.0961812, 1.0466275, -0.09223225, 0, 0.015969008, 6.046771, -67.79435, -1.0282626, -20.568123)
+[node name="Lava11" type="MeshInstance3D" parent="Island_SM_01_1/Lava"]
+transform = Transform3D(5.63419, -0.017867, 0.00157449, 0.0961812, 1.04663, -0.0922322, 0, 0.015969, 6.04677, -67.7943, -1.02826, -20.5681)
 mesh = SubResource("QuadMesh_58nln")
 
-[node name="Lava6" type="MeshInstance3D" parent="Island_SM_01_1/Lava" unique_id=1406776757]
-transform = Transform3D(7.568641, -0.05521137, 0, 0.33349812, 1.2530059, 0, 0, 0, 8.3629675, 18.4741, 6.9308853, -52.96206)
+[node name="Lava6" type="MeshInstance3D" parent="Island_SM_01_1/Lava"]
+transform = Transform3D(7.56864, -0.0552114, 0, 0.333498, 1.25301, 0, 0, 0, 8.36297, 18.4741, 6.93089, -52.9621)
 mesh = SubResource("QuadMesh_58nln")
 
-[node name="Lava7" type="MeshInstance3D" parent="Island_SM_01_1/Lava" unique_id=1937173867]
-transform = Transform3D(6.2546153, 0.14544538, 4.6183147, 0.34705597, 1.2061229, -2.2615495, -4.260855, 0.31174418, 6.59513, 22.264318, 4.2357483, -33.79734)
+[node name="Lava7" type="MeshInstance3D" parent="Island_SM_01_1/Lava"]
+transform = Transform3D(6.25462, 0.145445, 4.61831, 0.347056, 1.20612, -2.26155, -4.26086, 0.311744, 6.59513, 22.2643, 4.23575, -33.7973)
 mesh = SubResource("QuadMesh_58nln")
 
-[node name="Lava8" type="MeshInstance3D" parent="Island_SM_01_1/Lava" unique_id=1118446983]
-transform = Transform3D(3.7979684, 0.26353619, -6.9993634, -1.90541, 1.2081276, 0.7422294, 6.1991987, 0.2098781, 4.516326, 13.7991705, 1.742096, -15.570065)
+[node name="Lava8" type="MeshInstance3D" parent="Island_SM_01_1/Lava"]
+transform = Transform3D(3.79797, 0.263536, -6.99936, -1.90541, 1.20813, 0.742229, 6.1992, 0.209878, 4.51633, 13.7992, 1.7421, -15.5701)
 mesh = SubResource("QuadMesh_58nln")
 
-[node name="Lava9" type="MeshInstance3D" parent="Island_SM_01_1/Lava" unique_id=588243931]
-transform = Transform3D(3.7979686, 0.16361678, -7.1336317, -1.90541, 1.2132416, -0.018882766, 6.1991987, 0.27266607, 4.3646474, 18.069649, -2.5328808, -3.4254653)
+[node name="Lava9" type="MeshInstance3D" parent="Island_SM_01_1/Lava"]
+transform = Transform3D(3.79797, 0.163617, -7.13363, -1.90541, 1.21324, -0.0188828, 6.1992, 0.272666, 4.36465, 18.0696, -2.53288, -3.42547)
 mesh = SubResource("QuadMesh_58nln")
 
-[node name="ConfettiParticles" type="Node3D" parent="Island_SM_01_1" unique_id=370195284]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -117.32555, 32.54485, -209.97188)
+[node name="ConfettiParticles" type="Node3D" parent="Island_SM_01_1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -117.326, 32.5448, -209.972)
 
-[node name="BlueConfetti03" parent="Island_SM_01_1/ConfettiParticles" unique_id=1222215227 instance=ExtResource("34_fnoa3")]
-transform = Transform3D(0.9659258, -0.25881904, 0, 0.25881904, 0.9659258, 0, 0, 0, 1, -9.00045, 5.722046e-05, -42)
+[node name="BlueConfetti03" parent="Island_SM_01_1/ConfettiParticles" instance=ExtResource("34_fnoa3")]
+transform = Transform3D(0.965926, -0.258819, 0, 0.258819, 0.965926, 0, 0, 0, 1, -9.00045, 5.72205e-05, -42)
 
-[node name="PinkConfetti03" parent="Island_SM_01_1/ConfettiParticles" unique_id=111252714 instance=ExtResource("35_1s2qw")]
-transform = Transform3D(0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 0, 0, 0, 1, 9, 0, -42)
+[node name="PinkConfetti03" parent="Island_SM_01_1/ConfettiParticles" instance=ExtResource("35_1s2qw")]
+transform = Transform3D(0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 0, 0, 1, 9, 0, -42)
 
-[node name="BlueConfetti02" parent="Island_SM_01_1/ConfettiParticles" unique_id=1612238102 instance=ExtResource("34_fnoa3")]
-transform = Transform3D(-0.9659258, 0.25881904, -8.742278e-08, 0.25881904, 0.9659258, 0, 8.444392e-08, -2.262668e-08, -1, 8.99955, 5.722046e-05, -21)
+[node name="BlueConfetti02" parent="Island_SM_01_1/ConfettiParticles" instance=ExtResource("34_fnoa3")]
+transform = Transform3D(-0.965926, 0.258819, -8.74228e-08, 0.258819, 0.965926, 0, 8.44439e-08, -2.26267e-08, -1, 8.99955, 5.72205e-05, -21)
 
-[node name="PinkConfetti02" parent="Island_SM_01_1/ConfettiParticles" unique_id=813758431 instance=ExtResource("35_1s2qw")]
-transform = Transform3D(-0.9659258, -0.25881904, -8.742278e-08, -0.25881904, 0.9659258, 0, 8.444392e-08, 2.262668e-08, -1, -9.00045, 5.722046e-05, -21)
+[node name="PinkConfetti02" parent="Island_SM_01_1/ConfettiParticles" instance=ExtResource("35_1s2qw")]
+transform = Transform3D(-0.965926, -0.258819, -8.74228e-08, -0.258819, 0.965926, 0, 8.44439e-08, 2.26267e-08, -1, -9.00045, 5.72205e-05, -21)
 
-[node name="BlueConfetti01" parent="Island_SM_01_1/ConfettiParticles" unique_id=2141881811 instance=ExtResource("34_fnoa3")]
-transform = Transform3D(0.9659258, -0.25881904, 0, 0.25881904, 0.9659258, 0, 0, 0, 1, -9, 0, 0)
+[node name="BlueConfetti01" parent="Island_SM_01_1/ConfettiParticles" instance=ExtResource("34_fnoa3")]
+transform = Transform3D(0.965926, -0.258819, 0, 0.258819, 0.965926, 0, 0, 0, 1, -9, 0, 0)
 
-[node name="PinkConfetti01" parent="Island_SM_01_1/ConfettiParticles" unique_id=788199381 instance=ExtResource("35_1s2qw")]
-transform = Transform3D(0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 0, 0, 0, 1, 9, 0, 0)
+[node name="PinkConfetti01" parent="Island_SM_01_1/ConfettiParticles" instance=ExtResource("35_1s2qw")]
+transform = Transform3D(0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 0, 0, 1, 9, 0, 0)
 
-[node name="Swamp" type="Node3D" parent="Island_SM_01_1" unique_id=2099358428]
+[node name="Swamp" type="Node3D" parent="Island_SM_01_1"]
 
-[node name="Waterlight" type="SpotLight3D" parent="Island_SM_01_1/Swamp" unique_id=1672434943]
-transform = Transform3D(1, 0, -4.371139e-08, 4.371139e-08, 1.9106855e-15, 1, 0, -1, 1.9106855e-15, -185.48993, 67.49729, -3.1765015)
-light_color = Color(0.81960785, 0.8235294, 1, 1)
-light_energy = 500.0
+[node name="Waterlight" type="SpotLight3D" parent="Island_SM_01_1/Swamp"]
+transform = Transform3D(1, 0, -4.37114e-08, 4.37114e-08, 1.91069e-15, 1, 0, -1, 1.91069e-15, -185.49, 67.4973, -3.1765)
+light_color = Color(0.819608, 0.823529, 1, 1)
+light_energy = 10.0
 light_volumetric_fog_energy = 0.025
 light_bake_mode = 1
 spot_range = 189.661
 spot_angle = 180.0
 
-[node name="Fallsplash" type="GPUParticles3D" parent="Island_SM_01_1/Swamp" unique_id=1292053386]
+[node name="Fallsplash" type="GPUParticles3D" parent="Island_SM_01_1/Swamp"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -255, 17.5, -28)
-amount = 128
-lifetime = 0.4
+amount = 64
+lifetime = 0.2
 process_material = SubResource("ParticleProcessMaterial_udi0b")
 draw_pass_1 = SubResource("QuadMesh_wsfqs")
 
-[node name="FallBubble" type="GPUParticles3D" parent="Island_SM_01_1/Swamp" unique_id=275203137]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -255, 18.5, -28)
-amount = 128
+[node name="FallBubble" type="GPUParticles3D" parent="Island_SM_01_1/Swamp"]
+transform = Transform3D(1, 0, 0, 0, 0.975002, 0.222195, 0, -0.222195, 0.975002, -246.697, 20.1531, -11.3603)
+amount = 64
 sub_emitter = NodePath("../Fallsplash")
 lifetime = 0.4
 process_material = SubResource("ParticleProcessMaterial_un26f")
 draw_pass_1 = SubResource("QuadMesh_w07eq")
 
-[node name="FallBubble2" type="GPUParticles3D" parent="Island_SM_01_1/Swamp" unique_id=955042666]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -322, 4, -28)
-amount = 128
+[node name="FallBubble2" type="GPUParticles3D" parent="Island_SM_01_1/Swamp"]
+transform = Transform3D(1, 0, 0, 0, 0.999972, -0.00741757, 0, 0.00741757, 0.999972, -257.236, 14.2218, -17.8861)
+amount = 64
 sub_emitter = NodePath("../Fallsplash")
 lifetime = 0.4
 process_material = SubResource("ParticleProcessMaterial_un26f")
 draw_pass_1 = SubResource("QuadMesh_w07eq")
 
-[node name="SwampWater" parent="Island_SM_01_1/Swamp" unique_id=853041271 instance=ExtResource("37_ntsyb")]
+[node name="SwampWater" parent="Island_SM_01_1/Swamp" instance=ExtResource("37_ntsyb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.373753, 0)
 
-[node name="WaterFall" parent="Island_SM_01_1/Swamp" unique_id=1726501432 instance=ExtResource("38_g8wia")]
+[node name="WaterFall" parent="Island_SM_01_1/Swamp" instance=ExtResource("38_g8wia")]
+transform = Transform3D(0.999391, -0.0348995, 0, 0.0348995, 0.999391, 0, 0, 0, 1, 3.5, 6.522, 0)
 
-[node name="SmallBarrier_group" type="Node3D" parent="Island_SM_01_1" unique_id=852210107]
-transform = Transform3D(-0.004817019, 0, -2.9999962, 0, 3, 0, 2.9999962, 0, -0.004817019, 63.56053, 10.5, 214.52745)
+[node name="WaterPit_group" type="Node3D" parent="Island_SM_01_1"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 
-[node name="Small Barrier3" parent="Island_SM_01_1/SmallBarrier_group" unique_id=20724405 instance=ExtResource("42_5kx5x")]
-transform = Transform3D(0.84527135, 0, 0.53433776, 0, 1, 0, -0.53433776, 0, 0.84527135, 4.752678, 0.13967586, -6.076027)
-
-[node name="WaterPit_group" type="Node3D" parent="Island_SM_01_1" unique_id=433763371]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
-
-[node name="WaterPit01" parent="Island_SM_01_1/WaterPit_group" unique_id=1462268104 instance=ExtResource("43_ypv8o")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.39999998, 209.97572, 7.046674, 246.18771)
+[node name="WaterPit01" parent="Island_SM_01_1/WaterPit_group" instance=ExtResource("43_ypv8o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.4, 209.976, 7.04667, 246.188)
 slower_speed = 800.0
 
-[node name="SEA" type="Area3D" parent="Island_SM_01_1" unique_id=857933933]
+[node name="SEA" type="Area3D" parent="Island_SM_01_1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 
-[node name="WaterMesh" type="MeshInstance3D" parent="Island_SM_01_1/SEA" unique_id=1557549866]
+[node name="WaterMesh" type="MeshInstance3D" parent="Island_SM_01_1/SEA"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
 mesh = SubResource("QuadMesh_iccsf")
 
-[node name="JuneonsWater" type="MeshInstance3D" parent="Island_SM_01_1/SEA" unique_id=1529285144 groups=["Mud"]]
+[node name="JuneonsWater" type="MeshInstance3D" parent="Island_SM_01_1/SEA" groups=["Mud"]]
 transform = Transform3D(750, 0, 0, 0, 10, 0, 0, 0, 750, 0, 0, 0)
 visible = false
 mesh = SubResource("BoxMesh_d25n7")
 
-[node name="JWaterCollison" type="CollisionShape3D" parent="Island_SM_01_1/SEA" unique_id=10160861]
+[node name="JWaterCollison" type="CollisionShape3D" parent="Island_SM_01_1/SEA"]
 shape = SubResource("BoxShape3D_gqpl6")
 
-[node name="PlaceHolder_DONTDELETE" parent="Island_SM_01_1/SEA" unique_id=1097532883 instance=ExtResource("24_c8orl")]
+[node name="PlaceHolder_DONTDELETE" parent="Island_SM_01_1/SEA" instance=ExtResource("24_c8orl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
 
-[node name="RaceTrack" type="Node3D" parent="Island_SM_01_1" unique_id=1273527325]
+[node name="RaceTrack" type="Node3D" parent="Island_SM_01_1"]
 
-[node name="Section08" parent="Island_SM_01_1/RaceTrack" unique_id=1842483622 instance=ExtResource("44_288si")]
+[node name="Section08" parent="Island_SM_01_1/RaceTrack" instance=ExtResource("44_288si")]
 
-[node name="Section07" parent="Island_SM_01_1/RaceTrack" unique_id=82390105 instance=ExtResource("45_qf24h")]
+[node name="Section07" parent="Island_SM_01_1/RaceTrack" instance=ExtResource("45_qf24h")]
 
-[node name="Section06" parent="Island_SM_01_1/RaceTrack" unique_id=1458180260 instance=ExtResource("46_jdftk")]
+[node name="Section06" parent="Island_SM_01_1/RaceTrack" instance=ExtResource("46_jdftk")]
 
-[node name="Section_05" parent="Island_SM_01_1/RaceTrack" unique_id=834424799 instance=ExtResource("47_7jllu")]
+[node name="Section_05" parent="Island_SM_01_1/RaceTrack" instance=ExtResource("47_7jllu")]
 
-[node name="Section_04" parent="Island_SM_01_1/RaceTrack" unique_id=1795886780 instance=ExtResource("48_3o0is")]
+[node name="Section_04" parent="Island_SM_01_1/RaceTrack" instance=ExtResource("48_3o0is")]
 
-[node name="Section_03" parent="Island_SM_01_1/RaceTrack" unique_id=553748999 instance=ExtResource("49_6y63l")]
+[node name="Section_03" parent="Island_SM_01_1/RaceTrack" instance=ExtResource("49_6y63l")]
 
-[node name="Section02" parent="Island_SM_01_1/RaceTrack" unique_id=1126011178 instance=ExtResource("50_as8ni")]
+[node name="Section02" parent="Island_SM_01_1/RaceTrack" instance=ExtResource("50_as8ni")]
 
-[node name="Section01_Start" parent="Island_SM_01_1/RaceTrack" unique_id=726555059 instance=ExtResource("51_6prdq")]
+[node name="Section01_Start" parent="Island_SM_01_1/RaceTrack" instance=ExtResource("51_6prdq")]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=284657179]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_h4kpy")
 
-[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="." unique_id=1455290671]
-transform = Transform3D(-0.7071069, -0.1830127, 0.6830126, 1.7297301e-15, 0.9659258, 0.25881907, -0.70710665, 0.1830127, -0.6830126, -28.676985, 7.190658, -53.99477)
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.707107, -0.183013, 0.683013, 1.72973e-15, 0.965926, 0.258819, -0.707107, 0.183013, -0.683013, -28.677, 7.19066, -53.9948)
 light_energy = 0.02
 light_volumetric_fog_energy = 0.015
 light_bake_mode = 1
 
-[node name="VoxelGI" type="VoxelGI" parent="." unique_id=1158816872]
+[node name="VoxelGI" type="VoxelGI" parent="."]
 subdiv = 3
 size = Vector3(750, 400, 750)
 data = ExtResource("54_l28at")

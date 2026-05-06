@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cyapdte5wsc8i"]
+[gd_scene load_steps=8 format=3 uid="uid://cyapdte5wsc8i"]
 
 [ext_resource type="PackedScene" uid="uid://c7st6ot2phdqa" path="res://FinalAssets/StaticMeshes/Environments/3.0/TrackBuildKit/Scenes_Chunks/18x18_Block.tscn" id="1_q70ai"]
 [ext_resource type="PackedScene" uid="uid://p8kaglxfep4t" path="res://FinalAssets/StaticMeshes/Environments/3.0/Obstacles&Ramps/Scenes/FencePole.tscn" id="2_ei1rv"]
@@ -8,39 +8,39 @@
 [ext_resource type="PackedScene" uid="uid://cg8hy6jx8yrly" path="res://FinalAssets/StaticMeshes/Environments/3.0/Obstacles&Ramps/Scenes/Rock_var2.tscn" id="6_s6vut"]
 [ext_resource type="PackedScene" uid="uid://c8sa00bny2ogt" path="res://FinalAssets/StaticMeshes/Environments/3.0/Obstacles&Ramps/Scenes/Rock_var1.tscn" id="7_anbqn"]
 
-[node name="Section01_Start" type="Node3D" unique_id=726555059]
+[node name="Section01_Start" type="Node3D"]
 
-[node name="18x18_Block" parent="." unique_id=139849848 instance=ExtResource("1_q70ai")]
+[node name="18x18_Block" parent="." instance=ExtResource("1_q70ai")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 71.5, -3, 282)
 
-[node name="18x18_Block2" parent="." unique_id=893314946 instance=ExtResource("1_q70ai")]
+[node name="18x18_Block2" parent="." instance=ExtResource("1_q70ai")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 71.5, -3, 264)
 
-[node name="18x18_Block3" parent="." unique_id=821356771 instance=ExtResource("1_q70ai")]
+[node name="18x18_Block3" parent="." instance=ExtResource("1_q70ai")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 71.5, -3, 246)
 
-[node name="18x18_Block4" parent="." unique_id=1956570109 instance=ExtResource("1_q70ai")]
+[node name="18x18_Block4" parent="." instance=ExtResource("1_q70ai")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 71.5, -3, 228)
 
-[node name="18x18_Block5" parent="." unique_id=1435680266 instance=ExtResource("1_q70ai")]
+[node name="18x18_Block5" parent="." instance=ExtResource("1_q70ai")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 71.5, -3, 210)
 
-[node name="Props" type="Node3D" parent="." unique_id=1089680739]
+[node name="Props" type="Node3D" parent="."]
 
-[node name="FencePole" parent="Props" unique_id=2114237115 instance=ExtResource("2_ei1rv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75.384254, 6.2394695, 206.07541)
+[node name="FencePole" parent="Props" instance=ExtResource("2_ei1rv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75.3843, 6.23947, 206.075)
 
-[node name="ShortRamp" parent="Props" unique_id=1960538749 instance=ExtResource("3_fjyp8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78.38152, 9.5, 225.00034)
+[node name="ShortRamp" parent="Props" instance=ExtResource("3_fjyp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78.3815, 9.5, 225)
 
-[node name="ShippingContainer" parent="Props" unique_id=1925615727 instance=ExtResource("4_qk0bk")]
-transform = Transform3D(0.9907622, 0, 0.13561185, 0, 1, 0, -0.13561185, 0, 0.9907622, 80.067665, 9.5, 247.25714)
+[node name="ShippingContainer" parent="Props" instance=ExtResource("4_qk0bk")]
+transform = Transform3D(0.990762, 0, 0.135612, 0, 1, 0, -0.135612, 0, 0.990762, 80.0677, 9.5, 247.257)
 
-[node name="Node3D" parent="." unique_id=2123439176 instance=ExtResource("5_bejrp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.99806, 9.242226, 251.25049)
+[node name="Node3D" parent="." instance=ExtResource("5_bejrp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.9981, 9.24223, 251.25)
 
-[node name="Node3D2" parent="." unique_id=1669820343 instance=ExtResource("6_s6vut")]
-transform = Transform3D(1, 0, 0, 0, 0.6170496, -0.78692424, 0, 0.78692424, 0.6170496, 74.83276, 9.779583, 253.01567)
+[node name="Node3D2" parent="." instance=ExtResource("6_s6vut")]
+transform = Transform3D(1, 0, 0, 0, 0.61705, -0.786924, 0, 0.786924, 0.61705, 74.8328, 9.77958, 253.016)
 
-[node name="Node3D3" parent="." unique_id=328411048 instance=ExtResource("7_anbqn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.46774, 9.500001, 253.58475)
+[node name="Node3D3" parent="." instance=ExtResource("7_anbqn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.4677, 9.5, 253.585)

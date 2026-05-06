@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://c7st6ot2phdqa"]
+[gd_scene load_steps=10 format=3 uid="uid://c7st6ot2phdqa"]
 
 [ext_resource type="PackedScene" uid="uid://cmgtwnnx5m8p" path="res://FinalAssets/StaticMeshes/Environments/3.0/TrackBuildKit/FBX/SM_CementSlab_18x18_3M.fbx" id="1_2ve1y"]
 [ext_resource type="PackedScene" uid="uid://cqovrh8auuee0" path="res://FinalAssets/StaticMeshes/Environments/3.0/TrackBuildKit/FBX2/SM_CementTrack_18x18_BLOCK_TEST.fbx" id="1_8maet"]
@@ -16,101 +16,101 @@ size = Vector3(1, 12, 18)
 [sub_resource type="BoxShape3D" id="BoxShape3D_sie4d"]
 size = Vector3(1, 1, 18)
 
-[node name="18x18_Block" type="Node3D" unique_id=139849848]
+[node name="18x18_Block" type="Node3D"]
 
-[node name="SM_ENV_Streetlight_v06" parent="." unique_id=799298732 instance=ExtResource("1_sie4d")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1, 12.5, 10)
+[node name="SM_ENV_Streetlight_v06" parent="." instance=ExtResource("1_sie4d")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1, 12.5, 10)
 
-[node name="SM_ENV_Streetlight_v07" parent="." unique_id=249533419 instance=ExtResource("1_sie4d")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 17, 12.5, 10)
+[node name="SM_ENV_Streetlight_v07" parent="." instance=ExtResource("1_sie4d")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 17, 12.5, 10)
 
-[node name="SM_CementSlab_18x18_3M" parent="." unique_id=307897548 instance=ExtResource("1_2ve1y")]
+[node name="SM_CementSlab_18x18_3M" parent="." instance=ExtResource("1_2ve1y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12, 0)
 
-[node name="Walls" type="Node3D" parent="." unique_id=1844505649]
+[node name="Walls" type="Node3D" parent="."]
 
-[node name="SM_CementWall_3x12_3M" parent="Walls" unique_id=1155274838 instance=ExtResource("2_77yl3")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.5, 0, 0)
+[node name="SM_CementWall_3x12_3M" parent="Walls" instance=ExtResource("2_77yl3")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.5, 0, 0)
 visible = false
 
-[node name="SM_CementWall_3x12_3M2" parent="Walls" unique_id=265721178 instance=ExtResource("2_77yl3")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.5, 0, 3)
+[node name="SM_CementWall_3x12_3M2" parent="Walls" instance=ExtResource("2_77yl3")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.5, 0, 3)
 visible = false
 
-[node name="SM_CementWall_3x12_3M3" parent="Walls" unique_id=617061325 instance=ExtResource("2_77yl3")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.5, 0, 6)
+[node name="SM_CementWall_3x12_3M3" parent="Walls" instance=ExtResource("2_77yl3")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.5, 0, 6)
 visible = false
 
-[node name="SM_CementWall_3x12_3M4" parent="Walls" unique_id=1561466349 instance=ExtResource("2_77yl3")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.5, 0, 9)
+[node name="SM_CementWall_3x12_3M4" parent="Walls" instance=ExtResource("2_77yl3")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.5, 0, 9)
 visible = false
 
-[node name="SM_CementWall_3x12_3M5" parent="Walls" unique_id=260229857 instance=ExtResource("2_77yl3")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.5, 0, 12)
+[node name="SM_CementWall_3x12_3M5" parent="Walls" instance=ExtResource("2_77yl3")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.5, 0, 12)
 visible = false
 
-[node name="SM_CementWall_3x12_3M6" parent="Walls" unique_id=1553868409 instance=ExtResource("2_77yl3")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.5, 0, 15)
+[node name="SM_CementWall_3x12_3M6" parent="Walls" instance=ExtResource("2_77yl3")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.5, 0, 15)
 visible = false
 
-[node name="SM_CementWall_3x12_3M7" parent="Walls" unique_id=1631021472 instance=ExtResource("2_77yl3")]
-transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 16.5, 0, 18)
+[node name="SM_CementWall_3x12_3M7" parent="Walls" instance=ExtResource("2_77yl3")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 16.5, 0, 18)
 visible = false
 
-[node name="SM_CementWall_3x12_3M8" parent="Walls" unique_id=246963144 instance=ExtResource("2_77yl3")]
-transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 16.5, 0, 15)
+[node name="SM_CementWall_3x12_3M8" parent="Walls" instance=ExtResource("2_77yl3")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 16.5, 0, 15)
 visible = false
 
-[node name="SM_CementWall_3x12_3M9" parent="Walls" unique_id=764814885 instance=ExtResource("2_77yl3")]
-transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 16.5, 0, 12)
+[node name="SM_CementWall_3x12_3M9" parent="Walls" instance=ExtResource("2_77yl3")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 16.5, 0, 12)
 visible = false
 
-[node name="SM_CementWall_3x12_3M10" parent="Walls" unique_id=1736246751 instance=ExtResource("2_77yl3")]
-transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 16.5, 0, 9)
+[node name="SM_CementWall_3x12_3M10" parent="Walls" instance=ExtResource("2_77yl3")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 16.5, 0, 9)
 visible = false
 
-[node name="SM_CementWall_3x12_3M11" parent="Walls" unique_id=2097005096 instance=ExtResource("2_77yl3")]
-transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 16.5, 0, 6)
+[node name="SM_CementWall_3x12_3M11" parent="Walls" instance=ExtResource("2_77yl3")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 16.5, 0, 6)
 visible = false
 
-[node name="SM_CementWall_3x12_3M12" parent="Walls" unique_id=988646577 instance=ExtResource("2_77yl3")]
-transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 16.5, 0, 3)
+[node name="SM_CementWall_3x12_3M12" parent="Walls" instance=ExtResource("2_77yl3")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 16.5, 0, 3)
 visible = false
 
-[node name="StaticBody3D_Road" type="StaticBody3D" parent="." unique_id=347140097 groups=["Road"]]
+[node name="StaticBody3D_Road" type="StaticBody3D" parent="." groups=["Road"]]
 collision_layer = 3
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D_Road" unique_id=375322197]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D_Road"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 12.25, 9)
 shape = SubResource("BoxShape3D_k0mmo")
 
-[node name="StaticBody3D2_Walls" type="StaticBody3D" parent="." unique_id=1084992407 groups=["Wall"]]
+[node name="StaticBody3D2_Walls" type="StaticBody3D" parent="." groups=["Wall"]]
 visible = false
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D2_Walls" unique_id=1464060450]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D2_Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 6, 9)
 shape = SubResource("BoxShape3D_epioh")
 
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D2_Walls" unique_id=641787615]
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D2_Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 6, 9)
 shape = SubResource("BoxShape3D_epioh")
 
-[node name="StaticBody3D_Barriers" type="StaticBody3D" parent="." unique_id=2107966133 groups=["Wall"]]
+[node name="StaticBody3D_Barriers" type="StaticBody3D" parent="." groups=["Wall"]]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D_Barriers" unique_id=685120931]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D_Barriers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 13, 9)
 shape = SubResource("BoxShape3D_sie4d")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D_Barriers" unique_id=1858187781]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D_Barriers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 13, 9)
 shape = SubResource("BoxShape3D_sie4d")
 
-[node name="SM_CementTrack_18x18_BLOCK_TEST" parent="." unique_id=965333802 instance=ExtResource("1_8maet")]
+[node name="SM_CementTrack_18x18_BLOCK_TEST" parent="." instance=ExtResource("1_8maet")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12, 0)
 visible = false
 
-[node name="SM_CementTrack_18x18_BLOCK_ROAD" parent="." unique_id=1618591525 instance=ExtResource("2_o2wkl")]
+[node name="SM_CementTrack_18x18_BLOCK_ROAD" parent="." instance=ExtResource("2_o2wkl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12, 0)
 
-[node name="SM_CementTrack_18x18_BLOCK_WALLS" parent="." unique_id=1284716454 instance=ExtResource("3_sie4d")]
+[node name="SM_CementTrack_18x18_BLOCK_WALLS" parent="." instance=ExtResource("3_sie4d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12, 0)

@@ -1,4 +1,4 @@
-[gd_resource type="VisualShader" format=3 uid="uid://cye2un72e60rb"]
+[gd_resource type="VisualShader" load_steps=12 format=3 uid="uid://cye2un72e60rb"]
 
 [ext_resource type="Texture2D" uid="uid://b7c7fy4oagmcj" path="res://JuneTestStuff/Shader/T_Noise_001R.png" id="1_i2i5d"]
 [ext_resource type="Texture2D" uid="uid://x2htwb8o3r3k" path="res://JuneTestStuff/Shader/T_VFX_circle_1.png" id="2_pd8th"]
@@ -33,24 +33,93 @@ billboard_type = 3
 keep_scale = true
 
 [resource]
+code = "shader_type spatial;
+render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_lambert, specular_schlick_ggx;
+
+uniform vec4 ColorParameter : source_color;
+uniform sampler2D tex_frg_2;
+uniform sampler2D tex_frg_5;
+
+
+
+void vertex() {
+	mat4 n_out2p0;
+// GetBillboardMatrix:2
+	{
+		mat4 __wm = mat4(normalize(INV_VIEW_MATRIX[0]), normalize(INV_VIEW_MATRIX[1]), normalize(INV_VIEW_MATRIX[2]), MODEL_MATRIX[3]);
+		__wm = __wm * mat4(vec4(cos(INSTANCE_CUSTOM.x), -sin(INSTANCE_CUSTOM.x), 0.0, 0.0), vec4(sin(INSTANCE_CUSTOM.x), cos(INSTANCE_CUSTOM.x), 0.0, 0.0), vec4(0.0, 0.0, 1.0, 0.0), vec4(0.0, 0.0, 0.0, 1.0));
+		__wm = __wm * mat4(vec4(length(MODEL_MATRIX[0].xyz), 0.0, 0.0, 0.0), vec4(0.0, length(MODEL_MATRIX[1].xyz), 0.0, 0.0), vec4(0.0, 0.0, length(MODEL_MATRIX[2].xyz), 0.0), vec4(0.0, 0.0, 0.0, 1.0));
+		n_out2p0 = VIEW_MATRIX * __wm;
+	}
+
+
+// Output:0
+	MODELVIEW_MATRIX = n_out2p0;
+
+
+}
+
+void fragment() {
+// ColorParameter:11
+	vec4 n_out11p0 = ColorParameter;
+
+
+// Input:3
+	vec4 n_out3p0 = COLOR;
+	float n_out3p1 = n_out3p0.r;
+
+
+	float n_out4p0;
+// Remap:4
+	float n_in4p1 = 0.00000;
+	float n_in4p2 = 1.00000;
+	float n_in4p3 = 0.00000;
+	float n_in4p4 = 1.00000;
+	{
+		float __input_range = n_in4p2 - n_in4p1;
+		float __output_range = n_in4p4 - n_in4p3;
+		n_out4p0 = n_in4p3 + __output_range * ((n_out3p1 - n_in4p1) / __input_range);
+	}
+
+
+// Texture2D:2
+	vec4 n_out2p0 = textureLod(tex_frg_2, UV, n_out4p0);
+	float n_out2p1 = n_out2p0.r;
+
+
+// Texture2D:5
+	vec4 n_out5p0 = texture(tex_frg_5, UV);
+
+
+// FloatOp:7
+	float n_out7p0 = n_out2p1 * n_out5p0.x;
+
+
+// Output:0
+	ALBEDO = vec3(n_out11p0.xyz);
+	ALPHA = n_out7p0;
+
+
+}
+"
 nodes/vertex/2/node = SubResource("VisualShaderNodeBillboard_b7pfc")
-nodes/vertex/2/position = Vector2(79.43449, 311.97678)
+nodes/vertex/2/position = Vector2(79.4345, 311.977)
 nodes/vertex/connections = PackedInt32Array(2, 0, 0, 10)
-nodes/fragment/0/position = Vector2(1080, 106.666664)
+nodes/fragment/0/position = Vector2(1080, 106.667)
 nodes/fragment/2/node = SubResource("VisualShaderNodeTexture_uty8x")
-nodes/fragment/2/position = Vector2(173.33333, 80)
+nodes/fragment/2/position = Vector2(173.333, 80)
 nodes/fragment/3/node = SubResource("VisualShaderNodeInput_red00")
-nodes/fragment/3/position = Vector2(-413.33334, 133.33333)
+nodes/fragment/3/position = Vector2(-413.333, 133.333)
 nodes/fragment/4/node = SubResource("VisualShaderNodeRemap_ww01e")
-nodes/fragment/4/position = Vector2(-80, 186.66667)
+nodes/fragment/4/position = Vector2(-80, 186.667)
 nodes/fragment/5/node = SubResource("VisualShaderNodeTexture_6s6ff")
-nodes/fragment/5/position = Vector2(93.333336, 493.33334)
+nodes/fragment/5/position = Vector2(93.3333, 493.333)
 nodes/fragment/7/node = SubResource("VisualShaderNodeFloatOp_b72dn")
-nodes/fragment/7/position = Vector2(492.29346, 168.91856)
+nodes/fragment/7/position = Vector2(492.293, 168.919)
 nodes/fragment/8/node = SubResource("VisualShaderNodeInput_wph71")
-nodes/fragment/8/position = Vector2(426.66666, 640)
+nodes/fragment/8/position = Vector2(426.667, 640)
 nodes/fragment/9/node = SubResource("VisualShaderNodeFloatOp_a8411")
-nodes/fragment/9/position = Vector2(745.79736, 402.75613)
+nodes/fragment/9/position = Vector2(745.797, 402.756)
 nodes/fragment/11/node = SubResource("VisualShaderNodeColorParameter_313wu")
-nodes/fragment/11/position = Vector2(586.6667, -80)
+nodes/fragment/11/position = Vector2(586.667, -80)
 nodes/fragment/connections = PackedInt32Array(3, 1, 4, 0, 4, 0, 2, 1, 5, 0, 7, 1, 2, 1, 7, 0, 8, 0, 9, 1, 7, 0, 9, 0, 11, 0, 0, 0, 7, 0, 0, 1)
