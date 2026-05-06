@@ -927,16 +927,16 @@ adjustment_saturation = 1.3
 [node name="FinalMainScene" type="Node3D" unique_id=1582619210]
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=811988745 node_paths=PackedStringArray("target")]
-transform = Transform3D(1, 0, -1.1920929e-07, 0, 1, 0, 1.1920929e-07, 0, 1, 79.99998, 10.78883, 302.6671)
+transform = Transform3D(1, 0, -1.1920929e-07, 0, 1, 0, 1.1920929e-07, 0, 1, 79.99998, 11.376968, 313.74405)
 fov = 90.0
 script = ExtResource("17_v7kim")
 target = NodePath("../Bike")
-offset_y = 1.5
+offset_y = 3.0
 offset_z = 2.0
 follow_speed = 7.0
 
 [node name="Bike" parent="." unique_id=2141863104 instance=ExtResource("18_qh3w7")]
-transform = Transform3D(1, 0, -1.1920929e-07, 0, 1, 0, 1.1920929e-07, 0, 1, 79.99998, 9.470602, 300.86432)
+transform = Transform3D(1, 0, -1.1920929e-07, 0, 1, 0, 1.1920929e-07, 0, 1, 79.99998, 9.470602, 311.94125)
 acceleration = 2400.0
 max_speed = 15.0
 tire_max_turn_degrees = 20
@@ -953,8 +953,26 @@ shadow_enabled = true
 spot_range = 90.20194
 spot_angle = 65.13
 
+[node name="Label3D4" type="Label3D" parent="." unique_id=165353526]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.518654, 15.824572, 303.58487)
+text = "Samples of Shaders & Particles"
+font_size = 250
+outline_size = 100
+
+[node name="Label3D5" type="Label3D" parent="." unique_id=1810956200]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.518654, 13.5655, 303.58487)
+text = "Explore Scene to See Applications of 
+Shaders / Particles."
+font_size = 150
+outline_size = 10
+
 [node name="Examples_group" type="Node3D" parent="." unique_id=1609086210]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84.84382, 10.25, 291.9843)
+
+[node name="Label3D" type="Label3D" parent="Examples_group" unique_id=1116645261]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 2.5, 0)
+text = "Pickup Item "
+font_size = 100
 
 [node name="Collectible_Oil" parent="Examples_group" unique_id=814614715 instance=ExtResource("40_o65ns")]
 
@@ -967,8 +985,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
 [node name="Examples_group2" type="Node3D" parent="." unique_id=985342042]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75.61209, 10.25, 291.9843)
 
+[node name="Label3D2" type="Label3D" parent="Examples_group2" unique_id=134540908]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 2.5, 0)
+text = "Water & Lava Shdaer"
+font_size = 100
+
 [node name="Water" type="MeshInstance3D" parent="Examples_group2" unique_id=1321705772]
-transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, 0, 3)
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0.54914856, -0.44600582, 3)
 mesh = SubResource("QuadMesh_41aie")
 
 [node name="Object" type="MeshInstance3D" parent="Examples_group2/Water" unique_id=376468815]
@@ -993,7 +1016,7 @@ process_material = SubResource("ParticleProcessMaterial_peny8")
 draw_pass_1 = SubResource("QuadMesh_hxiyp")
 
 [node name="Lava" type="MeshInstance3D" parent="Examples_group2" unique_id=1859592308]
-transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0, 0, -3)
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0.54914856, -0.44600582, -3)
 mesh = SubResource("QuadMesh_170iu")
 
 [node name="Object" type="MeshInstance3D" parent="Examples_group2/Lava" unique_id=376854778]
@@ -1002,6 +1025,11 @@ mesh = SubResource("BoxMesh_see0q")
 
 [node name="Examples_group3" type="Node3D" parent="." unique_id=859331062]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84.844, 10.25, 274.114)
+
+[node name="Label3D3" type="Label3D" parent="Examples_group3" unique_id=2102696975]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 2.5, 0)
+text = "Smoke and Meteor Particles"
+font_size = 100
 
 [node name="Meteor" type="Node3D" parent="Examples_group3" unique_id=597027910 node_paths=PackedStringArray("particles")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, -4)
@@ -1074,6 +1102,11 @@ draw_pass_1 = SubResource("QuadMesh_peny8")
 
 [node name="Examples_group4" type="Node3D" parent="." unique_id=2033805722]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75.61209, 10.25, 274.11365)
+
+[node name="Label3D4" type="Label3D" parent="Examples_group4" unique_id=1227981747]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 2.5, 0)
+text = "Confetti Particles using Sub Emitter"
+font_size = 100
 
 [node name="BlueConfetti03" parent="Examples_group4" unique_id=646711714 instance=ExtResource("34_fnoa3")]
 transform = Transform3D(0.9659258, -0.25881904, 0, 0.25881904, 0.9659258, 0, 0, 0, 1, 0, 0, 4)
@@ -1330,6 +1363,7 @@ light_bake_mode = 1
 
 [node name="VoxelGI" type="VoxelGI" parent="." unique_id=1158816872]
 subdiv = 3
+size = Vector3(750, 400, 750)
 data = ExtResource("54_l28at")
 
 [connection signal="timeout" from="Examples_group3/Meteor/MeteorTimer" to="Examples_group3/Meteor" method="_on_Timer_timeout"]
