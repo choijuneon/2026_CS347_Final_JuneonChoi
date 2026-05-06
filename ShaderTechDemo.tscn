@@ -960,7 +960,7 @@ outline_size = 100
 
 [node name="Label3D5" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.5187, 13.5655, 303.585)
-text = "Explore Scene to See Applications of 
+text = "Explore Scene further to See Applications of 
 Shaders / Particles."
 font_size = 150
 outline_size = 10
