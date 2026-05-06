@@ -9,7 +9,7 @@ I worked on enhancing the visual quality of the level by creating custom shaders
 ## What did I do
 - Created and placed textured light poles along the track
 - Used Voxel global illumination
-- Developed custom lava** and water shaders using Godot Shader Language
+- Developed custom lava and water shaders using Godot Shader Language
 - Implemented a bubble shader and a wobble shader for collectible items
 - Built multiple particle systems:
   - Volcano meteors
@@ -38,7 +38,8 @@ The scene's name is `FinalMainScene.tscn`, and it's already set as main scene.
 1. Open the project in Godot
 2. Load the scene: `FinalMainScene.tscn`
 3. Run the scene (already set as the main scene)
-4. Explore the scene with the bike controller (use WASD to move)
+4. Check the samples of particles and shaders at the starting point
+5. Explore the scene further with the bike controller (use WASD to move)
 
 ## Credits
 
