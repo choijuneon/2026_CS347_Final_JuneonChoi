@@ -35,7 +35,7 @@ However, all implemented features can be tested directly within the main scene.
 The scene's name is `FinalMainScene.tscn`, and it's already set as main scene.
 
 ## How to Run
-1. Open the project in Godot
+1. Open the project in Godot 4.4
 2. Load the scene: `FinalMainScene.tscn`
 3. Run the scene (already set as the main scene)
 4. Check the samples of particles and shaders at the starting point
